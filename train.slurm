@@ -8,7 +8,7 @@
 #SBATCH --constraint=a100_80gb
 #SBATCH -N 1
 #SBATCH --cpus-per-task=16
-#SBATCH --output=/scratch/bae9wk/magvit/logs/log-%A-%a.log
+#SBATCH --output=logs/log-%A-%a.log
 #SBATCH -J official_runs
 
 # #SBATCH --ntasks-per-node=1
@@ -19,4 +19,4 @@
 module purge
 module load singularity
 
-bash /scratch/bae9wk/magvit/run.sh
+bash run.sh
