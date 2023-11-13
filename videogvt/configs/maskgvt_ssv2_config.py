@@ -17,6 +17,12 @@ r"""Configuration and hyperparameter for the MaskGVT on SSv2 frame prediction.
 
 """
 
+## TO DO
+
+# Cond frames?
+# Checkpoint saving?
+
+
 import ml_collections
 from videogvt.configs import maskgvt_ucf101_config
 
@@ -33,10 +39,6 @@ def get_config(config_str='B'):
 
   config = maskgvt_ucf101_config.get_config(config_str)
   config.experiment_name = f'SSV2_FP_{VARIANT}'
-
-  # Overall
-  config.image_size = 224
-  config.num_training_epochs = {'B': 400, 'L': 800}[version]
 
   if 'runlocal' in options:
     config.num_training_epochs = 1

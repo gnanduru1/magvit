@@ -36,7 +36,9 @@ def get_config(config_str='B'):
 
   # Overall
   config.image_size = 224
-  config.num_training_epochs = {'B': 400, 'L': 800}[version]
+  #config.num_training_epochs = {'B': 135, 'L': 400}[version]
+  config.num_training_epochs = {'B': 80}[version]
+  config.batch_size = {'B': 192}[version]
 
   # Dataset.
   config.dataset_name = 'video_tfrecord_dataset'
@@ -59,7 +61,7 @@ def get_config(config_str='B'):
   config.dataset_configs.num_frames = 4
   config.dataset_configs.stride = 1
   config.dataset_configs.zero_centering = False  # Range is 0 to 1
-  config.dataset_configs.num_eval_clips = 14  # Sample 16 frames out of 30
+  config.dataset_configs.num_eval_clips = 15  # Sample 16 frames out of 30
   config.dataset_configs.shuffle_buffer_size = 8 * config.get_ref('batch_size')
   config.dataset_configs.prefetch_to_device = 2
 
@@ -78,7 +80,7 @@ def get_config(config_str='B'):
   config.init_from.checkpoint_path = None
 
   config.init_from = None
-  config.logging.enable_checkpoint = False
+  config.logging.enable_checkpoint = True
 
   # Evaluation.
   config.eval.enable_inception_score = False
