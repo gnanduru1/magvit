@@ -741,3 +741,250 @@ I1113 13:37:42.042701 47038867797696 logging_writer.py:48] [3634] uptime=9393.4
 I1113 13:38:43.432240 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.5% (3659/105520), ETA: 2d21h28m (2h37m : 0.1% checkpoint, 0.3% sample)
 I1113 13:38:43.433121 47038867797696 logging_writer.py:48] [3659] steps_per_sec=0.407217
 I1113 13:38:43.434539 47038867797696 logging_writer.py:48] [3659] uptime=9454.79
+I1113 13:39:44.858688 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.5% (3684/105520), ETA: 2d21h30m (2h38m : 0.1% checkpoint, 0.3% sample)
+I1113 13:39:44.859528 47038867797696 logging_writer.py:48] [3684] steps_per_sec=0.406991
+I1113 13:39:44.861071 47038867797696 logging_writer.py:48] [3684] uptime=9516.22
+I1113 13:40:46.220183 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.5% (3709/105520), ETA: 2d21h24m (2h39m : 0.1% checkpoint, 0.3% sample)
+I1113 13:40:46.244729 47038867797696 logging_writer.py:48] [3709] steps_per_sec=0.407422
+I1113 13:40:46.247600 47038867797696 logging_writer.py:48] [3709] uptime=9577.58
+I1113 13:41:47.647852 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.5% (3734/105520), ETA: 2d21h28m (2h40m : 0.1% checkpoint, 0.3% sample)
+I1113 13:41:47.649715 47038867797696 logging_writer.py:48] [3734] steps_per_sec=0.406982
+I1113 13:41:47.650543 47038867797696 logging_writer.py:48] [3734] uptime=9639.01
+I1113 13:42:49.060370 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.6% (3759/105520), ETA: 2d21h26m (2h41m : 0.1% checkpoint, 0.3% sample)
+I1113 13:42:49.061255 47038867797696 logging_writer.py:48] [3759] steps_per_sec=0.407083
+I1113 13:42:49.062544 47038867797696 logging_writer.py:48] [3759] uptime=9700.42
+I1113 13:43:50.414470 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.6% (3784/105520), ETA: 2d21h21m (2h42m : 0.1% checkpoint, 0.3% sample)
+I1113 13:43:50.417219 47038867797696 logging_writer.py:48] [3784] steps_per_sec=0.407471
+I1113 13:43:50.419198 47038867797696 logging_writer.py:48] [3784] uptime=9761.77
+I1113 13:44:33.522020 47038867797696 logging_writer.py:48] [3801] train/d_adversarial_loss=1.2452967166900635, train/d_loss=1.2789146900177002, train/g_adversarial_loss=0.0933518260717392, train/g_loss=-0.08545876294374466, train/grad_penalty=0.033618390560150146, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=-0.19827169179916382, train/reconstruction_loss=0.01946103572845459
+I1113 13:44:33.526532 47038867797696 logging_writer.py:48] [3801] train/lr=9.986018994823098e-05
+I1113 13:44:51.826391 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.6% (3809/105520), ETA: 2d21h24m (2h43m : 0.1% checkpoint, 0.3% sample)
+I1113 13:44:51.827894 47038867797696 logging_writer.py:48] [3809] steps_per_sec=0.407086
+I1113 13:44:51.828365 47038867797696 logging_writer.py:48] [3809] uptime=9823.18
+I1113 13:45:53.170457 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.6% (3834/105520), ETA: 2d21h18m (2h44m : 0.1% checkpoint, 0.3% sample)
+I1113 13:45:53.173370 47038867797696 logging_writer.py:48] [3834] steps_per_sec=0.407538
+I1113 13:45:53.196084 47038867797696 logging_writer.py:48] [3834] uptime=9884.53
+I1113 13:46:54.528640 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.7% (3859/105520), ETA: 2d21h18m (2h45m : 0.1% checkpoint, 0.3% sample)
+I1113 13:46:54.529518 47038867797696 logging_writer.py:48] [3859] steps_per_sec=0.407444
+I1113 13:46:54.530590 47038867797696 logging_writer.py:48] [3859] uptime=9945.89
+I1113 13:47:55.861217 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.7% (3884/105520), ETA: 2d21h15m (2h46m : 0.1% checkpoint, 0.3% sample)
+I1113 13:47:55.862043 47038867797696 logging_writer.py:48] [3884] steps_per_sec=0.407614
+I1113 13:47:55.863153 47038867797696 logging_writer.py:48] [3884] uptime=10007.2
+I1113 13:48:57.189470 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.7% (3909/105520), ETA: 2d21h14m (2h47m : 0.1% checkpoint, 0.3% sample)
+I1113 13:48:57.192493 47038867797696 logging_writer.py:48] [3909] steps_per_sec=0.407643
+I1113 13:48:57.192942 47038867797696 logging_writer.py:48] [3909] uptime=10068.5
+I1113 13:49:58.519976 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.7% (3934/105520), ETA: 2d21h13m (2h48m : 0.1% checkpoint, 0.3% sample)
+I1113 13:49:58.522745 47038867797696 logging_writer.py:48] [3934] steps_per_sec=0.407627
+I1113 13:49:58.525039 47038867797696 logging_writer.py:48] [3934] uptime=10129.9
+I1113 13:50:59.876808 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.8% (3959/105520), ETA: 2d21h14m (2h49m : 0.1% checkpoint, 0.3% sample)
+I1113 13:50:59.902862 47038867797696 logging_writer.py:48] [3959] steps_per_sec=0.407453
+I1113 13:50:59.904797 47038867797696 logging_writer.py:48] [3959] uptime=10191.2
+I1113 13:52:01.210436 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.8% (3984/105520), ETA: 2d21h11m (2h50m : 0.1% checkpoint, 0.3% sample)
+I1113 13:52:01.211335 47038867797696 logging_writer.py:48] [3984] steps_per_sec=0.407607
+I1113 13:52:01.212476 47038867797696 logging_writer.py:48] [3984] uptime=10252.6
+I1113 13:52:44.343263 47038867797696 logging_writer.py:48] [4001] train/d_adversarial_loss=1.243867039680481, train/d_loss=1.2808822393417358, train/g_adversarial_loss=0.09056521952152252, train/g_loss=-0.035641349852085114, train/grad_penalty=0.037015631794929504, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=-0.14584718644618988, train/reconstruction_loss=0.019640643149614334
+I1113 13:52:44.348174 47038867797696 logging_writer.py:48] [4001] train/lr=9.983674681279808e-05
+I1113 13:52:44.662222 46936911911808 checkpoints.py:567] Saving checkpoint at step: 4001
+I1113 13:52:45.795096 46936911911808 checkpoints.py:486] Saved checkpoint at workdir/checkpoint_4001
+I1113 13:52:46.412008 47038867797696 logging_writer.py:51] [4001] Got images: {'train/generated_video_static': (450, 1796, 3), 'train/generated_video_ema_static': (450, 1796, 3)}.
+I1113 13:52:46.435689 47038867797696 logging_writer.py:55] [4001] Got videos: {'train/generated_video': (4, 450, 452, 3), 'train/generated_video_ema': (4, 450, 452, 3)}.
+I1113 13:53:02.382853 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.8% (4008/105520), ETA: 2d23h52m (2h51m : 0.1% checkpoint, 0.3% sample)
+I1113 13:53:02.387215 47038867797696 logging_writer.py:48] [4008] steps_per_sec=0.392334
+I1113 13:53:02.387651 47038867797696 logging_writer.py:48] [4008] uptime=10313.7
+I1113 13:54:03.793381 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.8% (4033/105520), ETA: 2d21h14m (2h52m : 0.1% checkpoint, 0.3% sample)
+I1113 13:54:03.795288 47038867797696 logging_writer.py:48] [4033] steps_per_sec=0.407096
+I1113 13:54:03.795863 47038867797696 logging_writer.py:48] [4033] uptime=10375.2
+I1113 13:55:05.217738 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.8% (4058/105520), ETA: 2d21h14m (2h53m : 0.1% checkpoint, 0.3% sample)
+I1113 13:55:05.218593 47038867797696 logging_writer.py:48] [4058] steps_per_sec=0.407005
+I1113 13:55:05.220255 47038867797696 logging_writer.py:48] [4058] uptime=10436.6
+I1113 13:56:06.579901 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.9% (4083/105520), ETA: 2d21h9m (2h54m : 0.1% checkpoint, 0.3% sample)
+I1113 13:56:06.583462 47038867797696 logging_writer.py:48] [4083] steps_per_sec=0.407418
+I1113 13:56:06.584090 47038867797696 logging_writer.py:48] [4083] uptime=10497.9
+I1113 13:57:07.897433 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.9% (4108/105520), ETA: 2d21h5m (2h55m : 0.1% checkpoint, 0.3% sample)
+I1113 13:57:07.900292 47038867797696 logging_writer.py:48] [4108] steps_per_sec=0.407713
+I1113 13:57:07.924440 47038867797696 logging_writer.py:48] [4108] uptime=10559.3
+I1113 13:58:09.271041 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.9% (4133/105520), ETA: 2d21h8m (2h57m : 0.1% checkpoint, 0.3% sample)
+I1113 13:58:09.273846 47038867797696 logging_writer.py:48] [4133] steps_per_sec=0.407341
+I1113 13:58:09.274731 47038867797696 logging_writer.py:48] [4133] uptime=10620.6
+I1113 13:59:10.637115 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.9% (4158/105520), ETA: 2d21h6m (2h58m : 0.1% checkpoint, 0.3% sample)
+I1113 13:59:10.639559 47038867797696 logging_writer.py:48] [4158] steps_per_sec=0.407391
+I1113 13:59:10.640139 47038867797696 logging_writer.py:48] [4158] uptime=10682
+I1113 14:00:11.993026 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.0% (4183/105520), ETA: 2d21h5m (2h59m : 0.1% checkpoint, 0.2% sample)
+I1113 14:00:12.023921 47038867797696 logging_writer.py:48] [4183] steps_per_sec=0.407459
+I1113 14:00:12.026972 47038867797696 logging_writer.py:48] [4183] uptime=10743.4
+I1113 14:00:57.628253 47038867797696 logging_writer.py:48] [4201] train/d_adversarial_loss=1.2085117101669312, train/d_loss=1.252562165260315, train/g_adversarial_loss=0.09174255281686783, train/g_loss=-0.05638253688812256, train/grad_penalty=0.04405087232589722, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=-0.16728802025318146, train/reconstruction_loss=0.019162964075803757
+I1113 14:00:57.632393 47038867797696 logging_writer.py:48] [4201] train/lr=9.981149923987687e-05
+I1113 14:01:13.473712 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.0% (4208/105520), ETA: 2d21h12m (3h0m : 0.1% checkpoint, 0.2% sample)
+I1113 14:01:13.474540 47038867797696 logging_writer.py:48] [4208] steps_per_sec=0.406632
+I1113 14:01:13.475832 47038867797696 logging_writer.py:48] [4208] uptime=10804.8
+I1113 14:02:14.831669 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.0% (4233/105520), ETA: 2d21h3m (3h1m : 0.1% checkpoint, 0.2% sample)
+I1113 14:02:14.834250 47038867797696 logging_writer.py:48] [4233] steps_per_sec=0.407445
+I1113 14:02:14.835927 47038867797696 logging_writer.py:48] [4233] uptime=10866.2
+I1113 14:03:16.223827 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.0% (4258/105520), ETA: 2d21h4m (3h2m : 0.1% checkpoint, 0.2% sample)
+I1113 14:03:16.224643 47038867797696 logging_writer.py:48] [4258] steps_per_sec=0.407218
+I1113 14:03:16.226056 47038867797696 logging_writer.py:48] [4258] uptime=10927.6
+I1113 14:04:17.603443 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.1% (4283/105520), ETA: 2d21h2m (3h3m : 0.1% checkpoint, 0.2% sample)
+I1113 14:04:17.604418 47038867797696 logging_writer.py:48] [4283] steps_per_sec=0.407301
+I1113 14:04:17.605739 47038867797696 logging_writer.py:48] [4283] uptime=10989
+I1113 14:05:19.016738 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.1% (4308/105520), ETA: 2d21h3m (3h4m : 0.1% checkpoint, 0.2% sample)
+I1113 14:05:19.017585 47038867797696 logging_writer.py:48] [4308] steps_per_sec=0.407078
+I1113 14:05:19.018750 47038867797696 logging_writer.py:48] [4308] uptime=11050.4
+I1113 14:06:20.391995 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.1% (4333/105520), ETA: 2d21h0m (3h5m : 0.1% checkpoint, 0.2% sample)
+I1113 14:06:20.392917 47038867797696 logging_writer.py:48] [4333] steps_per_sec=0.40733
+I1113 14:06:20.394034 47038867797696 logging_writer.py:48] [4333] uptime=11111.7
+I1113 14:07:21.754259 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.1% (4358/105520), ETA: 2d20h58m (3h6m : 0.1% checkpoint, 0.2% sample)
+I1113 14:07:21.757512 47038867797696 logging_writer.py:48] [4358] steps_per_sec=0.407417
+I1113 14:07:21.758813 47038867797696 logging_writer.py:48] [4358] uptime=11173.1
+I1113 14:08:23.170988 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.2% (4383/105520), ETA: 2d21h1m (3h7m : 0.1% checkpoint, 0.2% sample)
+I1113 14:08:23.174627 47038867797696 logging_writer.py:48] [4383] steps_per_sec=0.407055
+I1113 14:08:23.175384 47038867797696 logging_writer.py:48] [4383] uptime=11234.5
+I1113 14:09:09.052441 47038867797696 logging_writer.py:48] [4401] train/d_adversarial_loss=1.247152328491211, train/d_loss=1.2805994749069214, train/g_adversarial_loss=0.08511088043451309, train/g_loss=-0.06567341834306717, train/grad_penalty=0.03344695642590523, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=-0.166541188955307, train/reconstruction_loss=0.015756923705339432
+I1113 14:09:09.059132 47038867797696 logging_writer.py:48] [4401] train/lr=9.978443995350972e-05
+I1113 14:09:23.837792 46936911911808 local.py:50] Created artifact [4401] Profile of type ArtifactType.URL and value None.
+I1113 14:09:24.944298 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.2% (4407/105520), ETA: 3d17m (3h8m : 0.1% checkpoint, 0.2% sample)
+I1113 14:09:24.946300 47038867797696 logging_writer.py:48] [4407] steps_per_sec=0.388517
+I1113 14:09:24.946783 47038867797696 logging_writer.py:48] [4407] uptime=11296.3
+I1113 14:10:26.348565 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.2% (4432/105520), ETA: 2d20h58m (3h9m : 0.1% checkpoint, 0.2% sample)
+I1113 14:10:26.356243 47038867797696 logging_writer.py:48] [4432] steps_per_sec=0.407138
+I1113 14:10:26.357061 47038867797696 logging_writer.py:48] [4432] uptime=11357.7
+I1113 14:11:27.755569 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.2% (4457/105520), ETA: 2d20h57m (3h10m : 0.1% checkpoint, 0.2% sample)
+I1113 14:11:27.756380 47038867797696 logging_writer.py:48] [4457] steps_per_sec=0.40712
+I1113 14:11:27.758944 47038867797696 logging_writer.py:48] [4457] uptime=11419.1
+I1113 14:12:29.231487 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.2% (4482/105520), ETA: 2d21h0m (3h11m : 0.1% checkpoint, 0.2% sample)
+I1113 14:12:29.233497 47038867797696 logging_writer.py:48] [4482] steps_per_sec=0.406663
+I1113 14:12:29.257272 47038867797696 logging_writer.py:48] [4482] uptime=11480.6
+I1113 14:13:30.630152 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.3% (4507/105520), ETA: 2d20h54m (3h12m : 0.1% checkpoint, 0.2% sample)
+I1113 14:13:30.633092 47038867797696 logging_writer.py:48] [4507] steps_per_sec=0.407175
+I1113 14:13:30.633618 47038867797696 logging_writer.py:48] [4507] uptime=11542
+I1113 14:14:31.963947 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.3% (4532/105520), ETA: 2d20h49m (3h13m : 0.1% checkpoint, 0.2% sample)
+I1113 14:14:31.968783 47038867797696 logging_writer.py:48] [4532] steps_per_sec=0.407605
+I1113 14:14:31.969533 47038867797696 logging_writer.py:48] [4532] uptime=11603.3
+I1113 14:15:33.287228 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.3% (4557/105520), ETA: 2d20h47m (3h14m : 0.1% checkpoint, 0.2% sample)
+I1113 14:15:33.289652 47038867797696 logging_writer.py:48] [4557] steps_per_sec=0.407676
+I1113 14:15:33.290488 47038867797696 logging_writer.py:48] [4557] uptime=11664.6
+I1113 14:16:34.687626 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.3% (4582/105520), ETA: 2d20h51m (3h15m : 0.1% checkpoint, 0.2% sample)
+I1113 14:16:34.731603 47038867797696 logging_writer.py:48] [4582] steps_per_sec=0.407163
+I1113 14:16:34.734670 47038867797696 logging_writer.py:48] [4582] uptime=11726
+I1113 14:17:22.794720 47038867797696 logging_writer.py:48] [4601] train/d_adversarial_loss=1.2828388214111328, train/d_loss=1.309828758239746, train/g_adversarial_loss=0.08037621527910233, train/g_loss=-0.08071527630090714, train/grad_penalty=0.0269889235496521, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=-0.17621947824954987, train/reconstruction_loss=0.015128118917346
+I1113 14:17:22.800377 47038867797696 logging_writer.py:48] [4601] train/lr=9.975556895369664e-05
+I1113 14:17:36.201192 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.4% (4607/105520), ETA: 2d20h58m (3h16m : 0.1% checkpoint, 0.2% sample)
+I1113 14:17:36.204611 47038867797696 logging_writer.py:48] [4607] steps_per_sec=0.406415
+I1113 14:17:36.227802 47038867797696 logging_writer.py:48] [4607] uptime=11787.6
+I1113 14:18:37.550915 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.4% (4632/105520), ETA: 2d20h46m (3h17m : 0.1% checkpoint, 0.2% sample)
+I1113 14:18:37.552943 47038867797696 logging_writer.py:48] [4632] steps_per_sec=0.407499
+I1113 14:18:37.580069 47038867797696 logging_writer.py:48] [4632] uptime=11848.9
+I1113 14:19:38.897690 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.4% (4657/105520), ETA: 2d20h45m (3h18m : 0.1% checkpoint, 0.2% sample)
+I1113 14:19:38.901207 47038867797696 logging_writer.py:48] [4657] steps_per_sec=0.40752
+I1113 14:19:38.902365 47038867797696 logging_writer.py:48] [4657] uptime=11910.3
+I1113 14:20:40.205515 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.4% (4682/105520), ETA: 2d20h41m (3h19m : 0.1% checkpoint, 0.2% sample)
+I1113 14:20:40.209284 47038867797696 logging_writer.py:48] [4682] steps_per_sec=0.407778
+I1113 14:20:40.209916 47038867797696 logging_writer.py:48] [4682] uptime=11971.6
+I1113 14:21:41.503579 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.5% (4707/105520), ETA: 2d20h39m (3h20m : 0.1% checkpoint, 0.2% sample)
+I1113 14:21:41.507390 47038867797696 logging_writer.py:48] [4707] steps_per_sec=0.407844
+I1113 14:21:41.508713 47038867797696 logging_writer.py:48] [4707] uptime=12032.9
+I1113 14:22:42.761686 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.5% (4732/105520), ETA: 2d20h36m (3h21m : 0.1% checkpoint, 0.2% sample)
+I1113 14:22:42.768457 47038867797696 logging_writer.py:48] [4732] steps_per_sec=0.408109
+I1113 14:22:42.769444 47038867797696 logging_writer.py:48] [4732] uptime=12094.1
+I1113 14:23:44.130247 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.5% (4757/105520), ETA: 2d20h42m (3h22m : 0.1% checkpoint, 0.2% sample)
+I1113 14:23:44.132637 47038867797696 logging_writer.py:48] [4757] steps_per_sec=0.407375
+I1113 14:23:44.133479 47038867797696 logging_writer.py:48] [4757] uptime=12155.5
+I1113 14:24:45.492498 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.5% (4782/105520), ETA: 2d20h41m (3h23m : 0.1% checkpoint, 0.2% sample)
+I1113 14:24:45.497118 47038867797696 logging_writer.py:48] [4782] steps_per_sec=0.407416
+I1113 14:24:45.497596 47038867797696 logging_writer.py:48] [4782] uptime=12216.9
+I1113 14:25:33.504763 47038867797696 logging_writer.py:48] [4801] train/d_adversarial_loss=1.287049651145935, train/d_loss=1.3091206550598145, train/g_adversarial_loss=0.08316946029663086, train/g_loss=-0.053232863545417786, train/grad_penalty=0.02207135409116745, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=-0.15240474045276642, train/reconstruction_loss=0.016002435237169266
+I1113 14:25:33.508891 47038867797696 logging_writer.py:48] [4801] train/lr=9.972488624043763e-05
+I1113 14:25:46.904104 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.6% (4807/105520), ETA: 2d20h43m (3h24m : 0.1% checkpoint, 0.2% sample)
+I1113 14:25:46.907134 47038867797696 logging_writer.py:48] [4807] steps_per_sec=0.407089
+I1113 14:25:46.908486 47038867797696 logging_writer.py:48] [4807] uptime=12278.3
+I1113 14:26:48.204441 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.6% (4832/105520), ETA: 2d20h34m (3h25m : 0.1% checkpoint, 0.2% sample)
+I1113 14:26:48.206492 47038867797696 logging_writer.py:48] [4832] steps_per_sec=0.407828
+I1113 14:26:48.206954 47038867797696 logging_writer.py:48] [4832] uptime=12339.6
+I1113 14:27:49.516270 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.6% (4857/105520), ETA: 2d20h34m (3h26m : 0.1% checkpoint, 0.2% sample)
+I1113 14:27:49.517221 47038867797696 logging_writer.py:48] [4857] steps_per_sec=0.407752
+I1113 14:27:49.518822 47038867797696 logging_writer.py:48] [4857] uptime=12400.9
+I1113 14:28:50.811932 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.6% (4882/105520), ETA: 2d20h32m (3h27m : 0.1% checkpoint, 0.2% sample)
+I1113 14:28:50.815303 47038867797696 logging_writer.py:48] [4882] steps_per_sec=0.407859
+I1113 14:28:50.816072 47038867797696 logging_writer.py:48] [4882] uptime=12462.2
+I1113 14:29:52.194401 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.7% (4907/105520), ETA: 2d20h37m (3h28m : 0.1% checkpoint, 0.2% sample)
+I1113 14:29:52.197562 47038867797696 logging_writer.py:48] [4907] steps_per_sec=0.407283
+I1113 14:29:52.218827 47038867797696 logging_writer.py:48] [4907] uptime=12523.6
+I1113 14:30:53.614575 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.7% (4932/105520), ETA: 2d20h38m (3h29m : 0.1% checkpoint, 0.2% sample)
+I1113 14:30:53.651413 47038867797696 logging_writer.py:48] [4932] steps_per_sec=0.407032
+I1113 14:30:53.665294 47038867797696 logging_writer.py:48] [4932] uptime=12585
+I1113 14:31:54.910387 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.7% (4957/105520), ETA: 2d20h29m (3h30m : 0.1% checkpoint, 0.2% sample)
+I1113 14:31:54.941723 47038867797696 logging_writer.py:48] [4957] steps_per_sec=0.407858
+I1113 14:31:54.943354 47038867797696 logging_writer.py:48] [4957] uptime=12646.3
+I1113 14:32:56.208569 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.7% (4982/105520), ETA: 2d20h28m (3h31m : 0.1% checkpoint, 0.2% sample)
+I1113 14:32:56.209447 47038867797696 logging_writer.py:48] [4982] steps_per_sec=0.407842
+I1113 14:32:56.210836 47038867797696 logging_writer.py:48] [4982] uptime=12707.6
+I1113 14:33:44.275520 47038867797696 logging_writer.py:48] [5001] train/d_adversarial_loss=1.291028380393982, train/d_loss=1.3179759979248047, train/g_adversarial_loss=0.08108904957771301, train/g_loss=-0.14154265820980072, train/grad_penalty=0.026947425678372383, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=-0.23651660978794098, train/reconstruction_loss=0.013884931802749634
+I1113 14:33:44.279185 47038867797696 logging_writer.py:48] [5001] train/lr=9.96923990896903e-05
+I1113 14:33:44.660252 46936911911808 checkpoints.py:567] Saving checkpoint at step: 5001
+I1113 14:33:46.627767 46936911911808 checkpoints.py:486] Saved checkpoint at workdir/checkpoint_5001
+I1113 14:33:46.628708 46936911911808 checkpoints.py:432] Removing checkpoint at workdir/checkpoint_1
+I1113 14:33:47.403868 47038867797696 logging_writer.py:51] [5001] Got images: {'train/generated_video_static': (450, 1796, 3), 'train/generated_video_ema_static': (450, 1796, 3)}.
+I1113 14:33:47.426856 47038867797696 logging_writer.py:55] [5001] Got videos: {'train/generated_video': (4, 450, 452, 3), 'train/generated_video_ema': (4, 450, 452, 3)}.
+I1113 14:33:58.458182 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.7% (5006/105520), ETA: 3d25m (3h32m : 0.1% checkpoint, 0.2% sample)
+I1113 14:33:58.462858 47038867797696 logging_writer.py:48] [5006] steps_per_sec=0.385545
+I1113 14:33:58.481585 47038867797696 logging_writer.py:48] [5006] uptime=12769.8
+I1113 14:34:59.917118 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.8% (5031/105520), ETA: 2d20h37m (3h33m : 0.1% checkpoint, 0.2% sample)
+I1113 14:34:59.921120 47038867797696 logging_writer.py:48] [5031] steps_per_sec=0.406775
+I1113 14:34:59.922199 47038867797696 logging_writer.py:48] [5031] uptime=12831.3
+I1113 14:36:01.402145 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.8% (5056/105520), ETA: 2d20h38m (3h34m : 0.1% checkpoint, 0.2% sample)
+I1113 14:36:01.404698 47038867797696 logging_writer.py:48] [5056] steps_per_sec=0.406603
+I1113 14:36:01.405331 47038867797696 logging_writer.py:48] [5056] uptime=12892.8
+I1113 14:37:02.878361 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.8% (5081/105520), ETA: 2d20h36m (3h35m : 0.1% checkpoint, 0.2% sample)
+I1113 14:37:02.881743 47038867797696 logging_writer.py:48] [5081] steps_per_sec=0.406661
+I1113 14:37:02.911709 47038867797696 logging_writer.py:48] [5081] uptime=12954.2
+I1113 14:38:04.249231 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.8% (5106/105520), ETA: 2d20h28m (3h36m : 0.1% checkpoint, 0.2% sample)
+I1113 14:38:04.253337 47038867797696 logging_writer.py:48] [5106] steps_per_sec=0.40736
+I1113 14:38:04.254311 47038867797696 logging_writer.py:48] [5106] uptime=13015.6
+I1113 14:39:05.581434 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.9% (5131/105520), ETA: 2d20h24m (3h37m : 0.1% checkpoint, 0.2% sample)
+I1113 14:39:05.583335 47038867797696 logging_writer.py:48] [5131] steps_per_sec=0.407616
+I1113 14:39:05.584768 47038867797696 logging_writer.py:48] [5131] uptime=13076.9
+I1113 14:40:06.992574 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.9% (5156/105520), ETA: 2d20h28m (3h38m : 0.1% checkpoint, 0.2% sample)
+I1113 14:40:06.998612 47038867797696 logging_writer.py:48] [5156] steps_per_sec=0.407092
+I1113 14:40:07.020729 47038867797696 logging_writer.py:48] [5156] uptime=13138.4
+I1113 14:41:08.480698 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.9% (5181/105520), ETA: 2d20h33m (3h39m : 0.1% checkpoint, 0.2% sample)
+I1113 14:41:08.484805 47038867797696 logging_writer.py:48] [5181] steps_per_sec=0.406583
+I1113 14:41:08.486176 47038867797696 logging_writer.py:48] [5181] uptime=13199.8
+I1113 14:41:59.091327 47038867797696 logging_writer.py:48] [5201] train/d_adversarial_loss=1.294317603111267, train/d_loss=1.3255407810211182, train/g_adversarial_loss=0.08209632337093353, train/g_loss=-0.1457107961177826, train/grad_penalty=0.031222796067595482, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=-0.2439984828233719, train/reconstruction_loss=0.01619143970310688
+I1113 14:41:59.096840 47038867797696 logging_writer.py:48] [5201] train/lr=9.965810750145465e-05
+I1113 14:42:10.044755 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 4.9% (5206/105520), ETA: 2d20h37m (3h41m : 0.1% checkpoint, 0.2% sample)
+I1113 14:42:10.045670 47038867797696 logging_writer.py:48] [5206] steps_per_sec=0.406081
+I1113 14:42:10.047129 47038867797696 logging_writer.py:48] [5206] uptime=13261.4
+I1113 14:43:11.483828 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 5.0% (5231/105520), ETA: 2d20h27m (3h42m : 0.1% checkpoint, 0.2% sample)
+I1113 14:43:11.513293 47038867797696 logging_writer.py:48] [5231] steps_per_sec=0.406907
+I1113 14:43:11.514329 47038867797696 logging_writer.py:48] [5231] uptime=13322.8
+I1113 14:44:12.870442 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 5.0% (5256/105520), ETA: 2d20h23m (3h43m : 0.1% checkpoint, 0.2% sample)
+I1113 14:44:12.898811 47038867797696 logging_writer.py:48] [5256] steps_per_sec=0.407255
+I1113 14:44:12.907367 47038867797696 logging_writer.py:48] [5256] uptime=13384.2
+I1113 14:45:14.213261 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 5.0% (5281/105520), ETA: 2d20h19m (3h44m : 0.1% checkpoint, 0.2% sample)
+I1113 14:45:14.222017 47038867797696 logging_writer.py:48] [5281] steps_per_sec=0.407546
+I1113 14:45:14.244296 47038867797696 logging_writer.py:48] [5281] uptime=13445.6
+I1113 14:46:15.589763 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 5.0% (5306/105520), ETA: 2d20h20m (3h45m : 0.1% checkpoint, 0.2% sample)
+I1113 14:46:15.590734 47038867797696 logging_writer.py:48] [5306] steps_per_sec=0.407322
+I1113 14:46:15.592231 47038867797696 logging_writer.py:48] [5306] uptime=13506.9
+I1113 14:47:16.960990 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 5.1% (5331/105520), ETA: 2d20h19m (3h46m : 0.1% checkpoint, 0.2% sample)
+I1113 14:47:16.961998 47038867797696 logging_writer.py:48] [5331] steps_per_sec=0.407357
+I1113 14:47:16.963158 47038867797696 logging_writer.py:48] [5331] uptime=13568.3
+I1113 14:48:18.358041 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 5.1% (5356/105520), ETA: 2d20h19m (3h47m : 0.1% checkpoint, 0.2% sample)
+I1113 14:48:18.375263 47038867797696 logging_writer.py:48] [5356] steps_per_sec=0.407186
+I1113 14:48:18.375943 47038867797696 logging_writer.py:48] [5356] uptime=13629.7
+I1113 14:49:19.865158 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 5.1% (5381/105520), ETA: 2d20h26m (3h48m : 0.1% checkpoint, 0.2% sample)
+I1113 14:49:19.882290 47038867797696 logging_writer.py:48] [5381] steps_per_sec=0.406457
+I1113 14:49:19.882899 47038867797696 logging_writer.py:48] [5381] uptime=13691.2
+I1113 14:50:10.398597 47038867797696 logging_writer.py:48] [5401] train/d_adversarial_loss=1.3061362504959106, train/d_loss=1.3270246982574463, train/g_adversarial_loss=0.07826396077871323, train/g_loss=-0.18922464549541473, train/grad_penalty=0.02088814228773117, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=-0.28172504901885986, train/reconstruction_loss=0.014236386865377426
+I1113 14:50:10.402756 47038867797696 logging_writer.py:48] [5401] train/lr=9.962201147573069e-05
+I1113 14:50:21.349386 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 5.1% (5406/105520), ETA: 2d20h23m (3h49m : 0.1% checkpoint, 0.2% sample)
+I1113 14:50:21.353232 47038867797696 logging_writer.py:48] [5406] steps_per_sec=0.406608
+I1113 14:50:21.353893 47038867797696 logging_writer.py:48] [5406] uptime=13752.7
+I1113 14:51:22.712262 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 5.1% (5431/105520), ETA: 2d20h14m (3h50m : 0.1% checkpoint, 0.2% sample)
+I1113 14:51:22.716956 47038867797696 logging_writer.py:48] [5431] steps_per_sec=0.407414
+I1113 14:51:22.717789 47038867797696 logging_writer.py:48] [5431] uptime=13814.1
+I1113 14:52:24.084938 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 5.2% (5456/105520), ETA: 2d20h14m (3h51m : 0.1% checkpoint, 0.2% sample)
+I1113 14:52:24.089430 47038867797696 logging_writer.py:48] [5456] steps_per_sec=0.407345
+I1113 14:52:24.090538 47038867797696 logging_writer.py:48] [5456] uptime=13875.4
+I1113 14:53:25.442635 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 5.2% (5481/105520), ETA: 2d20h12m (3h52m : 0.1% checkpoint, 0.2% sample)
+I1113 14:53:25.445334 47038867797696 logging_writer.py:48] [5481] steps_per_sec=0.407447
+I1113 14:53:25.446912 47038867797696 logging_writer.py:48] [5481] uptime=13936.8
