@@ -1,0 +1,743 @@
+2023-11-13 11:00:35.365309: E tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:9342] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2023-11-13 11:00:35.365415: E tensorflow/compiler/xla/stream_executor/cuda/cuda_fft.cc:609] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2023-11-13 11:00:35.365437: E tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:1518] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-11-13 11:00:38.117286: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2023-11-13 11:00:46.886133: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2211] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+I1113 11:00:47.850262 46936911911808 xla_bridge.py:633] Unable to initialize backend 'rocm': NOT_FOUND: Could not find registered platform with name: "rocm". Available platform names are: CUDA
+I1113 11:00:47.851922 46936911911808 xla_bridge.py:633] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+I1113 11:00:47.862320 46936911911808 app.py:87] JAX host: 0 / 1
+I1113 11:00:47.862384 46936911911808 app.py:88] JAX devices: [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3)]
+I1113 11:00:47.862702 46936911911808 local.py:45] Setting task status: host_id: 0, host_count: 1
+I1113 11:00:47.862755 46936911911808 local.py:50] Created artifact Workdir of type ArtifactType.DIRECTORY and value workdir.
+I1113 11:00:48.762094 46936911911808 app.py:99] RNG: [0 0]
+I1113 11:00:49.232216 46936911911808 trainer_manager.py:57] Running model_class VQGAN in is_train True.
+I1113 11:00:49.232434 46936911911808 train_utils.py:254] device_count: 4
+I1113 11:00:49.232483 46936911911808 train_utils.py:255] num_hosts : 1
+I1113 11:00:49.232526 46936911911808 train_utils.py:256] host_id : 0
+I1113 11:00:49.485281 46936911911808 datasets.py:107] On-demand import of dataset (video_tfrecord_dataset) from module (scenic.projects.vivit.data.video_tfrecord_dataset).
+I1113 11:00:49.485445 46936911911808 train_utils.py:272] local_batch_size : 128
+I1113 11:00:49.485489 46936911911808 train_utils.py:273] device_batch_size : 32
+I1113 11:00:49.486544 46936911911808 video_tfrecord_dataset.py:416] Loading split train
+I1113 11:00:49.486836 46936911911808 video_tfrecord_dataset.py:313] Preprocessing graph: [FunctionDescription(fn_name='image_resize_smallest', fn=<function add_image.<locals>.<lambda> at 0x2ab3120fd000>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_random_crop', fn=<function add_image.<locals>.<lambda> at 0x2ab3120fd090>, feature_name='image', stateful=True), FunctionDescription(fn_name='image_random_flip', fn=<function add_image.<locals>.<lambda> at 0x2ab3120fd120>, feature_name='image', stateful=True), FunctionDescription(fn_name='image_normalize', fn=<function add_image.<locals>.<lambda> at 0x2ab3120fd1b0>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_subtract_given_mean', fn=<function add_image.<locals>.<lambda> at 0x2ab3120fd240>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_divide_by_given_std', fn=<function add_image.<locals>.<lambda> at 0x2ab3120fd2d0>, feature_name='image', stateful=False), FunctionDescription(fn_name='label_one_hot', fn=<function add_label.<locals>.<lambda> at 0x2ab3120fd360>, feature_name='label', stateful=False)]
+I1113 11:00:49.486917 46936911911808 video_tfrecord_dataset.py:315] Postprocessing graph: []
+WARNING:tensorflow:From /home/abg4br/.local/lib/python3.10/site-packages/tensorflow/python/autograph/impl/api.py:459: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with back_prop=False is deprecated and will be removed in a future version.
+Instructions for updating:
+back_prop=False is deprecated. Consider using tf.stop_gradient instead.
+Instead of:
+results = tf.map_fn(fn, elems, back_prop=False)
+Use:
+results = tf.nest.map_structure(tf.stop_gradient, tf.map_fn(fn, elems))
+W1113 11:00:50.257323 46936911911808 deprecation.py:50] From /home/abg4br/.local/lib/python3.10/site-packages/tensorflow/python/autograph/impl/api.py:459: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with back_prop=False is deprecated and will be removed in a future version.
+Instructions for updating:
+back_prop=False is deprecated. Consider using tf.stop_gradient instead.
+Instead of:
+results = tf.map_fn(fn, elems, back_prop=False)
+Use:
+results = tf.nest.map_structure(tf.stop_gradient, tf.map_fn(fn, elems))
+WARNING:tensorflow:From /home/abg4br/.local/lib/python3.10/site-packages/tensorflow/python/util/deprecation.py:660: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Use fn_output_signature instead
+W1113 11:00:50.257598 46936911911808 deprecation.py:50] From /home/abg4br/.local/lib/python3.10/site-packages/tensorflow/python/util/deprecation.py:660: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Use fn_output_signature instead
+I1113 11:00:51.116750 46936911911808 video_dataset.py:487] Dataset created successfully
+I1113 11:00:51.211627 46936911911808 video_tfrecord_dataset.py:416] Loading split validation
+I1113 11:00:51.212073 46936911911808 video_tfrecord_dataset.py:313] Preprocessing graph: [FunctionDescription(fn_name='image_resize_smallest', fn=<function add_image.<locals>.<lambda> at 0x2ab3120fef80>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_central_crop', fn=<function add_image.<locals>.<lambda> at 0x2ab3120ff760>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_normalize', fn=<function add_image.<locals>.<lambda> at 0x2ab3120fe560>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_subtract_given_mean', fn=<function add_image.<locals>.<lambda> at 0x2ab3120feb90>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_divide_by_given_std', fn=<function add_image.<locals>.<lambda> at 0x2ab17e113a30>, feature_name='image', stateful=False), FunctionDescription(fn_name='label_one_hot', fn=<function add_label.<locals>.<lambda> at 0x2ab17e1132e0>, feature_name='label', stateful=False)]
+I1113 11:00:51.212162 46936911911808 video_tfrecord_dataset.py:315] Postprocessing graph: []
+I1113 11:00:51.463718 46936911911808 video_dataset.py:487] Dataset created successfully
+I1113 11:00:51.602719 46936911911808 video_tfrecord_dataset.py:416] Loading split test
+I1113 11:00:51.603199 46936911911808 video_tfrecord_dataset.py:313] Preprocessing graph: [FunctionDescription(fn_name='image_resize_smallest', fn=<function add_image.<locals>.<lambda> at 0x2ab17e1de290>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_central_crop', fn=<function add_image.<locals>.<lambda> at 0x2ab17e1dea70>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_normalize', fn=<function add_image.<locals>.<lambda> at 0x2ab17e1dc1f0>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_subtract_given_mean', fn=<function add_image.<locals>.<lambda> at 0x2ab17e1dcd30>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_divide_by_given_std', fn=<function add_image.<locals>.<lambda> at 0x2ab17e1dc820>, feature_name='image', stateful=False), FunctionDescription(fn_name='label_one_hot', fn=<function add_label.<locals>.<lambda> at 0x2ab17e1dda20>, feature_name='label', stateful=False)]
+I1113 11:00:51.603296 46936911911808 video_tfrecord_dataset.py:315] Postprocessing graph: []
+I1113 11:00:51.812930 46936911911808 video_dataset.py:487] Dataset created successfully
+I1113 11:00:51.950770 46936911911808 video_tfrecord_dataset.py:485] Dataset metadata:
+{'num_classes': 174, 'input_shape': (-1, 4, 224, 224, 3), 'num_train_examples': 168913, 'num_eval_examples': 24777, 'num_test_examples': 24777, 'input_dtype': <class 'jax.numpy.float32'>, 'target_is_onehot': True}
+I1113 11:00:51.951421 46936911911808 main.py:59] Trainer VQGAN loaded
+I1113 11:00:51.952039 47038867797696 logging_writer.py:80] [Hyperparameters] {'base_lr': 0.0001, 'batch_size': 128, 'data_dtype_str': 'float32', 'dataset_configs/base_dir': '../ssv2', 'dataset_configs/camera_name': 'image_aux1', 'dataset_configs/examples_per_subset/test': 24777, 'dataset_configs/examples_per_subset/train': 168913, 'dataset_configs/examples_per_subset/validation': 24777, 'dataset_configs/frame_rate': 10, 'dataset_configs/num_classes': 174, 'dataset_configs/num_eval_clips': 15, 'dataset_configs/num_frames': 4, 'dataset_configs/prefetch_to_device': 2, 'dataset_configs/shuffle_buffer_size': 1024, 'dataset_configs/stride': 1, 'dataset_configs/tables/test': 'test_tfrecord', 'dataset_configs/tables/train': 'train_tfrecord', 'dataset_configs/tables/validation': 'val_tfrecord', 'dataset_configs/zero_centering': False, 'dataset_name': 'video_tfrecord_dataset', 'discriminator/channel_multipliers': (2, 4, 4, 4), 'discriminator/filters': 64, 'discriminator/num_remat_blocks': 0, 'dtype': 'float32', 'eval/data_splits': 'train,validation', 'eval/enable_frechet_distance': True, 'eval/enable_inception_score': False, 'eval/final_num_example_multiplier': 10, 'eval/final_num_repeats': 1, 'eval/num_examples': 247770, 'eval_batch_size': 32, 'eval_from/checkpoint_path': None, 'eval_from/step': None, 'experiment_name': 'SSV2_VQGAN/3D', 'image_size': 224, 'init_from': None, 'lax_precision': 'default', 'logging/checkpoint_kept': 5, 'logging/checkpoint_steps': 1000, 'logging/enable_checkpoint': True, 'logging/log_metric_steps': 200, 'logging/log_sample_size': 2, 'lr_configs/base_learning_rate': 0.0001, 'lr_configs/factors': 'constant * cosine_decay * linear_warmup', 'lr_configs/learning_rate_schedule': 'compound', 'lr_configs/steps_per_cycle': 105520, 'lr_configs/steps_per_epoch': 1319, 'lr_configs/warmup_steps': 1319, 'model_class': 'VQGAN', 'num_training_epochs': 80, 'optimizer/beta1': 0.0, 'optimizer/beta2': 0.99, 'optimizer/d_lr': 0.0001, 'optimizer/g_lr': 0.0001, 'optimizer/lr': 0.0001, 'perceptual_loss_on_logit': True, 'perceptual_loss_weight': 0.1, 'polyak_decay': 0.999, 'pretrained_image_model': True, 'rng_seed': 0, 'vqgan/finetune_decoder': False, 'vqgan/finetune_path': '', 'vqgan/g_adversarial_loss_weight': 0.1, 'vqgan/grad_penalty_cost': 10.0, 'vqgan/gradient_penalty': 'r1', 'vqgan/loss_type': 'non-saturating', 'vqgan/model_type': '3D', 'vqvae/activation_fn': 'swish', 'vqvae/architecture': '3dcnn', 'vqvae/channel_multipliers': (1, 2, 4), 'vqvae/codebook_size': 1024, 'vqvae/commitment_cost': 0.25, 'vqvae/conv_downsample': False, 'vqvae/deconv_upsample': False, 'vqvae/embedding_dim': 256, 'vqvae/entropy_loss_ratio': 0.1, 'vqvae/entropy_loss_type': 'softmax', 'vqvae/entropy_temperature': 0.01, 'vqvae/filters': 64, 'vqvae/norm_type': 'GN', 'vqvae/num_dec_remat_blocks': 0, 'vqvae/num_dec_res_blocks': 2, 'vqvae/num_enc_remat_blocks': 0, 'vqvae/num_enc_res_blocks': 2, 'vqvae/temporal_downsample': (True, True, False)}
+I1113 11:01:06.845539 46936911911808 checkpoints.py:1052] Found no checkpoint files in workdir with prefix checkpoint_
+I1113 11:01:06.848418 47038867797696 logging_writer.py:48] [0] param_size/discriminator=23530945, param_size/generator=36596355
+I1113 11:01:08.642447 46936911911808 vqgan_trainer.py:647] Starting training loop at step 0 of total_steps=105520.
+2023-11-13 11:01:21.146053: E external/xla/xla/service/slow_operation_alarm.cc:65] Constant folding an instruction is taking > 1s:
+
+  %reduce-window.18990 = f32[32,1,56,56,128]{4,3,2,1,0} reduce-window(f32[32,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_20.18986, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 11:01:33.123917: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 12.976983283s
+Constant folding an instruction is taking > 1s:
+
+  %reduce-window.18990 = f32[32,1,56,56,128]{4,3,2,1,0} reduce-window(f32[32,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_20.18986, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 11:01:35.249658: E external/xla/xla/service/slow_operation_alarm.cc:65] Constant folding an instruction is taking > 2s:
+
+  %reduce-window.22259 = f32[32,1,56,56,128]{4,3,2,1,0} reduce-window(f32[32,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_117.22255, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(StyleGANDiscriminator)/ResBlock_1/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 11:01:44.576223: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 11.326650226s
+Constant folding an instruction is taking > 2s:
+
+  %reduce-window.22259 = f32[32,1,56,56,128]{4,3,2,1,0} reduce-window(f32[32,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_117.22255, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(StyleGANDiscriminator)/ResBlock_1/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 11:01:48.576504: E external/xla/xla/service/slow_operation_alarm.cc:65] Constant folding an instruction is taking > 4s:
+
+  %reduce-window.22270 = f32[32,1,56,56,128]{4,3,2,1,0} reduce-window(f32[32,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_119.22266, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(StyleGANDiscriminator)/ResBlock_1/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 11:01:56.972172: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 12.395741515s
+Constant folding an instruction is taking > 4s:
+
+  %reduce-window.22270 = f32[32,1,56,56,128]{4,3,2,1,0} reduce-window(f32[32,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_119.22266, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(StyleGANDiscriminator)/ResBlock_1/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 11:02:13.202747: E external/xla/xla/service/slow_operation_alarm.cc:65] Constant folding an instruction is taking > 8s:
+
+  %reduce-window.21419 = f32[32,1,56,56,128]{4,3,2,1,0} reduce-window(f32[32,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_91.21415, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(jvp(StyleGANDiscriminator))/ResBlock_1/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 11:02:17.737699: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 12.535031888s
+Constant folding an instruction is taking > 8s:
+
+  %reduce-window.21419 = f32[32,1,56,56,128]{4,3,2,1,0} reduce-window(f32[32,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_91.21415, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(jvp(StyleGANDiscriminator))/ResBlock_1/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 11:02:57.057175: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[64,32,2,112,112]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:02:57.834130: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.777036817s
+Trying algorithm eng0{} for conv (f32[128,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[64,32,2,112,112]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:02:59.488367: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[64,32,2,112,112]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:00.254548: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.766295474s
+Trying algorithm eng0{} for conv (f32[128,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[64,32,2,112,112]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:02.478798: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,32,2,112,112]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:04.964904: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 3.486160241s
+Trying algorithm eng0{} for conv (f32[128,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,32,2,112,112]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:07.091224: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,32,2,112,112]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:09.577704: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 3.486533547s
+Trying algorithm eng0{} for conv (f32[128,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,32,2,112,112]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:14.126186: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[256,32,1,56,56]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,1,56,56]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=1x56x56 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:14.856355: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.730257693s
+Trying algorithm eng0{} for conv (f32[256,32,1,56,56]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,1,56,56]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=1x56x56 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:16.497106: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[256,32,1,56,56]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,1,56,56]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=1x56x56 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:17.227769: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.730736569s
+Trying algorithm eng0{} for conv (f32[256,32,1,56,56]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,1,56,56]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=1x56x56 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:20.445197: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng20{k2=6,k3=0} for conv (f32[256,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:21.348865: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.903720871s
+Trying algorithm eng20{k2=6,k3=0} for conv (f32[256,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:22.349065: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[256,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:35.203001: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 13.853991806s
+Trying algorithm eng0{} for conv (f32[256,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:37.867491: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng20{k2=6,k3=0} for conv (f32[256,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:38.771236: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.903840085s
+Trying algorithm eng20{k2=6,k3=0} for conv (f32[256,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:39.771399: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[256,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:52.622462: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 13.851127902s
+Trying algorithm eng0{} for conv (f32[256,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:03:55.725340: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:04:01.651310: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 6.926048727s
+Trying algorithm eng0{} for conv (f32[128,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:04:04.604675: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:04:10.535074: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 6.930475584s
+Trying algorithm eng0{} for conv (f32[128,32,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:04:16.632951: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng33{k2=15,k6=0,k13=0,k14=0,k22=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:04:17.007819: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.374928014s
+Trying algorithm eng33{k2=15,k6=0,k13=0,k14=0,k22=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:04:18.007996: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng11{k2=3,k3=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:04:18.834536: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.826616595s
+Trying algorithm eng11{k2=3,k3=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:04:23.498226: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng33{k2=15,k6=0,k13=0,k14=0,k22=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:04:23.873178: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.375043894s
+Trying algorithm eng33{k2=15,k6=0,k13=0,k14=0,k22=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:04:24.873367: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng11{k2=3,k3=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:04:25.702196: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.828916773s
+Trying algorithm eng11{k2=3,k3=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:05:16.271215: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[32,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,64,4,224,224]{4,3,2,1,0}, f32[64,64,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:05:18.384205: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 3.113063188s
+Trying algorithm eng0{} for conv (f32[32,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,64,4,224,224]{4,3,2,1,0}, f32[64,64,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:05:21.163570: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[32,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,64,4,224,224]{4,3,2,1,0}, f32[64,64,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:05:23.232364: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 3.06885884s
+Trying algorithm eng0{} for conv (f32[32,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,64,4,224,224]{4,3,2,1,0}, f32[64,64,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:05:34.669981: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:05:39.811345: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 6.141413606s
+Trying algorithm eng0{} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:05:44.625523: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:05:49.766746: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 6.141271367s
+Trying algorithm eng0{} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:05:57.016167: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng25{k2=0,k3=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:05:57.142979: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.126889382s
+Trying algorithm eng25{k2=0,k3=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:05:58.143078: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng25{k2=2,k3=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:05:58.382925: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.239907072s
+Trying algorithm eng25{k2=2,k3=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:02.813763: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng25{k2=0,k3=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:02.947392: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.133697541s
+Trying algorithm eng25{k2=0,k3=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:03.947481: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng25{k2=2,k3=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:04.189480: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.242050153s
+Trying algorithm eng25{k2=2,k3=0} for conv (f32[32,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:19.763120: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng28{k2=3,k3=0} for conv (f32[256,256,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:19.930787: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.167775045s
+Trying algorithm eng28{k2=3,k3=0} for conv (f32[256,256,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:20.930887: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[256,256,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:25.210934: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 5.280074849s
+Trying algorithm eng0{} for conv (f32[256,256,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:28.077499: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng28{k2=3,k3=0} for conv (f32[256,256,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:28.242338: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.164912444s
+Trying algorithm eng28{k2=3,k3=0} for conv (f32[256,256,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:29.242443: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[256,256,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:33.522146: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 5.279746678s
+Trying algorithm eng0{} for conv (f32[256,256,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[256,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:37.539821: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng40{k2=14,k6=0,k12=-1,k13=1,k14=0,k15=0,k17=3,k22=3} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[32,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:37.827002: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.28728064s
+Trying algorithm eng40{k2=14,k6=0,k12=-1,k13=1,k14=0,k15=0,k17=3,k22=3} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[32,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:38.827140: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng23{k2=6,k13=0,k14=2,k18=1,k23=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[32,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:39.113585: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.286525733s
+Trying algorithm eng23{k2=6,k13=0,k14=2,k18=1,k23=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[32,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:40.113696: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng20{k2=6,k3=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[32,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:41.014868: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.901228759s
+Trying algorithm eng20{k2=6,k3=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[32,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:44.219252: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng40{k2=14,k6=0,k12=-1,k13=1,k14=0,k15=0,k17=3,k22=3} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[32,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:44.504201: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.285018223s
+Trying algorithm eng40{k2=14,k6=0,k12=-1,k13=1,k14=0,k15=0,k17=3,k22=3} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[32,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:45.504304: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng23{k2=6,k13=0,k14=2,k18=1,k23=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[32,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:45.791296: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.287051546s
+Trying algorithm eng23{k2=6,k13=0,k14=2,k18=1,k23=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[32,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:46.791392: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng20{k2=6,k3=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[32,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:47.685735: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.894396985s
+Trying algorithm eng20{k2=6,k3=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[32,128,4,224,224]{4,3,2,1,0}, f32[32,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:53.000079: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[256,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[128,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:54.634833: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 2.634825813s
+Trying algorithm eng0{} for conv (f32[256,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[128,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:57.378225: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[256,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[128,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:06:59.013184: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 2.63505107s
+Trying algorithm eng0{} for conv (f32[256,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,32,2,112,112]{4,3,2,1,0}, f32[128,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:07:01.343077: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,32,2,112,112]{4,3,2,1,0}, f32[128,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:07:01.663904: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.320899297s
+Trying algorithm eng0{} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,32,2,112,112]{4,3,2,1,0}, f32[128,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:07:03.884584: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,32,2,112,112]{4,3,2,1,0}, f32[128,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:07:04.204821: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.320318359s
+Trying algorithm eng0{} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,32,2,112,112]{4,3,2,1,0}, f32[128,32,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:07:35.660228: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,32,2,112,112]{4,3,2,1,0}, f32[128,32,2,112,112]{4,3,2,1,0}, f32[128]{0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":1,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:07:35.981251: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.321105005s
+Trying algorithm eng0{} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,32,2,112,112]{4,3,2,1,0}, f32[128,32,2,112,112]{4,3,2,1,0}, f32[128]{0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":1,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:07:38.207138: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,32,2,112,112]{4,3,2,1,0}, f32[128,32,2,112,112]{4,3,2,1,0}, f32[128]{0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":1,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 11:07:38.527793: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.320757769s
+Trying algorithm eng0{} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,32,2,112,112]{4,3,2,1,0}, f32[128,32,2,112,112]{4,3,2,1,0}, f32[128]{0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":1,"leakyrelu_alpha":0} is taking a while...
+I1113 11:08:17.819885 46936911911808 vqgan_trainer.py:671] Finished training step 1.
+I1113 11:08:17.898034 47038867797696 logging_writer.py:48] [1] train/d_adversarial_loss=1.3892269134521484, train/d_loss=1.3892316818237305, train/g_adversarial_loss=0.06938336044549942, train/g_loss=0.696760356426239, train/grad_penalty=4.763805009133648e-06, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=0.1560685634613037, train/reconstruction_loss=0.4713084101676941
+I1113 11:08:18.537039 47038867797696 logging_writer.py:48] [1] train/lr=0.0
+I1113 11:08:19.046931 46936911911808 checkpoints.py:567] Saving checkpoint at step: 1
+I1113 11:08:20.678039 46936911911808 checkpoints.py:486] Saved checkpoint at workdir/checkpoint_1
+I1113 11:08:44.798555 47038867797696 logging_writer.py:51] [1] Got images: {'train/generated_video_static': (450, 1796, 3), 'train/generated_video_ema_static': (450, 1796, 3)}.
+I1113 11:08:44.833809 47038867797696 logging_writer.py:55] [1] Got videos: {'train/generated_video': (4, 450, 452, 3), 'train/generated_video_ema': (4, 450, 452, 3)}.
+W1113 11:08:45.257419 47038865696448 summary_writer.py:69] SummaryWriter does not support writing videos.
+I1113 11:08:46.142899 46936911911808 vqgan_trainer.py:671] Finished training step 2.
+I1113 11:08:49.957864 46936911911808 vqgan_trainer.py:671] Finished training step 3.
+I1113 11:08:51.094440 46936911911808 vqgan_trainer.py:671] Finished training step 4.
+I1113 11:08:53.526734 46936911911808 vqgan_trainer.py:671] Finished training step 5.
+I1113 11:09:19.311727 46936911911808 local.py:41] Setting work unit notes: 0.2 steps/s, 0.0% (15/105520), ETA: 5d8h43m (8m : 0.4% checkpoint, 4.9% sample)
+I1113 11:09:19.441260 47038867797696 logging_writer.py:48] [15] steps_per_sec=0.227675
+I1113 11:09:19.443403 47038867797696 logging_writer.py:48] [15] uptime=490.67
+I1113 11:09:22.118546 46936911911808 local.py:50] Created artifact [10] Profile of type ArtifactType.URL and value None.
+I1113 11:10:19.669438 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.0% (39/105520), ETA: 3d1h41m (9m : 0.4% checkpoint, 4.4% sample)
+I1113 11:10:19.675029 47038867797696 logging_writer.py:48] [39] steps_per_sec=0.397629
+I1113 11:10:19.675685 47038867797696 logging_writer.py:48] [39] uptime=551.027
+I1113 11:11:21.098248 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.1% (64/105520), ETA: 2d23h58m (10m : 0.4% checkpoint, 3.9% sample)
+I1113 11:11:21.105087 47038867797696 logging_writer.py:48] [64] steps_per_sec=0.406975
+I1113 11:11:21.129740 47038867797696 logging_writer.py:48] [64] uptime=612.456
+I1113 11:12:22.569404 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.1% (89/105520), ETA: 3d0m (11m : 0.3% checkpoint, 3.6% sample)
+I1113 11:12:22.572146 47038867797696 logging_writer.py:48] [89] steps_per_sec=0.406695
+I1113 11:12:22.573954 47038867797696 logging_writer.py:48] [89] uptime=673.927
+I1113 11:13:23.942206 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.1% (114/105520), ETA: 2d23h52m (12m : 0.3% checkpoint, 3.3% sample)
+I1113 11:13:23.944517 47038867797696 logging_writer.py:48] [114] steps_per_sec=0.407347
+I1113 11:13:23.946256 47038867797696 logging_writer.py:48] [114] uptime=735.3
+I1113 11:14:25.302738 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.1% (139/105520), ETA: 2d23h50m (13m : 0.3% checkpoint, 3.0% sample)
+I1113 11:14:25.308435 47038867797696 logging_writer.py:48] [139] steps_per_sec=0.407428
+I1113 11:14:25.310096 47038867797696 logging_writer.py:48] [139] uptime=796.661
+I1113 11:15:26.654838 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.2% (164/105520), ETA: 2d23h49m (14m : 0.3% checkpoint, 2.8% sample)
+I1113 11:15:26.661667 47038867797696 logging_writer.py:48] [164] steps_per_sec=0.407483
+I1113 11:15:26.662841 47038867797696 logging_writer.py:48] [164] uptime=858.013
+I1113 11:16:27.987920 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.2% (189/105520), ETA: 2d23h46m (15m : 0.2% checkpoint, 2.6% sample)
+I1113 11:16:28.001295 47038867797696 logging_writer.py:48] [189] steps_per_sec=0.407611
+I1113 11:16:28.002958 47038867797696 logging_writer.py:48] [189] uptime=919.346
+I1113 11:16:58.822324 47038867797696 logging_writer.py:48] [201] train/d_adversarial_loss=1.3713953495025635, train/d_loss=1.3715429306030273, train/g_adversarial_loss=0.07094717025756836, train/g_loss=0.5328006744384766, train/grad_penalty=0.0001477259793318808, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=0.36385828256607056, train/reconstruction_loss=0.09799529612064362
+I1113 11:16:58.828046 47038867797696 logging_writer.py:48] [201] train/lr=1.5163002899498679e-05
+I1113 11:17:29.409433 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.2% (214/105520), ETA: 2d23h52m (16m : 0.2% checkpoint, 2.5% sample)
+I1113 11:17:29.418327 47038867797696 logging_writer.py:48] [214] steps_per_sec=0.407023
+I1113 11:17:29.452945 47038867797696 logging_writer.py:48] [214] uptime=980.767
+I1113 11:18:30.728838 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.2% (239/105520), ETA: 2d23h43m (17m : 0.2% checkpoint, 2.3% sample)
+I1113 11:18:30.736428 47038867797696 logging_writer.py:48] [239] steps_per_sec=0.407701
+I1113 11:18:30.737735 47038867797696 logging_writer.py:48] [239] uptime=1042.09
+I1113 11:19:32.121793 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.3% (264/105520), ETA: 2d23h47m (18m : 0.2% checkpoint, 2.2% sample)
+I1113 11:19:32.124969 47038867797696 logging_writer.py:48] [264] steps_per_sec=0.407213
+I1113 11:19:32.125345 47038867797696 logging_writer.py:48] [264] uptime=1103.48
+I1113 11:20:33.538730 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.3% (289/105520), ETA: 2d23h48m (19m : 0.2% checkpoint, 2.1% sample)
+I1113 11:20:33.542083 47038867797696 logging_writer.py:48] [289] steps_per_sec=0.407053
+I1113 11:20:33.543390 47038867797696 logging_writer.py:48] [289] uptime=1164.9
+I1113 11:21:34.857549 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.3% (314/105520), ETA: 2d23h40m (20m : 0.2% checkpoint, 2.0% sample)
+I1113 11:21:34.884399 47038867797696 logging_writer.py:48] [314] steps_per_sec=0.407705
+I1113 11:21:34.886179 47038867797696 logging_writer.py:48] [314] uptime=1226.22
+I1113 11:22:36.239624 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.3% (339/105520), ETA: 2d23h44m (21m : 0.2% checkpoint, 1.9% sample)
+I1113 11:22:36.242585 47038867797696 logging_writer.py:48] [339] steps_per_sec=0.407285
+I1113 11:22:36.243363 47038867797696 logging_writer.py:48] [339] uptime=1287.6
+I1113 11:23:37.680133 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.3% (364/105520), ETA: 2d23h47m (22m : 0.2% checkpoint, 1.8% sample)
+I1113 11:23:37.683299 47038867797696 logging_writer.py:48] [364] steps_per_sec=0.406898
+I1113 11:23:37.685468 47038867797696 logging_writer.py:48] [364] uptime=1349.04
+I1113 11:24:39.050383 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.4% (389/105520), ETA: 2d23h41m (23m : 0.2% checkpoint, 1.7% sample)
+I1113 11:24:39.054570 47038867797696 logging_writer.py:48] [389] steps_per_sec=0.407364
+I1113 11:24:39.087519 47038867797696 logging_writer.py:48] [389] uptime=1410.41
+I1113 11:25:09.873748 47038867797696 logging_writer.py:48] [401] train/d_adversarial_loss=1.3807848691940308, train/d_loss=1.3809659481048584, train/g_adversarial_loss=0.06982367485761642, train/g_loss=0.8558064699172974, train/grad_penalty=0.0001813725393731147, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=0.7605440616607666, train/reconstruction_loss=0.025438735261559486
+I1113 11:25:09.879432 47038867797696 logging_writer.py:48] [401] train/lr=3.0326005798997357e-05
+I1113 11:25:40.426595 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.4% (414/105520), ETA: 2d23h40m (24m : 0.1% checkpoint, 1.6% sample)
+I1113 11:25:40.429426 47038867797696 logging_writer.py:48] [414] steps_per_sec=0.407324
+I1113 11:25:40.433815 47038867797696 logging_writer.py:48] [414] uptime=1471.78
+I1113 11:26:41.868543 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.4% (439/105520), ETA: 2d23h44m (25m : 0.1% checkpoint, 1.6% sample)
+I1113 11:26:41.873176 47038867797696 logging_writer.py:48] [439] steps_per_sec=0.406888
+I1113 11:26:41.875531 47038867797696 logging_writer.py:48] [439] uptime=1533.23
+I1113 11:27:43.378060 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.4% (464/105520), ETA: 2d23h47m (26m : 0.1% checkpoint, 1.5% sample)
+I1113 11:27:43.384594 47038867797696 logging_writer.py:48] [464] steps_per_sec=0.406441
+I1113 11:27:43.385186 47038867797696 logging_writer.py:48] [464] uptime=1594.74
+I1113 11:28:44.840276 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.5% (489/105520), ETA: 2d23h43m (27m : 0.1% checkpoint, 1.5% sample)
+I1113 11:28:44.848031 47038867797696 logging_writer.py:48] [489] steps_per_sec=0.406754
+I1113 11:28:44.873720 47038867797696 logging_writer.py:48] [489] uptime=1656.2
+I1113 11:29:46.237838 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.5% (514/105520), ETA: 2d23h38m (28m : 0.1% checkpoint, 1.4% sample)
+I1113 11:29:46.246762 47038867797696 logging_writer.py:48] [514] steps_per_sec=0.407183
+I1113 11:29:46.275507 47038867797696 logging_writer.py:48] [514] uptime=1717.6
+I1113 11:30:47.699230 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.5% (539/105520), ETA: 2d23h41m (29m : 0.1% checkpoint, 1.4% sample)
+I1113 11:30:47.703605 47038867797696 logging_writer.py:48] [539] steps_per_sec=0.406759
+I1113 11:30:47.704331 47038867797696 logging_writer.py:48] [539] uptime=1779.06
+I1113 11:31:49.151649 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.5% (564/105520), ETA: 2d23h39m (30m : 0.1% checkpoint, 1.3% sample)
+I1113 11:31:49.154653 47038867797696 logging_writer.py:48] [564] steps_per_sec=0.406819
+I1113 11:31:49.156011 47038867797696 logging_writer.py:48] [564] uptime=1840.51
+I1113 11:32:50.549266 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.6% (589/105520), ETA: 2d23h35m (31m : 0.1% checkpoint, 1.3% sample)
+I1113 11:32:50.554003 47038867797696 logging_writer.py:48] [589] steps_per_sec=0.407182
+I1113 11:32:50.555725 47038867797696 logging_writer.py:48] [589] uptime=1901.91
+I1113 11:33:21.426501 47038867797696 logging_writer.py:48] [601] train/d_adversarial_loss=1.3816907405853271, train/d_loss=1.3823657035827637, train/g_adversarial_loss=0.06955227255821228, train/g_loss=1.0522186756134033, train/grad_penalty=0.0006749636377207935, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=0.9608492851257324, train/reconstruction_loss=0.021817054599523544
+I1113 11:33:21.431290 47038867797696 logging_writer.py:48] [601] train/lr=4.548900687950663e-05
+I1113 11:33:52.006289 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.6% (614/105520), ETA: 2d23h38m (32m : 0.1% checkpoint, 1.2% sample)
+I1113 11:33:52.011474 47038867797696 logging_writer.py:48] [614] steps_per_sec=0.406788
+I1113 11:33:52.012230 47038867797696 logging_writer.py:48] [614] uptime=1963.36
+I1113 11:34:53.397934 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.6% (639/105520), ETA: 2d23h32m (33m : 0.1% checkpoint, 1.2% sample)
+I1113 11:34:53.400865 47038867797696 logging_writer.py:48] [639] steps_per_sec=0.407222
+I1113 11:34:53.427081 47038867797696 logging_writer.py:48] [639] uptime=2024.76
+I1113 11:35:54.787529 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.6% (664/105520), ETA: 2d23h31m (34m : 0.1% checkpoint, 1.2% sample)
+I1113 11:35:54.798544 47038867797696 logging_writer.py:48] [664] steps_per_sec=0.407235
+I1113 11:35:54.821832 47038867797696 logging_writer.py:48] [664] uptime=2086.15
+I1113 11:36:56.211851 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.7% (689/105520), ETA: 2d23h32m (35m : 0.1% checkpoint, 1.1% sample)
+I1113 11:36:56.212800 47038867797696 logging_writer.py:48] [689] steps_per_sec=0.407005
+I1113 11:36:56.214724 47038867797696 logging_writer.py:48] [689] uptime=2147.57
+I1113 11:37:57.707231 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.7% (714/105520), ETA: 2d23h36m (36m : 0.1% checkpoint, 1.1% sample)
+I1113 11:37:57.713790 47038867797696 logging_writer.py:48] [714] steps_per_sec=0.406535
+I1113 11:37:57.714485 47038867797696 logging_writer.py:48] [714] uptime=2209.07
+I1113 11:38:59.174343 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.7% (739/105520), ETA: 2d23h33m (37m : 0.1% checkpoint, 1.1% sample)
+I1113 11:38:59.177847 47038867797696 logging_writer.py:48] [739] steps_per_sec=0.406721
+I1113 11:38:59.179467 47038867797696 logging_writer.py:48] [739] uptime=2270.53
+I1113 11:40:00.616495 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.7% (764/105520), ETA: 2d23h30m (38m : 0.1% checkpoint, 1.0% sample)
+I1113 11:40:00.619449 47038867797696 logging_writer.py:48] [764] steps_per_sec=0.406887
+I1113 11:40:00.620461 47038867797696 logging_writer.py:48] [764] uptime=2331.97
+I1113 11:41:02.033095 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.7% (789/105520), ETA: 2d23h28m (39m : 0.1% checkpoint, 1.0% sample)
+I1113 11:41:02.035438 47038867797696 logging_writer.py:48] [789] steps_per_sec=0.407056
+I1113 11:41:02.035936 47038867797696 logging_writer.py:48] [789] uptime=2393.39
+I1113 11:41:32.916058 47038867797696 logging_writer.py:48] [801] train/d_adversarial_loss=1.3814023733139038, train/d_loss=1.3821029663085938, train/g_adversarial_loss=0.06956510990858078, train/g_loss=1.0932068824768066, train/grad_penalty=0.0007004251820035279, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=1.0051066875457764, train/reconstruction_loss=0.018535438925027847
+I1113 11:41:32.921154 47038867797696 logging_writer.py:48] [801] train/lr=6.0652011597994715e-05
+I1113 11:42:03.530251 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.8% (814/105520), ETA: 2d23h32m (40m : 0.1% checkpoint, 1.0% sample)
+I1113 11:42:03.543051 47038867797696 logging_writer.py:48] [814] steps_per_sec=0.406523
+I1113 11:42:03.543758 47038867797696 logging_writer.py:48] [814] uptime=2454.9
+I1113 11:43:04.947748 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.8% (839/105520), ETA: 2d23h26m (41m : 0.1% checkpoint, 1.0% sample)
+I1113 11:43:04.950408 47038867797696 logging_writer.py:48] [839] steps_per_sec=0.40705
+I1113 11:43:04.950971 47038867797696 logging_writer.py:48] [839] uptime=2516.31
+I1113 11:44:06.348282 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.8% (864/105520), ETA: 2d23h23m (42m : 0.1% checkpoint, 0.9% sample)
+I1113 11:44:06.353573 47038867797696 logging_writer.py:48] [864] steps_per_sec=0.407162
+I1113 11:44:06.354376 47038867797696 logging_writer.py:48] [864] uptime=2577.71
+I1113 11:45:07.719687 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.8% (889/105520), ETA: 2d23h20m (43m : 0.1% checkpoint, 0.9% sample)
+I1113 11:45:07.722270 47038867797696 logging_writer.py:48] [889] steps_per_sec=0.407356
+I1113 11:45:07.722972 47038867797696 logging_writer.py:48] [889] uptime=2639.08
+I1113 11:46:09.081723 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.9% (914/105520), ETA: 2d23h19m (45m : 0.1% checkpoint, 0.9% sample)
+I1113 11:46:09.087970 47038867797696 logging_writer.py:48] [914] steps_per_sec=0.407418
+I1113 11:46:09.089711 47038867797696 logging_writer.py:48] [914] uptime=2700.44
+I1113 11:47:10.467219 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.9% (939/105520), ETA: 2d23h19m (46m : 0.1% checkpoint, 0.9% sample)
+I1113 11:47:10.469712 47038867797696 logging_writer.py:48] [939] steps_per_sec=0.407262
+I1113 11:47:10.470582 47038867797696 logging_writer.py:48] [939] uptime=2761.83
+I1113 11:48:11.908622 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.9% (964/105520), ETA: 2d23h22m (47m : 0.1% checkpoint, 0.9% sample)
+I1113 11:48:11.911603 47038867797696 logging_writer.py:48] [964] steps_per_sec=0.406892
+I1113 11:48:11.912553 47038867797696 logging_writer.py:48] [964] uptime=2823.27
+I1113 11:49:13.393311 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 0.9% (989/105520), ETA: 2d23h24m (48m : 0.1% checkpoint, 0.8% sample)
+I1113 11:49:13.397345 47038867797696 logging_writer.py:48] [989] steps_per_sec=0.406605
+I1113 11:49:13.414290 47038867797696 logging_writer.py:48] [989] uptime=2884.75
+I1113 11:49:44.263405 47038867797696 logging_writer.py:48] [1001] train/d_adversarial_loss=1.3813793659210205, train/d_loss=1.3822752237319946, train/g_adversarial_loss=0.06988296657800674, train/g_loss=1.0706647634506226, train/grad_penalty=0.000896283658221364, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=0.9796833395957947, train/reconstruction_loss=0.021098420023918152
+I1113 11:49:44.269448 47038867797696 logging_writer.py:48] [1001] train/lr=7.581500540254638e-05
+I1113 11:49:44.676396 46936911911808 checkpoints.py:567] Saving checkpoint at step: 1001
+I1113 11:49:46.156852 46936911911808 checkpoints.py:486] Saved checkpoint at workdir/checkpoint_1001
+I1113 11:49:46.961486 47038867797696 logging_writer.py:51] [1001] Got images: {'train/generated_video_static': (450, 1796, 3), 'train/generated_video_ema_static': (450, 1796, 3)}.
+I1113 11:49:46.981148 47038867797696 logging_writer.py:55] [1001] Got videos: {'train/generated_video': (4, 450, 452, 3), 'train/generated_video_ema': (4, 450, 452, 3)}.
+I1113 11:50:15.174439 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.0% (1013/105520), ETA: 3d2h43m (49m : 0.1% checkpoint, 0.8% sample)
+I1113 11:50:15.181268 47038867797696 logging_writer.py:48] [1013] steps_per_sec=0.388468
+I1113 11:50:15.181991 47038867797696 logging_writer.py:48] [1013] uptime=2946.53
+I1113 11:51:16.595311 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.0% (1038/105520), ETA: 2d23h18m (50m : 0.1% checkpoint, 0.8% sample)
+I1113 11:51:16.629936 47038867797696 logging_writer.py:48] [1038] steps_per_sec=0.407028
+I1113 11:51:16.633310 47038867797696 logging_writer.py:48] [1038] uptime=3007.95
+I1113 11:52:17.932485 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.0% (1063/105520), ETA: 2d23h11m (51m : 0.1% checkpoint, 0.8% sample)
+I1113 11:52:17.938417 47038867797696 logging_writer.py:48] [1063] steps_per_sec=0.407583
+I1113 11:52:17.967647 47038867797696 logging_writer.py:48] [1063] uptime=3069.29
+I1113 11:53:19.282723 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.0% (1088/105520), ETA: 2d23h11m (52m : 0.1% checkpoint, 0.8% sample)
+I1113 11:53:19.307392 47038867797696 logging_writer.py:48] [1088] steps_per_sec=0.407496
+I1113 11:53:19.308633 47038867797696 logging_writer.py:48] [1088] uptime=3130.64
+I1113 11:54:20.596874 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.1% (1113/105520), ETA: 2d23h7m (53m : 0.1% checkpoint, 0.8% sample)
+I1113 11:54:20.599406 47038867797696 logging_writer.py:48] [1113] steps_per_sec=0.407736
+I1113 11:54:20.600266 47038867797696 logging_writer.py:48] [1113] uptime=3191.95
+I1113 11:55:21.924871 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.1% (1138/105520), ETA: 2d23h7m (54m : 0.1% checkpoint, 0.8% sample)
+I1113 11:55:21.931996 47038867797696 logging_writer.py:48] [1138] steps_per_sec=0.407644
+I1113 11:55:21.932741 47038867797696 logging_writer.py:48] [1138] uptime=3253.28
+I1113 11:56:23.334311 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.1% (1163/105520), ETA: 2d23h12m (55m : 0.1% checkpoint, 0.7% sample)
+I1113 11:56:23.339993 47038867797696 logging_writer.py:48] [1163] steps_per_sec=0.407104
+I1113 11:56:23.361474 47038867797696 logging_writer.py:48] [1163] uptime=3314.69
+I1113 11:57:24.699126 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.1% (1188/105520), ETA: 2d23h8m (56m : 0.1% checkpoint, 0.7% sample)
+I1113 11:57:24.702062 47038867797696 logging_writer.py:48] [1188] steps_per_sec=0.4074
+I1113 11:57:24.707335 47038867797696 logging_writer.py:48] [1188] uptime=3376.06
+I1113 11:57:57.987764 47038867797696 logging_writer.py:48] [1201] train/d_adversarial_loss=1.3807896375656128, train/d_loss=1.3826160430908203, train/g_adversarial_loss=0.07068043202161789, train/g_loss=0.9531967043876648, train/grad_penalty=0.0018263994716107845, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=0.8607606291770935, train/reconstruction_loss=0.021755920723080635
+I1113 11:57:57.992378 47038867797696 logging_writer.py:48] [1201] train/lr=9.097801375901327e-05
+I1113 11:58:26.083373 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.1% (1213/105520), ETA: 2d23h8m (57m : 0.1% checkpoint, 0.7% sample)
+I1113 11:58:26.084342 47038867797696 logging_writer.py:48] [1213] steps_per_sec=0.40727
+I1113 11:58:26.086267 47038867797696 logging_writer.py:48] [1213] uptime=3437.44
+I1113 11:59:27.422716 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.2% (1238/105520), ETA: 2d23h4m (58m : 0.1% checkpoint, 0.7% sample)
+I1113 11:59:27.447183 47038867797696 logging_writer.py:48] [1238] steps_per_sec=0.407569
+I1113 11:59:27.448652 47038867797696 logging_writer.py:48] [1238] uptime=3498.78
+I1113 12:00:28.835079 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.2% (1263/105520), ETA: 2d23h8m (59m : 0.1% checkpoint, 0.7% sample)
+I1113 12:00:28.841436 47038867797696 logging_writer.py:48] [1263] steps_per_sec=0.407084
+I1113 12:00:28.875426 47038867797696 logging_writer.py:48] [1263] uptime=3560.19
+I1113 12:01:30.274580 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.2% (1288/105520), ETA: 2d23h9m (1h0m : 0.1% checkpoint, 0.7% sample)
+I1113 12:01:30.277493 47038867797696 logging_writer.py:48] [1288] steps_per_sec=0.406904
+I1113 12:01:30.278489 47038867797696 logging_writer.py:48] [1288] uptime=3621.63
+I1113 12:02:31.643972 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.2% (1313/105520), ETA: 2d23h3m (1h1m : 0.1% checkpoint, 0.7% sample)
+I1113 12:02:31.644914 47038867797696 logging_writer.py:48] [1313] steps_per_sec=0.407369
+I1113 12:02:31.646582 47038867797696 logging_writer.py:48] [1313] uptime=3683
+I1113 12:03:32.990658 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.3% (1338/105520), ETA: 2d23h0m (1h2m : 0.1% checkpoint, 0.7% sample)
+I1113 12:03:32.992078 47038867797696 logging_writer.py:48] [1338] steps_per_sec=0.40752
+I1113 12:03:32.993919 47038867797696 logging_writer.py:48] [1338] uptime=3744.35
+I1113 12:04:34.301361 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.3% (1363/105520), ETA: 2d22h57m (1h3m : 0.1% checkpoint, 0.7% sample)
+I1113 12:04:34.304936 47038867797696 logging_writer.py:48] [1363] steps_per_sec=0.407759
+I1113 12:04:34.327593 47038867797696 logging_writer.py:48] [1363] uptime=3805.66
+I1113 12:05:35.631060 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.3% (1388/105520), ETA: 2d22h57m (1h4m : 0.1% checkpoint, 0.6% sample)
+I1113 12:05:35.635232 47038867797696 logging_writer.py:48] [1388] steps_per_sec=0.407633
+I1113 12:05:35.636858 47038867797696 logging_writer.py:48] [1388] uptime=3866.99
+I1113 12:06:08.928814 47038867797696 logging_writer.py:48] [1401] train/d_adversarial_loss=1.42466402053833, train/d_loss=1.4330480098724365, train/g_adversarial_loss=0.11196287721395493, train/g_loss=1.1107947826385498, train/grad_penalty=0.008384138345718384, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=0.9609212279319763, train/reconstruction_loss=0.03791026026010513
+I1113 12:06:08.933202 47038867797696 logging_writer.py:48] [1401] train/lr=9.999985195463523e-05
+I1113 12:06:37.007582 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.3% (1413/105520), ETA: 2d22h59m (1h5m : 0.1% checkpoint, 0.6% sample)
+I1113 12:06:37.010131 47038867797696 logging_writer.py:48] [1413] steps_per_sec=0.407322
+I1113 12:06:37.012232 47038867797696 logging_writer.py:48] [1413] uptime=3928.37
+I1113 12:07:38.341352 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.4% (1438/105520), ETA: 2d22h55m (1h6m : 0.1% checkpoint, 0.6% sample)
+I1113 12:07:38.342415 47038867797696 logging_writer.py:48] [1438] steps_per_sec=0.407606
+I1113 12:07:38.345609 47038867797696 logging_writer.py:48] [1438] uptime=3989.7
+I1113 12:08:39.709475 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.4% (1463/105520), ETA: 2d22h57m (1h7m : 0.1% checkpoint, 0.6% sample)
+I1113 12:08:39.710388 47038867797696 logging_writer.py:48] [1463] steps_per_sec=0.407378
+I1113 12:08:39.711894 47038867797696 logging_writer.py:48] [1463] uptime=4051.07
+I1113 12:09:22.982650 46936911911808 local.py:50] Created artifact [1474] Profile of type ArtifactType.URL and value None.
+I1113 12:09:41.278992 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.4% (1487/105520), ETA: 3d2h8m (1h8m : 0.1% checkpoint, 0.6% sample)
+I1113 12:09:41.279918 47038867797696 logging_writer.py:48] [1487] steps_per_sec=0.389803
+I1113 12:09:41.281785 47038867797696 logging_writer.py:48] [1487] uptime=4112.64
+I1113 12:10:42.688781 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.4% (1512/105520), ETA: 2d22h58m (1h9m : 0.1% checkpoint, 0.6% sample)
+I1113 12:10:42.689668 47038867797696 logging_writer.py:48] [1512] steps_per_sec=0.407101
+I1113 12:10:42.691209 47038867797696 logging_writer.py:48] [1512] uptime=4174.05
+I1113 12:11:44.046519 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.5% (1537/105520), ETA: 2d22h53m (1h10m : 0.1% checkpoint, 0.6% sample)
+I1113 12:11:44.047429 47038867797696 logging_writer.py:48] [1537] steps_per_sec=0.407447
+I1113 12:11:44.049170 47038867797696 logging_writer.py:48] [1537] uptime=4235.4
+I1113 12:12:45.424203 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.5% (1562/105520), ETA: 2d22h53m (1h11m : 0.1% checkpoint, 0.6% sample)
+I1113 12:12:45.425045 47038867797696 logging_writer.py:48] [1562] steps_per_sec=0.407314
+I1113 12:12:45.426368 47038867797696 logging_writer.py:48] [1562] uptime=4296.78
+I1113 12:13:46.804842 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.5% (1587/105520), ETA: 2d22h52m (1h12m : 0.1% checkpoint, 0.6% sample)
+I1113 12:13:46.807688 47038867797696 logging_writer.py:48] [1587] steps_per_sec=0.407295
+I1113 12:13:46.808982 47038867797696 logging_writer.py:48] [1587] uptime=4358.16
+I1113 12:14:22.576665 47038867797696 logging_writer.py:48] [1601] train/d_adversarial_loss=1.278779149055481, train/d_loss=1.2913414239883423, train/g_adversarial_loss=0.08543617278337479, train/g_loss=1.3033801317214966, train/grad_penalty=0.012562616728246212, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=1.1804282665252686, train/reconstruction_loss=0.037515852600336075
+I1113 12:14:22.582242 47038867797696 logging_writer.py:48] [1601] train/lr=9.999820031225681e-05
+I1113 12:14:48.263420 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.5% (1612/105520), ETA: 2d22h57m (1h13m : 0.1% checkpoint, 0.6% sample)
+I1113 12:14:48.266432 47038867797696 logging_writer.py:48] [1612] steps_per_sec=0.406778
+I1113 12:14:48.267613 47038867797696 logging_writer.py:48] [1612] uptime=4419.62
+I1113 12:15:49.729302 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.6% (1637/105520), ETA: 2d22h56m (1h14m : 0.1% checkpoint, 0.6% sample)
+I1113 12:15:49.732257 47038867797696 logging_writer.py:48] [1637] steps_per_sec=0.406729
+I1113 12:15:49.733124 47038867797696 logging_writer.py:48] [1637] uptime=4481.09
+I1113 12:16:51.140776 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.6% (1662/105520), ETA: 2d22h52m (1h15m : 0.1% checkpoint, 0.5% sample)
+I1113 12:16:51.141695 47038867797696 logging_writer.py:48] [1662] steps_per_sec=0.40709
+I1113 12:16:51.143682 47038867797696 logging_writer.py:48] [1662] uptime=4542.5
+I1113 12:17:52.564225 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.6% (1687/105520), ETA: 2d22h51m (1h16m : 0.1% checkpoint, 0.5% sample)
+I1113 12:17:52.567394 47038867797696 logging_writer.py:48] [1687] steps_per_sec=0.407011
+I1113 12:17:52.567971 47038867797696 logging_writer.py:48] [1687] uptime=4603.92
+I1113 12:18:54.009113 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.6% (1712/105520), ETA: 2d22h52m (1h17m : 0.1% checkpoint, 0.5% sample)
+I1113 12:18:54.009974 47038867797696 logging_writer.py:48] [1712] steps_per_sec=0.406869
+I1113 12:18:54.011641 47038867797696 logging_writer.py:48] [1712] uptime=4665.37
+I1113 12:19:55.421731 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.6% (1737/105520), ETA: 2d22h49m (1h18m : 0.1% checkpoint, 0.5% sample)
+I1113 12:19:55.426510 47038867797696 logging_writer.py:48] [1737] steps_per_sec=0.407082
+I1113 12:19:55.427498 47038867797696 logging_writer.py:48] [1737] uptime=4726.78
+I1113 12:20:56.832865 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.7% (1762/105520), ETA: 2d22h47m (1h19m : 0.1% checkpoint, 0.5% sample)
+I1113 12:20:56.836115 47038867797696 logging_writer.py:48] [1762] steps_per_sec=0.407092
+I1113 12:20:56.837118 47038867797696 logging_writer.py:48] [1762] uptime=4788.19
+I1113 12:21:58.228040 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.7% (1787/105520), ETA: 2d22h45m (1h20m : 0.1% checkpoint, 0.5% sample)
+I1113 12:21:58.233164 47038867797696 logging_writer.py:48] [1787] steps_per_sec=0.407198
+I1113 12:21:58.234685 47038867797696 logging_writer.py:48] [1787] uptime=4849.59
+I1113 12:22:33.990462 47038867797696 logging_writer.py:48] [1801] train/d_adversarial_loss=1.2768137454986572, train/d_loss=1.293519139289856, train/g_adversarial_loss=0.08431529998779297, train/g_loss=0.648141622543335, train/grad_penalty=0.01670442521572113, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=0.5314105749130249, train/reconstruction_loss=0.03241584822535515
+I1113 12:22:34.043496 47038867797696 logging_writer.py:48] [1801] train/lr=9.999473695643246e-05
+I1113 12:22:59.698717 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.7% (1812/105520), ETA: 2d22h50m (1h21m : 0.1% checkpoint, 0.5% sample)
+I1113 12:22:59.699620 47038867797696 logging_writer.py:48] [1812] steps_per_sec=0.406698
+I1113 12:22:59.701180 47038867797696 logging_writer.py:48] [1812] uptime=4911.06
+I1113 12:24:01.078605 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.7% (1837/105520), ETA: 2d22h42m (1h22m : 0.1% checkpoint, 0.5% sample)
+I1113 12:24:01.106209 47038867797696 logging_writer.py:48] [1837] steps_per_sec=0.4073
+I1113 12:24:01.108309 47038867797696 logging_writer.py:48] [1837] uptime=4972.44
+I1113 12:25:02.571386 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.8% (1862/105520), ETA: 2d22h49m (1h23m : 0.1% checkpoint, 0.5% sample)
+I1113 12:25:02.577624 47038867797696 logging_writer.py:48] [1862] steps_per_sec=0.406552
+I1113 12:25:02.597778 47038867797696 logging_writer.py:48] [1862] uptime=5033.93
+I1113 12:26:03.940230 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.8% (1887/105520), ETA: 2d22h39m (1h24m : 0.1% checkpoint, 0.5% sample)
+I1113 12:26:03.941249 47038867797696 logging_writer.py:48] [1887] steps_per_sec=0.407372
+I1113 12:26:03.942808 47038867797696 logging_writer.py:48] [1887] uptime=5095.3
+I1113 12:27:05.289416 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.8% (1912/105520), ETA: 2d22h37m (1h25m : 0.1% checkpoint, 0.5% sample)
+I1113 12:27:05.290379 47038867797696 logging_writer.py:48] [1912] steps_per_sec=0.407503
+I1113 12:27:05.292087 47038867797696 logging_writer.py:48] [1912] uptime=5156.65
+I1113 12:28:06.644680 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.8% (1937/105520), ETA: 2d22h36m (1h26m : 0.1% checkpoint, 0.5% sample)
+I1113 12:28:06.645629 47038867797696 logging_writer.py:48] [1937] steps_per_sec=0.407463
+I1113 12:28:06.647194 47038867797696 logging_writer.py:48] [1937] uptime=5218
+I1113 12:29:08.055612 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.9% (1962/105520), ETA: 2d22h39m (1h27m : 0.1% checkpoint, 0.5% sample)
+I1113 12:29:08.058873 47038867797696 logging_writer.py:48] [1962] steps_per_sec=0.407094
+I1113 12:29:08.059702 47038867797696 logging_writer.py:48] [1962] uptime=5279.41
+I1113 12:30:09.544832 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.9% (1987/105520), ETA: 2d22h44m (1h29m : 0.1% checkpoint, 0.5% sample)
+I1113 12:30:09.548692 47038867797696 logging_writer.py:48] [1987] steps_per_sec=0.406575
+I1113 12:30:09.578229 47038867797696 logging_writer.py:48] [1987] uptime=5340.9
+I1113 12:30:45.329813 47038867797696 logging_writer.py:48] [2001] train/d_adversarial_loss=1.3217267990112305, train/d_loss=1.3369600772857666, train/g_adversarial_loss=0.07870809733867645, train/g_loss=0.3328230679035187, train/grad_penalty=0.015233755111694336, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=0.22503550350666046, train/reconstruction_loss=0.02907949686050415
+I1113 12:30:45.333467 47038867797696 logging_writer.py:48] [2001] train/lr=9.998946188716218e-05
+I1113 12:30:45.686201 46936911911808 checkpoints.py:567] Saving checkpoint at step: 2001
+I1113 12:30:47.269033 46936911911808 checkpoints.py:486] Saved checkpoint at workdir/checkpoint_2001
+I1113 12:30:48.011070 47038867797696 logging_writer.py:51] [2001] Got images: {'train/generated_video_static': (450, 1796, 3), 'train/generated_video_ema_static': (450, 1796, 3)}.
+I1113 12:30:48.031789 47038867797696 logging_writer.py:55] [2001] Got videos: {'train/generated_video': (4, 450, 452, 3), 'train/generated_video_ema': (4, 450, 452, 3)}.
+I1113 12:31:11.330330 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.9% (2011/105520), ETA: 3d2h1m (1h30m : 0.1% checkpoint, 0.5% sample)
+I1113 12:31:11.333135 47038867797696 logging_writer.py:48] [2011] steps_per_sec=0.388441
+I1113 12:31:11.333800 47038867797696 logging_writer.py:48] [2011] uptime=5402.69
+I1113 12:32:12.765329 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 1.9% (2036/105520), ETA: 2d22h38m (1h31m : 0.1% checkpoint, 0.5% sample)
+I1113 12:32:12.766298 47038867797696 logging_writer.py:48] [2036] steps_per_sec=0.406934
+I1113 12:32:12.768846 47038867797696 logging_writer.py:48] [2036] uptime=5464.12
+I1113 12:33:14.148768 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.0% (2061/105520), ETA: 2d22h33m (1h32m : 0.1% checkpoint, 0.5% sample)
+I1113 12:33:14.156095 47038867797696 logging_writer.py:48] [2061] steps_per_sec=0.407276
+I1113 12:33:14.157956 47038867797696 logging_writer.py:48] [2061] uptime=5525.51
+I1113 12:34:15.486710 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.0% (2086/105520), ETA: 2d22h29m (1h33m : 0.1% checkpoint, 0.5% sample)
+I1113 12:34:15.489810 47038867797696 logging_writer.py:48] [2086] steps_per_sec=0.407578
+I1113 12:34:15.490324 47038867797696 logging_writer.py:48] [2086] uptime=5586.84
+I1113 12:35:16.828780 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.0% (2111/105520), ETA: 2d22h28m (1h34m : 0.1% checkpoint, 0.5% sample)
+I1113 12:35:16.831511 47038867797696 logging_writer.py:48] [2111] steps_per_sec=0.40755
+I1113 12:35:16.832161 47038867797696 logging_writer.py:48] [2111] uptime=5648.19
+I1113 12:36:18.183000 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.0% (2136/105520), ETA: 2d22h28m (1h35m : 0.1% checkpoint, 0.4% sample)
+I1113 12:36:18.186935 47038867797696 logging_writer.py:48] [2136] steps_per_sec=0.407471
+I1113 12:36:18.187669 47038867797696 logging_writer.py:48] [2136] uptime=5709.54
+I1113 12:37:19.522832 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.0% (2161/105520), ETA: 2d22h26m (1h36m : 0.1% checkpoint, 0.4% sample)
+I1113 12:37:19.525363 47038867797696 logging_writer.py:48] [2161] steps_per_sec=0.407564
+I1113 12:37:19.525880 47038867797696 logging_writer.py:48] [2161] uptime=5770.88
+I1113 12:38:20.885367 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.1% (2186/105520), ETA: 2d22h27m (1h37m : 0.1% checkpoint, 0.4% sample)
+I1113 12:38:20.888108 47038867797696 logging_writer.py:48] [2186] steps_per_sec=0.407415
+I1113 12:38:20.889159 47038867797696 logging_writer.py:48] [2186] uptime=5832.24
+I1113 12:38:59.147662 47038867797696 logging_writer.py:48] [2201] train/d_adversarial_loss=1.3459172248840332, train/d_loss=1.357433795928955, train/g_adversarial_loss=0.08391500264406204, train/g_loss=0.18332669138908386, train/grad_penalty=0.01151648722589016, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=0.07299785315990448, train/reconstruction_loss=0.02641391195356846
+I1113 12:38:59.151492 47038867797696 logging_writer.py:48] [2201] train/lr=9.998236055253074e-05
+I1113 12:39:22.377697 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.1% (2211/105520), ETA: 2d22h35m (1h38m : 0.1% checkpoint, 0.4% sample)
+I1113 12:39:22.380689 47038867797696 logging_writer.py:48] [2211] steps_per_sec=0.406555
+I1113 12:39:22.383413 47038867797696 logging_writer.py:48] [2211] uptime=5893.74
+I1113 12:40:23.818082 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.1% (2236/105520), ETA: 2d22h30m (1h39m : 0.1% checkpoint, 0.4% sample)
+I1113 12:40:23.852374 47038867797696 logging_writer.py:48] [2236] steps_per_sec=0.406898
+I1113 12:40:23.853158 47038867797696 logging_writer.py:48] [2236] uptime=5955.18
+I1113 12:41:25.274411 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.1% (2261/105520), ETA: 2d22h30m (1h40m : 0.1% checkpoint, 0.4% sample)
+I1113 12:41:25.278825 47038867797696 logging_writer.py:48] [2261] steps_per_sec=0.406793
+I1113 12:41:25.280432 47038867797696 logging_writer.py:48] [2261] uptime=6016.63
+I1113 12:42:26.643034 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.2% (2286/105520), ETA: 2d22h23m (1h41m : 0.1% checkpoint, 0.4% sample)
+I1113 12:42:26.647774 47038867797696 logging_writer.py:48] [2286] steps_per_sec=0.407374
+I1113 12:42:26.683646 47038867797696 logging_writer.py:48] [2286] uptime=6078
+I1113 12:43:27.992111 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.2% (2311/105520), ETA: 2d22h21m (1h42m : 0.1% checkpoint, 0.4% sample)
+I1113 12:43:27.994348 47038867797696 logging_writer.py:48] [2311] steps_per_sec=0.407504
+I1113 12:43:27.996067 47038867797696 logging_writer.py:48] [2311] uptime=6139.35
+I1113 12:44:29.381477 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.2% (2336/105520), ETA: 2d22h22m (1h43m : 0.1% checkpoint, 0.4% sample)
+I1113 12:44:29.418670 47038867797696 logging_writer.py:48] [2336] steps_per_sec=0.407237
+I1113 12:44:29.419604 47038867797696 logging_writer.py:48] [2336] uptime=6200.74
+I1113 12:45:30.837443 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.2% (2361/105520), ETA: 2d22h26m (1h44m : 0.1% checkpoint, 0.4% sample)
+I1113 12:45:30.839836 47038867797696 logging_writer.py:48] [2361] steps_per_sec=0.406795
+I1113 12:45:30.840249 47038867797696 logging_writer.py:48] [2361] uptime=6262.2
+I1113 12:46:32.212974 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.3% (2386/105520), ETA: 2d22h19m (1h45m : 0.1% checkpoint, 0.4% sample)
+I1113 12:46:32.220900 47038867797696 logging_writer.py:48] [2386] steps_per_sec=0.407329
+I1113 12:46:32.221805 47038867797696 logging_writer.py:48] [2386] uptime=6323.57
+I1113 12:47:10.396130 47038867797696 logging_writer.py:48] [2401] train/d_adversarial_loss=1.2793077230453491, train/d_loss=1.3008041381835938, train/g_adversarial_loss=0.0836290642619133, train/g_loss=0.14706411957740784, train/grad_penalty=0.02149578370153904, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=0.03931114822626114, train/reconstruction_loss=0.024123935028910637
+I1113 12:47:10.400012 47038867797696 logging_writer.py:48] [2401] train/lr=9.997344022849575e-05
+I1113 12:47:33.604865 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.3% (2411/105520), ETA: 2d22h20m (1h46m : 0.1% checkpoint, 0.4% sample)
+I1113 12:47:33.607701 47038867797696 logging_writer.py:48] [2411] steps_per_sec=0.40722
+I1113 12:47:33.608329 47038867797696 logging_writer.py:48] [2411] uptime=6384.96
+I1113 12:48:34.940900 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.3% (2436/105520), ETA: 2d22h15m (1h47m : 0.1% checkpoint, 0.4% sample)
+I1113 12:48:34.943526 47038867797696 logging_writer.py:48] [2436] steps_per_sec=0.407591
+I1113 12:48:34.973678 47038867797696 logging_writer.py:48] [2436] uptime=6446.3
+I1113 12:49:36.310182 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.3% (2461/105520), ETA: 2d22h16m (1h48m : 0.1% checkpoint, 0.4% sample)
+I1113 12:49:36.314109 47038867797696 logging_writer.py:48] [2461] steps_per_sec=0.40737
+I1113 12:49:36.314894 47038867797696 logging_writer.py:48] [2461] uptime=6507.67
+I1113 12:50:37.697974 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.4% (2486/105520), ETA: 2d22h16m (1h49m : 0.1% checkpoint, 0.4% sample)
+I1113 12:50:37.701126 47038867797696 logging_writer.py:48] [2486] steps_per_sec=0.407247
+I1113 12:50:37.701780 47038867797696 logging_writer.py:48] [2486] uptime=6569.06
+I1113 12:51:39.139054 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.4% (2511/105520), ETA: 2d22h19m (1h50m : 0.1% checkpoint, 0.4% sample)
+I1113 12:51:39.143150 47038867797696 logging_writer.py:48] [2511] steps_per_sec=0.406894
+I1113 12:51:39.173556 47038867797696 logging_writer.py:48] [2511] uptime=6630.5
+I1113 12:52:40.487364 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.4% (2536/105520), ETA: 2d22h11m (1h51m : 0.1% checkpoint, 0.4% sample)
+I1113 12:52:40.491043 47038867797696 logging_writer.py:48] [2536] steps_per_sec=0.407509
+I1113 12:52:40.492741 47038867797696 logging_writer.py:48] [2536] uptime=6691.85
+I1113 12:53:41.833490 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.4% (2561/105520), ETA: 2d22h10m (1h52m : 0.1% checkpoint, 0.4% sample)
+I1113 12:53:41.834920 47038867797696 logging_writer.py:48] [2561] steps_per_sec=0.407524
+I1113 12:53:41.835984 47038867797696 logging_writer.py:48] [2561] uptime=6753.19
+I1113 12:54:43.172638 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.5% (2586/105520), ETA: 2d22h9m (1h53m : 0.1% checkpoint, 0.4% sample)
+I1113 12:54:43.184059 47038867797696 logging_writer.py:48] [2586] steps_per_sec=0.40757
+I1113 12:54:43.207260 47038867797696 logging_writer.py:48] [2586] uptime=6814.53
+I1113 12:55:21.386971 47038867797696 logging_writer.py:48] [2601] train/d_adversarial_loss=1.2785388231277466, train/d_loss=1.301866888999939, train/g_adversarial_loss=0.0851488932967186, train/g_loss=0.25947901606559753, train/grad_penalty=0.02332763373851776, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=0.1472359150648117, train/reconstruction_loss=0.02709411270916462
+I1113 12:55:21.391019 47038867797696 logging_writer.py:48] [2601] train/lr=9.996270819101483e-05
+I1113 12:55:44.582922 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.5% (2611/105520), ETA: 2d22h13m (1h54m : 0.1% checkpoint, 0.4% sample)
+I1113 12:55:44.585941 47038867797696 logging_writer.py:48] [2611] steps_per_sec=0.407098
+I1113 12:55:44.587174 47038867797696 logging_writer.py:48] [2611] uptime=6875.94
+I1113 12:56:45.990132 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.5% (2636/105520), ETA: 2d22h11m (1h55m : 0.1% checkpoint, 0.4% sample)
+I1113 12:56:45.993400 47038867797696 logging_writer.py:48] [2636] steps_per_sec=0.407118
+I1113 12:56:46.021034 47038867797696 logging_writer.py:48] [2636] uptime=6937.35
+I1113 12:57:47.370936 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.5% (2661/105520), ETA: 2d22h9m (1h56m : 0.1% checkpoint, 0.4% sample)
+I1113 12:57:47.371910 47038867797696 logging_writer.py:48] [2661] steps_per_sec=0.407294
+I1113 12:57:47.373333 47038867797696 logging_writer.py:48] [2661] uptime=6998.73
+I1113 12:58:48.755422 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.5% (2686/105520), ETA: 2d22h8m (1h57m : 0.1% checkpoint, 0.4% sample)
+I1113 12:58:48.756300 47038867797696 logging_writer.py:48] [2686] steps_per_sec=0.407269
+I1113 12:58:48.757592 47038867797696 logging_writer.py:48] [2686] uptime=7060.11
+I1113 12:59:50.161003 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.6% (2711/105520), ETA: 2d22h8m (1h58m : 0.1% checkpoint, 0.4% sample)
+I1113 12:59:50.161868 47038867797696 logging_writer.py:48] [2711] steps_per_sec=0.407129
+I1113 12:59:50.163340 47038867797696 logging_writer.py:48] [2711] uptime=7121.52
+I1113 13:00:51.569689 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.6% (2736/105520), ETA: 2d22h7m (1h59m : 0.1% checkpoint, 0.4% sample)
+I1113 13:00:51.572414 47038867797696 logging_writer.py:48] [2736] steps_per_sec=0.407109
+I1113 13:00:51.599295 47038867797696 logging_writer.py:48] [2736] uptime=7182.93
+I1113 13:01:52.952651 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.6% (2761/105520), ETA: 2d22h5m (2h0m : 0.1% checkpoint, 0.4% sample)
+I1113 13:01:52.955704 47038867797696 logging_writer.py:48] [2761] steps_per_sec=0.407279
+I1113 13:01:52.956296 47038867797696 logging_writer.py:48] [2761] uptime=7244.31
+I1113 13:02:54.326625 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.6% (2786/105520), ETA: 2d22h3m (2h1m : 0.1% checkpoint, 0.3% sample)
+I1113 13:02:54.329191 47038867797696 logging_writer.py:48] [2786] steps_per_sec=0.407339
+I1113 13:02:54.329531 47038867797696 logging_writer.py:48] [2786] uptime=7305.68
+I1113 13:03:32.530678 47038867797696 logging_writer.py:48] [2801] train/d_adversarial_loss=1.2608720064163208, train/d_loss=1.2914665937423706, train/g_adversarial_loss=0.08361511677503586, train/g_loss=0.12657880783081055, train/grad_penalty=0.03059493564069271, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=0.02270621433854103, train/reconstruction_loss=0.020257486030459404
+I1113 13:03:32.536037 47038867797696 logging_writer.py:48] [2801] train/lr=9.995016444008797e-05
+I1113 13:03:55.746220 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.7% (2811/105520), ETA: 2d22h5m (2h2m : 0.1% checkpoint, 0.3% sample)
+I1113 13:03:55.747048 47038867797696 logging_writer.py:48] [2811] steps_per_sec=0.407036
+I1113 13:03:55.748053 47038867797696 logging_writer.py:48] [2811] uptime=7367.1
+I1113 13:04:57.171655 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.7% (2836/105520), ETA: 2d22h4m (2h3m : 0.1% checkpoint, 0.3% sample)
+I1113 13:04:57.173948 47038867797696 logging_writer.py:48] [2836] steps_per_sec=0.406997
+I1113 13:04:57.200153 47038867797696 logging_writer.py:48] [2836] uptime=7428.53
+I1113 13:05:58.492331 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.7% (2861/105520), ETA: 2d21h56m (2h4m : 0.1% checkpoint, 0.3% sample)
+I1113 13:05:58.495090 47038867797696 logging_writer.py:48] [2861] steps_per_sec=0.407693
+I1113 13:05:58.495372 47038867797696 logging_writer.py:48] [2861] uptime=7489.85
+I1113 13:06:59.797996 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.7% (2886/105520), ETA: 2d21h54m (2h5m : 0.1% checkpoint, 0.3% sample)
+I1113 13:06:59.800598 47038867797696 logging_writer.py:48] [2886] steps_per_sec=0.407793
+I1113 13:06:59.801462 47038867797696 logging_writer.py:48] [2886] uptime=7551.16
+I1113 13:08:01.113818 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.8% (2911/105520), ETA: 2d21h54m (2h6m : 0.1% checkpoint, 0.3% sample)
+I1113 13:08:01.116439 47038867797696 logging_writer.py:48] [2911] steps_per_sec=0.407725
+I1113 13:08:01.116914 47038867797696 logging_writer.py:48] [2911] uptime=7612.47
+I1113 13:09:02.438668 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.8% (2936/105520), ETA: 2d21h53m (2h7m : 0.1% checkpoint, 0.3% sample)
+I1113 13:09:02.445973 47038867797696 logging_writer.py:48] [2936] steps_per_sec=0.407665
+I1113 13:09:02.470214 47038867797696 logging_writer.py:48] [2936] uptime=7673.8
+I1113 13:09:23.601007 46936911911808 local.py:50] Created artifact [2938] Profile of type ArtifactType.URL and value None.
+I1113 13:10:04.002347 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.8% (2960/105520), ETA: 3d1h4m (2h8m : 0.1% checkpoint, 0.3% sample)
+I1113 13:10:04.032241 47038867797696 logging_writer.py:48] [2960] steps_per_sec=0.38984
+I1113 13:10:04.032979 47038867797696 logging_writer.py:48] [2960] uptime=7735.36
+I1113 13:11:05.398274 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.8% (2985/105520), ETA: 2d21h56m (2h9m : 0.1% checkpoint, 0.3% sample)
+I1113 13:11:05.400756 47038867797696 logging_writer.py:48] [2985] steps_per_sec=0.407193
+I1113 13:11:05.422549 47038867797696 logging_writer.py:48] [2985] uptime=7796.76
+I1113 13:11:46.051206 47038867797696 logging_writer.py:48] [3001] train/d_adversarial_loss=1.2998942136764526, train/d_loss=1.3213260173797607, train/g_adversarial_loss=0.08143620938062668, train/g_loss=0.07763421535491943, train/grad_penalty=0.021431662142276764, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=-0.023552127182483673, train/reconstruction_loss=0.019750112667679787
+I1113 13:11:46.056041 47038867797696 logging_writer.py:48] [3001] train/lr=9.993579442379996e-05
+I1113 13:11:46.421854 46936911911808 checkpoints.py:567] Saving checkpoint at step: 3001
+I1113 13:11:47.623462 46936911911808 checkpoints.py:486] Saved checkpoint at workdir/checkpoint_3001
+I1113 13:11:48.355652 47038867797696 logging_writer.py:51] [3001] Got images: {'train/generated_video_static': (450, 1796, 3), 'train/generated_video_ema_static': (450, 1796, 3)}.
+I1113 13:11:48.373958 47038867797696 logging_writer.py:55] [3001] Got videos: {'train/generated_video': (4, 450, 452, 3), 'train/generated_video_ema': (4, 450, 452, 3)}.
+I1113 13:12:06.743087 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.9% (3009/105520), ETA: 3d47m (2h10m : 0.1% checkpoint, 0.3% sample)
+I1113 13:12:06.745353 47038867797696 logging_writer.py:48] [3009] steps_per_sec=0.391231
+I1113 13:12:06.745985 47038867797696 logging_writer.py:48] [3009] uptime=7858.1
+I1113 13:13:08.203525 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.9% (3034/105520), ETA: 2d21h59m (2h11m : 0.1% checkpoint, 0.3% sample)
+I1113 13:13:08.206288 47038867797696 logging_writer.py:48] [3034] steps_per_sec=0.406766
+I1113 13:13:08.207170 47038867797696 logging_writer.py:48] [3034] uptime=7919.56
+I1113 13:14:09.702955 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.9% (3059/105520), ETA: 2d22h0m (2h13m : 0.1% checkpoint, 0.3% sample)
+I1113 13:14:09.705064 47038867797696 logging_writer.py:48] [3059] steps_per_sec=0.406508
+I1113 13:14:09.730753 47038867797696 logging_writer.py:48] [3059] uptime=7981.06
+I1113 13:15:11.086040 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.9% (3084/105520), ETA: 2d21h51m (2h14m : 0.1% checkpoint, 0.3% sample)
+I1113 13:15:11.088551 47038867797696 logging_writer.py:48] [3084] steps_per_sec=0.40728
+I1113 13:15:11.089296 47038867797696 logging_writer.py:48] [3084] uptime=8042.44
+I1113 13:16:12.418795 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 2.9% (3109/105520), ETA: 2d21h47m (2h15m : 0.1% checkpoint, 0.3% sample)
+I1113 13:16:12.421415 47038867797696 logging_writer.py:48] [3109] steps_per_sec=0.407611
+I1113 13:16:12.421931 47038867797696 logging_writer.py:48] [3109] uptime=8103.78
+I1113 13:17:13.750859 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.0% (3134/105520), ETA: 2d21h46m (2h16m : 0.1% checkpoint, 0.3% sample)
+I1113 13:17:13.751862 47038867797696 logging_writer.py:48] [3134] steps_per_sec=0.407617
+I1113 13:17:13.752998 47038867797696 logging_writer.py:48] [3134] uptime=8165.11
+I1113 13:18:15.078646 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.0% (3159/105520), ETA: 2d21h45m (2h17m : 0.1% checkpoint, 0.3% sample)
+I1113 13:18:15.081402 47038867797696 logging_writer.py:48] [3159] steps_per_sec=0.407645
+I1113 13:18:15.082086 47038867797696 logging_writer.py:48] [3159] uptime=8226.44
+I1113 13:19:16.437555 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.0% (3184/105520), ETA: 2d21h46m (2h18m : 0.1% checkpoint, 0.3% sample)
+I1113 13:19:16.438583 47038867797696 logging_writer.py:48] [3184] steps_per_sec=0.407439
+I1113 13:19:16.440142 47038867797696 logging_writer.py:48] [3184] uptime=8287.8
+I1113 13:19:59.611554 47038867797696 logging_writer.py:48] [3201] train/d_adversarial_loss=1.2611167430877686, train/d_loss=1.2951809167861938, train/g_adversarial_loss=0.08251821994781494, train/g_loss=-0.022088060155510902, train/grad_penalty=0.034064579755067825, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=-0.12275081127882004, train/reconstruction_loss=0.018144557252526283
+I1113 13:19:59.615695 47038867797696 logging_writer.py:48] [3201] train/lr=9.991961269406602e-05
+I1113 13:20:17.945739 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.0% (3209/105520), ETA: 2d21h55m (2h19m : 0.1% checkpoint, 0.3% sample)
+I1113 13:20:17.971852 47038867797696 logging_writer.py:48] [3209] steps_per_sec=0.40645
+I1113 13:20:17.974629 47038867797696 logging_writer.py:48] [3209] uptime=8349.3
+I1113 13:21:19.411714 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.1% (3234/105520), ETA: 2d21h51m (2h20m : 0.1% checkpoint, 0.3% sample)
+I1113 13:21:19.415745 47038867797696 logging_writer.py:48] [3234] steps_per_sec=0.406729
+I1113 13:21:19.417915 47038867797696 logging_writer.py:48] [3234] uptime=8410.77
+I1113 13:22:20.873407 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.1% (3259/105520), ETA: 2d21h50m (2h21m : 0.1% checkpoint, 0.3% sample)
+I1113 13:22:20.877574 47038867797696 logging_writer.py:48] [3259] steps_per_sec=0.406757
+I1113 13:22:20.878734 47038867797696 logging_writer.py:48] [3259] uptime=8472.23
+I1113 13:23:22.265649 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.1% (3284/105520), ETA: 2d21h44m (2h22m : 0.1% checkpoint, 0.3% sample)
+I1113 13:23:22.292389 47038867797696 logging_writer.py:48] [3284] steps_per_sec=0.407217
+I1113 13:23:22.292917 47038867797696 logging_writer.py:48] [3284] uptime=8533.62
+I1113 13:24:23.640416 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.1% (3309/105520), ETA: 2d21h42m (2h23m : 0.1% checkpoint, 0.3% sample)
+I1113 13:24:23.648020 47038867797696 logging_writer.py:48] [3309] steps_per_sec=0.407334
+I1113 13:24:23.673703 47038867797696 logging_writer.py:48] [3309] uptime=8595
+I1113 13:25:25.128016 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.2% (3334/105520), ETA: 2d21h48m (2h24m : 0.1% checkpoint, 0.3% sample)
+I1113 13:25:25.130487 47038867797696 logging_writer.py:48] [3334] steps_per_sec=0.406586
+I1113 13:25:25.131293 47038867797696 logging_writer.py:48] [3334] uptime=8656.49
+I1113 13:26:26.614948 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.2% (3359/105520), ETA: 2d21h47m (2h25m : 0.1% checkpoint, 0.3% sample)
+I1113 13:26:26.617143 47038867797696 logging_writer.py:48] [3359] steps_per_sec=0.40659
+I1113 13:26:26.618173 47038867797696 logging_writer.py:48] [3359] uptime=8717.97
+I1113 13:27:28.042613 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.2% (3384/105520), ETA: 2d21h42m (2h26m : 0.1% checkpoint, 0.3% sample)
+I1113 13:27:28.045714 47038867797696 logging_writer.py:48] [3384] steps_per_sec=0.406983
+I1113 13:27:28.046202 47038867797696 logging_writer.py:48] [3384] uptime=8779.4
+I1113 13:28:11.178508 47038867797696 logging_writer.py:48] [3401] train/d_adversarial_loss=1.238436222076416, train/d_loss=1.2761247158050537, train/g_adversarial_loss=0.0909460261464119, train/g_loss=-0.02787388302385807, train/grad_penalty=0.03768813610076904, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=-0.14124040305614471, train/reconstruction_loss=0.022420519962906837
+I1113 13:28:11.183506 47038867797696 logging_writer.py:48] [3401] train/lr=9.990161925088614e-05
+I1113 13:28:29.475632 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.2% (3409/105520), ETA: 2d21h41m (2h27m : 0.1% checkpoint, 0.3% sample)
+I1113 13:28:29.477705 47038867797696 logging_writer.py:48] [3409] steps_per_sec=0.406947
+I1113 13:28:29.478563 47038867797696 logging_writer.py:48] [3409] uptime=8840.83
+I1113 13:29:30.819912 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.3% (3434/105520), ETA: 2d21h34m (2h28m : 0.1% checkpoint, 0.3% sample)
+I1113 13:29:30.822622 47038867797696 logging_writer.py:48] [3434] steps_per_sec=0.407536
+I1113 13:29:30.848740 47038867797696 logging_writer.py:48] [3434] uptime=8902.18
+I1113 13:30:32.206418 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.3% (3459/105520), ETA: 2d21h36m (2h29m : 0.1% checkpoint, 0.3% sample)
+I1113 13:30:32.209517 47038867797696 logging_writer.py:48] [3459] steps_per_sec=0.407256
+I1113 13:30:32.213939 47038867797696 logging_writer.py:48] [3459] uptime=8963.56
+I1113 13:31:33.644147 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.3% (3484/105520), ETA: 2d21h39m (2h30m : 0.1% checkpoint, 0.3% sample)
+I1113 13:31:33.670648 47038867797696 logging_writer.py:48] [3484] steps_per_sec=0.406916
+I1113 13:31:33.671169 47038867797696 logging_writer.py:48] [3484] uptime=9025
+I1113 13:32:35.024005 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.3% (3509/105520), ETA: 2d21h34m (2h31m : 0.1% checkpoint, 0.3% sample)
+I1113 13:32:35.026427 47038867797696 logging_writer.py:48] [3509] steps_per_sec=0.4073
+I1113 13:32:35.027859 47038867797696 logging_writer.py:48] [3509] uptime=9086.38
+I1113 13:33:36.366536 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.3% (3534/105520), ETA: 2d21h30m (2h32m : 0.1% checkpoint, 0.3% sample)
+I1113 13:33:36.368849 47038867797696 logging_writer.py:48] [3534] steps_per_sec=0.407548
+I1113 13:33:36.394738 47038867797696 logging_writer.py:48] [3534] uptime=9147.72
+I1113 13:34:37.711458 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.4% (3559/105520), ETA: 2d21h29m (2h33m : 0.1% checkpoint, 0.3% sample)
+I1113 13:34:37.714202 47038867797696 logging_writer.py:48] [3559] steps_per_sec=0.407532
+I1113 13:34:37.715267 47038867797696 logging_writer.py:48] [3559] uptime=9209.07
+I1113 13:35:39.153397 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.4% (3584/105520), ETA: 2d21h35m (2h34m : 0.1% checkpoint, 0.3% sample)
+I1113 13:35:39.157191 47038867797696 logging_writer.py:48] [3584] steps_per_sec=0.406888
+I1113 13:35:39.157693 47038867797696 logging_writer.py:48] [3584] uptime=9270.51
+I1113 13:36:22.342637 47038867797696 logging_writer.py:48] [3601] train/d_adversarial_loss=1.2352221012115479, train/d_loss=1.2721774578094482, train/g_adversarial_loss=0.0866379588842392, train/g_loss=-0.14631789922714233, train/grad_penalty=0.036954835057258606, train/lecam_loss=0.0, train/logit_laplace_loss=0.0, train/perceptual_loss=0.0, train/quantizer_loss=-0.25136205554008484, train/reconstruction_loss=0.01840614154934883
+I1113 13:36:22.347281 47038867797696 logging_writer.py:48] [3601] train/lr=9.988181409426033e-05
+I1113 13:36:40.680851 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.4% (3609/105520), ETA: 2d21h40m (2h35m : 0.1% checkpoint, 0.3% sample)
+I1113 13:36:40.683621 47038867797696 logging_writer.py:48] [3609] steps_per_sec=0.406323
+I1113 13:36:40.684669 47038867797696 logging_writer.py:48] [3609] uptime=9332.04
+I1113 13:37:42.039864 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.4% (3634/105520), ETA: 2d21h27m (2h36m : 0.1% checkpoint, 0.3% sample)
+I1113 13:37:42.042339 47038867797696 logging_writer.py:48] [3634] steps_per_sec=0.407438
+I1113 13:37:42.042701 47038867797696 logging_writer.py:48] [3634] uptime=9393.4
+I1113 13:38:43.432240 46936911911808 local.py:41] Setting work unit notes: 0.4 steps/s, 3.5% (3659/105520), ETA: 2d21h28m (2h37m : 0.1% checkpoint, 0.3% sample)
+I1113 13:38:43.433121 47038867797696 logging_writer.py:48] [3659] steps_per_sec=0.407217
+I1113 13:38:43.434539 47038867797696 logging_writer.py:48] [3659] uptime=9454.79

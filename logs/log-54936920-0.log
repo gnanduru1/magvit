@@ -1,0 +1,1379 @@
+2023-11-13 03:17:08.926060: E tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:9342] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2023-11-13 03:17:08.926152: E tensorflow/compiler/xla/stream_executor/cuda/cuda_fft.cc:609] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2023-11-13 03:17:08.926195: E tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:1518] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-11-13 03:17:11.922700: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2023-11-13 03:17:19.972922: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2211] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+I1113 03:17:20.964434 47504210017152 xla_bridge.py:633] Unable to initialize backend 'rocm': NOT_FOUND: Could not find registered platform with name: "rocm". Available platform names are: CUDA
+I1113 03:17:20.967031 47504210017152 xla_bridge.py:633] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+I1113 03:17:20.977197 47504210017152 app.py:87] JAX host: 0 / 1
+I1113 03:17:20.977260 47504210017152 app.py:88] JAX devices: [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3)]
+I1113 03:17:20.977498 47504210017152 local.py:45] Setting task status: host_id: 0, host_count: 1
+I1113 03:17:20.977559 47504210017152 local.py:50] Created artifact Workdir of type ArtifactType.DIRECTORY and value workdir.
+I1113 03:17:21.847997 47504210017152 app.py:99] RNG: [0 0]
+I1113 03:17:22.312961 47504210017152 trainer_manager.py:57] Running model_class VQGAN in is_train True.
+I1113 03:17:22.313119 47504210017152 train_utils.py:254] device_count: 4
+I1113 03:17:22.313168 47504210017152 train_utils.py:255] num_hosts : 1
+I1113 03:17:22.313223 47504210017152 train_utils.py:256] host_id : 0
+I1113 03:17:22.563605 47504210017152 datasets.py:107] On-demand import of dataset (video_tfrecord_dataset) from module (scenic.projects.vivit.data.video_tfrecord_dataset).
+I1113 03:17:22.563727 47504210017152 train_utils.py:272] local_batch_size : 192
+I1113 03:17:22.563770 47504210017152 train_utils.py:273] device_batch_size : 48
+I1113 03:17:22.564807 47504210017152 video_tfrecord_dataset.py:416] Loading split train
+I1113 03:17:22.565060 47504210017152 video_tfrecord_dataset.py:313] Preprocessing graph: [FunctionDescription(fn_name='image_resize_smallest', fn=<function add_image.<locals>.<lambda> at 0x2b36f3eed000>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_random_crop', fn=<function add_image.<locals>.<lambda> at 0x2b36f3eed090>, feature_name='image', stateful=True), FunctionDescription(fn_name='image_random_flip', fn=<function add_image.<locals>.<lambda> at 0x2b36f3eed120>, feature_name='image', stateful=True), FunctionDescription(fn_name='image_normalize', fn=<function add_image.<locals>.<lambda> at 0x2b36f3eed1b0>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_subtract_given_mean', fn=<function add_image.<locals>.<lambda> at 0x2b36f3eed240>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_divide_by_given_std', fn=<function add_image.<locals>.<lambda> at 0x2b36f3eed2d0>, feature_name='image', stateful=False), FunctionDescription(fn_name='label_one_hot', fn=<function add_label.<locals>.<lambda> at 0x2b36f3eed360>, feature_name='label', stateful=False)]
+I1113 03:17:22.565141 47504210017152 video_tfrecord_dataset.py:315] Postprocessing graph: []
+WARNING:tensorflow:From /home/abg4br/.local/lib/python3.10/site-packages/tensorflow/python/autograph/impl/api.py:459: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with back_prop=False is deprecated and will be removed in a future version.
+Instructions for updating:
+back_prop=False is deprecated. Consider using tf.stop_gradient instead.
+Instead of:
+results = tf.map_fn(fn, elems, back_prop=False)
+Use:
+results = tf.nest.map_structure(tf.stop_gradient, tf.map_fn(fn, elems))
+W1113 03:17:23.319824 47504210017152 deprecation.py:50] From /home/abg4br/.local/lib/python3.10/site-packages/tensorflow/python/autograph/impl/api.py:459: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with back_prop=False is deprecated and will be removed in a future version.
+Instructions for updating:
+back_prop=False is deprecated. Consider using tf.stop_gradient instead.
+Instead of:
+results = tf.map_fn(fn, elems, back_prop=False)
+Use:
+results = tf.nest.map_structure(tf.stop_gradient, tf.map_fn(fn, elems))
+WARNING:tensorflow:From /home/abg4br/.local/lib/python3.10/site-packages/tensorflow/python/util/deprecation.py:660: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Use fn_output_signature instead
+W1113 03:17:23.320083 47504210017152 deprecation.py:50] From /home/abg4br/.local/lib/python3.10/site-packages/tensorflow/python/util/deprecation.py:660: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Use fn_output_signature instead
+I1113 03:17:24.132308 47504210017152 video_dataset.py:487] Dataset created successfully
+I1113 03:17:24.250855 47504210017152 video_tfrecord_dataset.py:416] Loading split validation
+I1113 03:17:24.251243 47504210017152 video_tfrecord_dataset.py:313] Preprocessing graph: [FunctionDescription(fn_name='image_resize_smallest', fn=<function add_image.<locals>.<lambda> at 0x2b36f3eeef80>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_central_crop', fn=<function add_image.<locals>.<lambda> at 0x2b36f3eef760>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_normalize', fn=<function add_image.<locals>.<lambda> at 0x2b36f3eee560>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_subtract_given_mean', fn=<function add_image.<locals>.<lambda> at 0x2b36f3eeeb90>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_divide_by_given_std', fn=<function add_image.<locals>.<lambda> at 0x2b377a944040>, feature_name='image', stateful=False), FunctionDescription(fn_name='label_one_hot', fn=<function add_label.<locals>.<lambda> at 0x2b377a944d30>, feature_name='label', stateful=False)]
+I1113 03:17:24.251324 47504210017152 video_tfrecord_dataset.py:315] Postprocessing graph: []
+I1113 03:17:24.499709 47504210017152 video_dataset.py:487] Dataset created successfully
+I1113 03:17:24.644402 47504210017152 video_tfrecord_dataset.py:416] Loading split test
+I1113 03:17:24.644803 47504210017152 video_tfrecord_dataset.py:313] Preprocessing graph: [FunctionDescription(fn_name='image_resize_smallest', fn=<function add_image.<locals>.<lambda> at 0x2b3593c27520>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_central_crop', fn=<function add_image.<locals>.<lambda> at 0x2b3593c27910>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_normalize', fn=<function add_image.<locals>.<lambda> at 0x2b3593c27250>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_subtract_given_mean', fn=<function add_image.<locals>.<lambda> at 0x2b3593c26d40>, feature_name='image', stateful=False), FunctionDescription(fn_name='image_divide_by_given_std', fn=<function add_image.<locals>.<lambda> at 0x2b3593c25870>, feature_name='image', stateful=False), FunctionDescription(fn_name='label_one_hot', fn=<function add_label.<locals>.<lambda> at 0x2b3593c27760>, feature_name='label', stateful=False)]
+I1113 03:17:24.644884 47504210017152 video_tfrecord_dataset.py:315] Postprocessing graph: []
+I1113 03:17:24.853491 47504210017152 video_dataset.py:487] Dataset created successfully
+I1113 03:17:24.996996 47504210017152 video_tfrecord_dataset.py:485] Dataset metadata:
+{'num_classes': 174, 'input_shape': (-1, 4, 224, 224, 3), 'num_train_examples': 168913, 'num_eval_examples': 24777, 'num_test_examples': 24777, 'input_dtype': <class 'jax.numpy.float32'>, 'target_is_onehot': True}
+I1113 03:17:24.997835 47504210017152 main.py:59] Trainer VQGAN loaded
+I1113 03:17:24.998694 47606635972288 logging_writer.py:80] [Hyperparameters] {'base_lr': 0.0001, 'batch_size': 192, 'data_dtype_str': 'float32', 'dataset_configs/base_dir': '../ssv2', 'dataset_configs/camera_name': 'image_aux1', 'dataset_configs/examples_per_subset/test': 24777, 'dataset_configs/examples_per_subset/train': 168913, 'dataset_configs/examples_per_subset/validation': 24777, 'dataset_configs/frame_rate': 10, 'dataset_configs/num_classes': 174, 'dataset_configs/num_eval_clips': 15, 'dataset_configs/num_frames': 4, 'dataset_configs/prefetch_to_device': 2, 'dataset_configs/shuffle_buffer_size': 1536, 'dataset_configs/stride': 1, 'dataset_configs/tables/test': 'test_tfrecord', 'dataset_configs/tables/train': 'train_tfrecord', 'dataset_configs/tables/validation': 'val_tfrecord', 'dataset_configs/zero_centering': False, 'dataset_name': 'video_tfrecord_dataset', 'discriminator/channel_multipliers': (2, 4, 4, 4), 'discriminator/filters': 64, 'discriminator/num_remat_blocks': 0, 'dtype': 'float32', 'eval/data_splits': 'train,validation', 'eval/enable_frechet_distance': True, 'eval/enable_inception_score': False, 'eval/final_num_example_multiplier': 10, 'eval/final_num_repeats': 1, 'eval/num_examples': 247770, 'eval_batch_size': 48, 'eval_from/checkpoint_path': None, 'eval_from/step': None, 'experiment_name': 'SSV2_VQGAN/3D', 'image_size': 224, 'init_from': None, 'lax_precision': 'default', 'logging/checkpoint_kept': 5, 'logging/checkpoint_steps': 1000, 'logging/enable_checkpoint': True, 'logging/log_metric_steps': 200, 'logging/log_sample_size': 2, 'lr_configs/base_learning_rate': 0.0001, 'lr_configs/factors': 'constant * cosine_decay * linear_warmup', 'lr_configs/learning_rate_schedule': 'compound', 'lr_configs/steps_per_cycle': 70320, 'lr_configs/steps_per_epoch': 879, 'lr_configs/warmup_steps': 879, 'model_class': 'VQGAN', 'num_training_epochs': 80, 'optimizer/beta1': 0.0, 'optimizer/beta2': 0.99, 'optimizer/d_lr': 0.0001, 'optimizer/g_lr': 0.0001, 'optimizer/lr': 0.0001, 'perceptual_loss_on_logit': True, 'perceptual_loss_weight': 0.1, 'polyak_decay': 0.999, 'pretrained_image_model': True, 'rng_seed': 0, 'vqgan/finetune_decoder': False, 'vqgan/finetune_path': '', 'vqgan/g_adversarial_loss_weight': 0.1, 'vqgan/grad_penalty_cost': 10.0, 'vqgan/gradient_penalty': 'r1', 'vqgan/loss_type': 'non-saturating', 'vqgan/model_type': '3D', 'vqvae/activation_fn': 'swish', 'vqvae/architecture': '3dcnn', 'vqvae/channel_multipliers': (1, 2, 4), 'vqvae/codebook_size': 1024, 'vqvae/commitment_cost': 0.25, 'vqvae/conv_downsample': False, 'vqvae/deconv_upsample': False, 'vqvae/embedding_dim': 256, 'vqvae/entropy_loss_ratio': 0.1, 'vqvae/entropy_loss_type': 'softmax', 'vqvae/entropy_temperature': 0.01, 'vqvae/filters': 64, 'vqvae/norm_type': 'GN', 'vqvae/num_dec_remat_blocks': 0, 'vqvae/num_dec_res_blocks': 2, 'vqvae/num_enc_remat_blocks': 0, 'vqvae/num_enc_res_blocks': 2, 'vqvae/temporal_downsample': (True, True, False)}
+I1113 03:17:39.437599 47504210017152 checkpoints.py:1052] Found no checkpoint files in workdir with prefix checkpoint_
+I1113 03:17:39.440385 47606635972288 logging_writer.py:48] [0] param_size/discriminator=23530945, param_size/generator=36596355
+I1113 03:17:40.816201 47504210017152 vqgan_trainer.py:647] Starting training loop at step 0 of total_steps=70320.
+2023-11-13 03:17:53.249444: E external/xla/xla/service/slow_operation_alarm.cc:65] Constant folding an instruction is taking > 1s:
+
+  %reduce-window.18990 = f32[48,1,56,56,128]{4,3,2,1,0} reduce-window(f32[48,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_20.18986, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 03:18:12.205528: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 19.955240582s
+Constant folding an instruction is taking > 1s:
+
+  %reduce-window.18990 = f32[48,1,56,56,128]{4,3,2,1,0} reduce-window(f32[48,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_20.18986, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 03:18:14.349250: E external/xla/xla/service/slow_operation_alarm.cc:65] Constant folding an instruction is taking > 2s:
+
+  %reduce-window.22259 = f32[48,1,56,56,128]{4,3,2,1,0} reduce-window(f32[48,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_117.22255, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(StyleGANDiscriminator)/ResBlock_1/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 03:18:31.594391: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 19.245196683s
+Constant folding an instruction is taking > 2s:
+
+  %reduce-window.22259 = f32[48,1,56,56,128]{4,3,2,1,0} reduce-window(f32[48,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_117.22255, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(StyleGANDiscriminator)/ResBlock_1/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 03:18:35.594634: E external/xla/xla/service/slow_operation_alarm.cc:65] Constant folding an instruction is taking > 4s:
+
+  %reduce-window.22270 = f32[48,1,56,56,128]{4,3,2,1,0} reduce-window(f32[48,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_119.22266, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(StyleGANDiscriminator)/ResBlock_1/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 03:18:52.412529: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 20.81794739s
+Constant folding an instruction is taking > 4s:
+
+  %reduce-window.22270 = f32[48,1,56,56,128]{4,3,2,1,0} reduce-window(f32[48,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_119.22266, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(StyleGANDiscriminator)/ResBlock_1/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 03:19:13.407415: E external/xla/xla/service/slow_operation_alarm.cc:65] Constant folding an instruction is taking > 8s:
+
+  %reduce-window.21419 = f32[48,1,56,56,128]{4,3,2,1,0} reduce-window(f32[48,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_91.21415, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(jvp(StyleGANDiscriminator))/ResBlock_1/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 03:19:26.266786: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 20.859425625s
+Constant folding an instruction is taking > 8s:
+
+  %reduce-window.21419 = f32[48,1,56,56,128]{4,3,2,1,0} reduce-window(f32[48,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_91.21415, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(jvp(StyleGANDiscriminator))/ResBlock_1/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 03:19:42.267047: E external/xla/xla/service/slow_operation_alarm.cc:65] Constant folding an instruction is taking > 16s:
+
+  %reduce-window.21430 = f32[48,1,56,56,128]{4,3,2,1,0} reduce-window(f32[48,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_93.21426, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(jvp(StyleGANDiscriminator))/ResBlock_1/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 03:19:45.975479: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 19.708509243s
+Constant folding an instruction is taking > 16s:
+
+  %reduce-window.21430 = f32[48,1,56,56,128]{4,3,2,1,0} reduce-window(f32[48,2,112,112,128]{4,3,2,1,0} %broadcast.985, f32[] %constant.865), window={size=1x2x2x2x1 stride=1x2x2x2x1}, to_apply=%region_93.21426, metadata={op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(jvp(StyleGANDiscriminator))/ResBlock_1/reduce_window_sum[window_dimensions=(1, 2, 2, 2, 1) window_strides=(1, 2, 2, 2, 1) padding=((0, 0), (0, 0), (0, 0), (0, 0), (0, 0)) base_dilation=(1, 1, 1, 1, 1) window_dilation=(1, 1, 1, 1, 1)]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=72}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2023-11-13 03:20:23.626733: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[64,48,2,112,112]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:25.280712: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 2.65407776s
+Trying algorithm eng0{} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[64,48,2,112,112]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:27.109339: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[64,48,2,112,112]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:28.754794: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 2.645501537s
+Trying algorithm eng0{} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[64,48,2,112,112]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:31.362679: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,48,2,112,112]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:35.582731: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 5.220098883s
+Trying algorithm eng0{} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,48,2,112,112]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:38.036659: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,48,2,112,112]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:42.256631: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 5.220044159s
+Trying algorithm eng0{} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,48,2,112,112]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:44.391386: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[256,48,1,56,56]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,48,1,56,56]{4,3,2,1,0}, f32[128,256,3,3,3]{4,3,2,1,0}), window={size=1x56x56 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:44.696923: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.305578761s
+Trying algorithm eng0{} for conv (f32[256,48,1,56,56]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,48,1,56,56]{4,3,2,1,0}, f32[128,256,3,3,3]{4,3,2,1,0}), window={size=1x56x56 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:46.203470: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[256,48,1,56,56]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,48,1,56,56]{4,3,2,1,0}, f32[128,256,3,3,3]{4,3,2,1,0}), window={size=1x56x56 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:46.508874: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.305460787s
+Trying algorithm eng0{} for conv (f32[256,48,1,56,56]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[128,48,1,56,56]{4,3,2,1,0}, f32[128,256,3,3,3]{4,3,2,1,0}), window={size=1x56x56 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:48.528805: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[256,48,1,56,56]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,1,56,56]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=1x56x56 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:50.122676: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 2.593933478s
+Trying algorithm eng0{} for conv (f32[256,48,1,56,56]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,1,56,56]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=1x56x56 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:52.096759: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[256,48,1,56,56]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,1,56,56]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=1x56x56 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:53.689854: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 2.593148185s
+Trying algorithm eng0{} for conv (f32[256,48,1,56,56]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,1,56,56]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=1x56x56 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:57.811780: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng20{k2=6,k3=0} for conv (f32[256,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:20:59.391049: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 2.579327623s
+Trying algorithm eng20{k2=6,k3=0} for conv (f32[256,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:21:00.391223: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[256,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:21:20.144031: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 20.752839808s
+Trying algorithm eng0{} for conv (f32[256,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:21:23.490586: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng20{k2=6,k3=0} for conv (f32[256,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:21:25.072614: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 2.582201072s
+Trying algorithm eng20{k2=6,k3=0} for conv (f32[256,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:21:26.073217: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[256,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:21:45.824128: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 20.750949986s
+Trying algorithm eng0{} for conv (f32[256,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,256,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:21:48.339838: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng20{k2=6,k3=0} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:21:48.630153: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.290376999s
+Trying algorithm eng20{k2=6,k3=0} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:21:49.630296: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:21:59.006987: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 10.376734152s
+Trying algorithm eng0{} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:01.286845: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng20{k2=6,k3=0} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:01.576544: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.289745826s
+Trying algorithm eng20{k2=6,k3=0} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:02.576698: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:11.953172: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 10.376501623s
+Trying algorithm eng0{} for conv (f32[128,48,2,112,112]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,128,3,3,3]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:18.588833: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng33{k2=15,k6=2,k13=1,k14=0,k22=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:18.680322: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.091549388s
+Trying algorithm eng33{k2=15,k6=2,k13=1,k14=0,k22=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:19.680533: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng33{k2=2,k6=0,k13=2,k14=0,k22=2} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:20.100060: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.419574325s
+Trying algorithm eng33{k2=2,k6=0,k13=2,k14=0,k22=2} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:21.100238: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng33{k2=15,k6=0,k13=0,k14=0,k22=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:22.166337: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 2.066169758s
+Trying algorithm eng33{k2=15,k6=0,k13=0,k14=0,k22=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:23.166472: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng11{k2=3,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:24.901520: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 2.735107602s
+Trying algorithm eng11{k2=3,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:29.379050: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng33{k2=15,k6=2,k13=1,k14=0,k22=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:29.470441: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.09143918s
+Trying algorithm eng33{k2=15,k6=2,k13=1,k14=0,k22=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:30.470602: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng33{k2=2,k6=0,k13=2,k14=0,k22=2} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:30.889600: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.419045395s
+Trying algorithm eng33{k2=2,k6=0,k13=2,k14=0,k22=2} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:31.889774: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng33{k2=15,k6=0,k13=0,k14=0,k22=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:32.957588: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 2.067874379s
+Trying algorithm eng33{k2=15,k6=0,k13=0,k14=0,k22=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:33.957764: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng11{k2=3,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:35.697235: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 2.739537633s
+Trying algorithm eng11{k2=3,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}, f32[128]{0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBiasActivationForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:41.559730: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng48{k2=15,k6=0,k13=0,k14=0,k22=0} for conv (f32[48,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:41.593476: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.033795192s
+Trying algorithm eng48{k2=15,k6=0,k13=0,k14=0,k22=0} for conv (f32[48,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:42.593646: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng28{k2=3,k3=0} for conv (f32[48,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:42.959400: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.365770102s
+Trying algorithm eng28{k2=3,k3=0} for conv (f32[48,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:48.505600: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng48{k2=15,k6=0,k13=0,k14=0,k22=0} for conv (f32[48,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:48.539270: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.033702475s
+Trying algorithm eng48{k2=15,k6=0,k13=0,k14=0,k22=0} for conv (f32[48,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:49.539415: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng28{k2=3,k3=0} for conv (f32[48,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:22:49.905486: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.366119642s
+Trying algorithm eng28{k2=3,k3=0} for conv (f32[48,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:23:49.576449: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[48,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,64,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:23:53.215576: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 4.639206936s
+Trying algorithm eng0{} for conv (f32[48,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,64,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:23:56.928847: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[48,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,64,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:00.529653: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 4.600852371s
+Trying algorithm eng0{} for conv (f32[48,64,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,64,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:13.902588: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng25{k2=0,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:14.014629: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.11211379s
+Trying algorithm eng25{k2=0,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:15.014776: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng25{k2=2,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:15.186609: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.171893304s
+Trying algorithm eng25{k2=2,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:17.465214: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:25.657412: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 9.192251892s
+Trying algorithm eng0{} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:28.930853: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng25{k2=0,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:29.044209: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.113477868s
+Trying algorithm eng25{k2=0,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:30.044357: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng25{k2=2,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:30.219620: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.175321651s
+Trying algorithm eng25{k2=2,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:32.498929: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng0{} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:40.691321: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 9.192433736s
+Trying algorithm eng0{} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[64,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:51.195734: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng25{k2=0,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:51.911226: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.715546154s
+Trying algorithm eng25{k2=0,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:52.911391: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng25{k2=2,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:53.789713: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.878366214s
+Trying algorithm eng25{k2=2,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:54.789811: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng5{} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:24:54.839372: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.04962066s
+Trying algorithm eng5{} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:00.103041: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng25{k2=0,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:00.810793: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.707803866s
+Trying algorithm eng25{k2=0,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:01.810940: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng25{k2=2,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:02.689408: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.878511339s
+Trying algorithm eng25{k2=2,k3=0} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:03.689559: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng5{} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:03.739514: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.050014685s
+Trying algorithm eng5{} for conv (f32[48,128,4,224,224]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[128,128,3,3,3]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardInput", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:24.229214: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng28{k2=3,k3=0} for conv (f32[256,256,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,48,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:24.974887: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.745732526s
+Trying algorithm eng28{k2=3,k3=0} for conv (f32[256,256,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,48,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:28.560295: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng28{k2=3,k3=0} for conv (f32[256,256,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,48,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:29.312940: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.752690743s
+Trying algorithm eng28{k2=3,k3=0} for conv (f32[256,256,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[256,48,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:32.320784: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 336: 2.39859e+06, expected 2.15867e+06
+2023-11-13 03:25:32.320882: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 1201: 2.40313e+06, expected 2.16252e+06
+2023-11-13 03:25:32.320957: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 2767: 2.41079e+06, expected 2.16952e+06
+2023-11-13 03:25:32.321023: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3361: 2.4101e+06, expected 2.16875e+06
+2023-11-13 03:25:32.321098: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3819: 2.39858e+06, expected 2.15866e+06
+2023-11-13 03:25:32.321177: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 4684: 2.4031e+06, expected 2.1625e+06
+2023-11-13 03:25:32.321254: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6250: 2.41083e+06, expected 2.16956e+06
+2023-11-13 03:25:32.321320: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6844: 2.41006e+06, expected 2.16873e+06
+2023-11-13 03:25:32.321329: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 7302: 2.39853e+06, expected 2.15862e+06
+2023-11-13 03:25:32.321353: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 8167: 2.40306e+06, expected 2.16247e+06
+2023-11-13 03:25:32.321368: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng30{k2=0,k12=11,k13=2,k14=3,k15=0,k17=12,k18=1,k23=0} vs eng23{k2=5,k13=1,k14=3,k18=1,k23=0}
+2023-11-13 03:25:32.321376: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:25:32.321383: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:25:32.321393: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:25:32.321400: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:25:32.321410: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:25:32.960656: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 336: 2.39859e+06, expected 2.15867e+06
+2023-11-13 03:25:32.960678: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 1201: 2.40313e+06, expected 2.16252e+06
+2023-11-13 03:25:32.960730: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 2767: 2.41079e+06, expected 2.16952e+06
+2023-11-13 03:25:32.960773: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3361: 2.4101e+06, expected 2.16875e+06
+2023-11-13 03:25:32.960818: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3819: 2.39858e+06, expected 2.15866e+06
+2023-11-13 03:25:32.960866: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 4684: 2.4031e+06, expected 2.1625e+06
+2023-11-13 03:25:32.960919: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6250: 2.41083e+06, expected 2.16956e+06
+2023-11-13 03:25:32.960969: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6844: 2.41006e+06, expected 2.16873e+06
+2023-11-13 03:25:32.960979: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 7302: 2.39853e+06, expected 2.15862e+06
+2023-11-13 03:25:32.960990: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 8167: 2.40306e+06, expected 2.16247e+06
+2023-11-13 03:25:32.961001: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng30{k2=0,k12=11,k13=2,k14=3,k15=0,k17=12,k18=1,k23=0} vs eng23{k2=8,k13=1,k14=4,k18=1,k23=0}
+2023-11-13 03:25:32.961007: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:25:32.961013: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:25:32.961018: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:25:32.961024: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:25:32.961034: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:25:33.904981: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 336: 2.39859e+06, expected 2.15867e+06
+2023-11-13 03:25:33.905019: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 1201: 2.40313e+06, expected 2.16252e+06
+2023-11-13 03:25:33.905075: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 2767: 2.41079e+06, expected 2.16952e+06
+2023-11-13 03:25:33.905123: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3361: 2.4101e+06, expected 2.16875e+06
+2023-11-13 03:25:33.905172: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3819: 2.39858e+06, expected 2.15866e+06
+2023-11-13 03:25:33.905226: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 4684: 2.4031e+06, expected 2.1625e+06
+2023-11-13 03:25:33.905279: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6250: 2.41083e+06, expected 2.16956e+06
+2023-11-13 03:25:33.905289: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6844: 2.41006e+06, expected 2.16873e+06
+2023-11-13 03:25:33.905298: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 7302: 2.39853e+06, expected 2.15862e+06
+2023-11-13 03:25:33.905308: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 8167: 2.40306e+06, expected 2.16247e+06
+2023-11-13 03:25:33.905319: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng30{k2=0,k12=11,k13=2,k14=3,k15=0,k17=12,k18=1,k23=0} vs eng23{k2=0,k13=2,k14=3,k18=1,k23=0}
+2023-11-13 03:25:33.905325: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:25:33.905332: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:25:33.905336: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:25:33.905342: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:25:33.905350: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:25:34.905470: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng40{k2=14,k6=0,k12=-1,k13=1,k14=0,k15=0,k17=3,k22=3} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:35.857486: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.952095924s
+Trying algorithm eng40{k2=14,k6=0,k12=-1,k13=1,k14=0,k15=0,k17=3,k22=3} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:36.857613: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng23{k2=6,k13=0,k14=2,k18=1,k23=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:37.787219: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 336: 2.39859e+06, expected 2.15867e+06
+2023-11-13 03:25:37.787293: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 1201: 2.40313e+06, expected 2.16252e+06
+2023-11-13 03:25:37.787355: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 2767: 2.41079e+06, expected 2.16952e+06
+2023-11-13 03:25:37.787418: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3361: 2.4101e+06, expected 2.16875e+06
+2023-11-13 03:25:37.787479: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3819: 2.39858e+06, expected 2.15866e+06
+2023-11-13 03:25:37.787549: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 4684: 2.4031e+06, expected 2.1625e+06
+2023-11-13 03:25:37.787561: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6250: 2.41083e+06, expected 2.16956e+06
+2023-11-13 03:25:37.787571: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6844: 2.41006e+06, expected 2.16873e+06
+2023-11-13 03:25:37.787580: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 7302: 2.39853e+06, expected 2.15862e+06
+2023-11-13 03:25:37.787590: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 8167: 2.40306e+06, expected 2.16247e+06
+2023-11-13 03:25:37.787609: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng30{k2=0,k12=11,k13=2,k14=3,k15=0,k17=12,k18=1,k23=0} vs eng23{k2=6,k13=0,k14=2,k18=1,k23=0}
+2023-11-13 03:25:37.787616: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:25:37.787623: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:25:37.787632: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:25:37.787638: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:25:37.787650: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:25:37.787678: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.930125394s
+Trying algorithm eng23{k2=6,k13=0,k14=2,k18=1,k23=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:38.787763: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng20{k2=6,k3=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:40.610290: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 2.822569637s
+Trying algorithm eng20{k2=6,k3=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:42.366918: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 336: 2.39859e+06, expected 2.15867e+06
+2023-11-13 03:25:42.366995: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 1201: 2.40313e+06, expected 2.16252e+06
+2023-11-13 03:25:42.367141: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 2767: 2.41079e+06, expected 2.16952e+06
+2023-11-13 03:25:42.367286: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3361: 2.4101e+06, expected 2.16875e+06
+2023-11-13 03:25:42.367425: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3819: 2.39858e+06, expected 2.15866e+06
+2023-11-13 03:25:42.367577: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 4684: 2.4031e+06, expected 2.1625e+06
+2023-11-13 03:25:42.367723: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6250: 2.41083e+06, expected 2.16956e+06
+2023-11-13 03:25:42.367871: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6844: 2.41006e+06, expected 2.16873e+06
+2023-11-13 03:25:42.368014: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 7302: 2.39853e+06, expected 2.15862e+06
+2023-11-13 03:25:42.368153: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 8167: 2.40306e+06, expected 2.16247e+06
+2023-11-13 03:25:42.368294: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng30{k2=0,k12=11,k13=2,k14=3,k15=0,k17=12,k18=1,k23=0} vs eng23{k2=5,k13=1,k14=3,k18=1,k23=0}
+2023-11-13 03:25:42.368302: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:25:42.368308: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:25:42.368314: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:25:42.368320: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:25:42.368331: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:25:43.012511: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 336: 2.39859e+06, expected 2.15867e+06
+2023-11-13 03:25:43.012535: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 1201: 2.40313e+06, expected 2.16252e+06
+2023-11-13 03:25:43.012785: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 2767: 2.41079e+06, expected 2.16952e+06
+2023-11-13 03:25:43.013000: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3361: 2.4101e+06, expected 2.16875e+06
+2023-11-13 03:25:43.013235: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3819: 2.39858e+06, expected 2.15866e+06
+2023-11-13 03:25:43.013451: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 4684: 2.4031e+06, expected 2.1625e+06
+2023-11-13 03:25:43.013683: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6250: 2.41083e+06, expected 2.16956e+06
+2023-11-13 03:25:43.013946: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6844: 2.41006e+06, expected 2.16873e+06
+2023-11-13 03:25:43.014208: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 7302: 2.39853e+06, expected 2.15862e+06
+2023-11-13 03:25:43.014483: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 8167: 2.40306e+06, expected 2.16247e+06
+2023-11-13 03:25:43.014745: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng30{k2=0,k12=11,k13=2,k14=3,k15=0,k17=12,k18=1,k23=0} vs eng23{k2=8,k13=1,k14=4,k18=1,k23=0}
+2023-11-13 03:25:43.014997: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:25:43.015205: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:25:43.015211: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:25:43.015218: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:25:43.015225: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:25:43.959146: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 336: 2.39859e+06, expected 2.15867e+06
+2023-11-13 03:25:43.959191: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 1201: 2.40313e+06, expected 2.16252e+06
+2023-11-13 03:25:43.959434: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 2767: 2.41079e+06, expected 2.16952e+06
+2023-11-13 03:25:43.959703: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3361: 2.4101e+06, expected 2.16875e+06
+2023-11-13 03:25:43.959960: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3819: 2.39858e+06, expected 2.15866e+06
+2023-11-13 03:25:43.960198: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 4684: 2.4031e+06, expected 2.1625e+06
+2023-11-13 03:25:43.960443: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6250: 2.41083e+06, expected 2.16956e+06
+2023-11-13 03:25:43.960705: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6844: 2.41006e+06, expected 2.16873e+06
+2023-11-13 03:25:43.960997: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 7302: 2.39853e+06, expected 2.15862e+06
+2023-11-13 03:25:43.961246: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 8167: 2.40306e+06, expected 2.16247e+06
+2023-11-13 03:25:43.961496: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng30{k2=0,k12=11,k13=2,k14=3,k15=0,k17=12,k18=1,k23=0} vs eng23{k2=0,k13=2,k14=3,k18=1,k23=0}
+2023-11-13 03:25:43.961562: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:25:43.961568: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:25:43.961580: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:25:43.961586: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:25:43.961595: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:25:44.961704: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng40{k2=14,k6=0,k12=-1,k13=1,k14=0,k15=0,k17=3,k22=3} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:45.913937: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.952299919s
+Trying algorithm eng40{k2=14,k6=0,k12=-1,k13=1,k14=0,k15=0,k17=3,k22=3} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:46.914163: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng23{k2=6,k13=0,k14=2,k18=1,k23=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:47.844492: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 336: 2.39859e+06, expected 2.15867e+06
+2023-11-13 03:25:47.844568: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 1201: 2.40313e+06, expected 2.16252e+06
+2023-11-13 03:25:47.844669: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 2767: 2.41079e+06, expected 2.16952e+06
+2023-11-13 03:25:47.844741: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3361: 2.4101e+06, expected 2.16875e+06
+2023-11-13 03:25:47.844828: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3819: 2.39858e+06, expected 2.15866e+06
+2023-11-13 03:25:47.844913: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 4684: 2.4031e+06, expected 2.1625e+06
+2023-11-13 03:25:47.845181: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6250: 2.41083e+06, expected 2.16956e+06
+2023-11-13 03:25:47.845260: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6844: 2.41006e+06, expected 2.16873e+06
+2023-11-13 03:25:47.845340: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 7302: 2.39853e+06, expected 2.15862e+06
+2023-11-13 03:25:47.845422: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 8167: 2.40306e+06, expected 2.16247e+06
+2023-11-13 03:25:47.845515: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng30{k2=0,k12=11,k13=2,k14=3,k15=0,k17=12,k18=1,k23=0} vs eng23{k2=6,k13=0,k14=2,k18=1,k23=0}
+2023-11-13 03:25:47.845595: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:25:47.845601: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:25:47.845609: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:25:47.845615: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:25:47.845626: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:25:47.845654: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.931635478s
+Trying algorithm eng23{k2=6,k13=0,k14=2,k18=1,k23=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:48.845747: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng20{k2=6,k3=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:50.662493: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 2.816795027s
+Trying algorithm eng20{k2=6,k3=0} for conv (f32[128,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,128,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:51.804571: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 9: 2.38901e+06, expected 2.14776e+06
+2023-11-13 03:25:51.804642: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 10: 2.39999e+06, expected 2.15634e+06
+2023-11-13 03:25:51.804805: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 11: 2.3906e+06, expected 2.14929e+06
+2023-11-13 03:25:51.804969: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 12: 2.39936e+06, expected 2.15548e+06
+2023-11-13 03:25:51.805120: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 13: 2.41142e+06, expected 2.16476e+06
+2023-11-13 03:25:51.805275: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 14: 2.39948e+06, expected 2.15545e+06
+2023-11-13 03:25:51.805423: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 15: 2.38984e+06, expected 2.14856e+06
+2023-11-13 03:25:51.805568: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 16: 2.4023e+06, expected 2.15845e+06
+2023-11-13 03:25:51.805725: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 17: 2.3903e+06, expected 2.14897e+06
+2023-11-13 03:25:51.805867: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 36: 2.38902e+06, expected 2.14793e+06
+2023-11-13 03:25:51.806030: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[3,64,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[48,3,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng40{k2=14,k6=0,k12=16,k13=1,k14=0,k15=0,k17=17,k22=3} vs eng23{k2=8,k13=1,k14=4,k18=1,k23=0}
+2023-11-13 03:25:51.806183: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:25:51.806330: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:25:51.806336: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:25:51.806342: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:25:51.806352: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:25:52.242574: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 9: 2.38901e+06, expected 2.14776e+06
+2023-11-13 03:25:52.242592: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 10: 2.39999e+06, expected 2.15634e+06
+2023-11-13 03:25:52.242784: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 11: 2.3906e+06, expected 2.14929e+06
+2023-11-13 03:25:52.242970: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 12: 2.39936e+06, expected 2.15548e+06
+2023-11-13 03:25:52.243129: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 13: 2.41142e+06, expected 2.16476e+06
+2023-11-13 03:25:52.243281: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 14: 2.39948e+06, expected 2.15545e+06
+2023-11-13 03:25:52.243436: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 15: 2.38984e+06, expected 2.14856e+06
+2023-11-13 03:25:52.243616: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 16: 2.4023e+06, expected 2.15845e+06
+2023-11-13 03:25:52.243772: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 17: 2.3903e+06, expected 2.14897e+06
+2023-11-13 03:25:52.243950: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 36: 2.38902e+06, expected 2.14793e+06
+2023-11-13 03:25:52.243959: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[3,64,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[48,3,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng40{k2=14,k6=0,k12=16,k13=1,k14=0,k15=0,k17=17,k22=3} vs eng23{k2=5,k13=1,k14=3,k18=1,k23=0}
+2023-11-13 03:25:52.243966: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:25:52.243971: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:25:52.243977: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:25:52.243983: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:25:52.243990: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:25:53.448289: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 9: 2.38901e+06, expected 2.14776e+06
+2023-11-13 03:25:53.448361: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 10: 2.39999e+06, expected 2.15634e+06
+2023-11-13 03:25:53.448551: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 11: 2.3906e+06, expected 2.14929e+06
+2023-11-13 03:25:53.448733: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 12: 2.39936e+06, expected 2.15548e+06
+2023-11-13 03:25:53.448904: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 13: 2.41142e+06, expected 2.16476e+06
+2023-11-13 03:25:53.449078: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 14: 2.39948e+06, expected 2.15545e+06
+2023-11-13 03:25:53.449255: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 15: 2.38984e+06, expected 2.14856e+06
+2023-11-13 03:25:53.449416: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 16: 2.4023e+06, expected 2.15845e+06
+2023-11-13 03:25:53.449590: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 17: 2.3903e+06, expected 2.14897e+06
+2023-11-13 03:25:53.449747: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 36: 2.38902e+06, expected 2.14793e+06
+2023-11-13 03:25:53.449916: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[3,64,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[48,3,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng40{k2=14,k6=0,k12=16,k13=1,k14=0,k15=0,k17=17,k22=3} vs eng23{k2=8,k13=1,k14=4,k18=1,k23=0}
+2023-11-13 03:25:53.449922: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:25:53.449928: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:25:53.449934: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:25:53.449940: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:25:53.449948: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:25:53.886122: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 9: 2.38901e+06, expected 2.14776e+06
+2023-11-13 03:25:53.886142: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 10: 2.39999e+06, expected 2.15634e+06
+2023-11-13 03:25:53.886350: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 11: 2.3906e+06, expected 2.14929e+06
+2023-11-13 03:25:53.886560: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 12: 2.39936e+06, expected 2.15548e+06
+2023-11-13 03:25:53.886726: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 13: 2.41142e+06, expected 2.16476e+06
+2023-11-13 03:25:53.886917: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 14: 2.39948e+06, expected 2.15545e+06
+2023-11-13 03:25:53.887109: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 15: 2.38984e+06, expected 2.14856e+06
+2023-11-13 03:25:53.887308: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 16: 2.4023e+06, expected 2.15845e+06
+2023-11-13 03:25:53.887491: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 17: 2.3903e+06, expected 2.14897e+06
+2023-11-13 03:25:53.887675: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 36: 2.38902e+06, expected 2.14793e+06
+2023-11-13 03:25:53.887840: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[3,64,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[48,3,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng40{k2=14,k6=0,k12=16,k13=1,k14=0,k15=0,k17=17,k22=3} vs eng23{k2=5,k13=1,k14=3,k18=1,k23=0}
+2023-11-13 03:25:53.888018: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:25:53.888203: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:25:53.888371: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:25:53.888377: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:25:53.888384: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:25:56.986425: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng28{k2=3,k3=0} for conv (f32[256,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[128,48,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:57.007675: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.02131963s
+Trying algorithm eng28{k2=3,k3=0} for conv (f32[256,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[128,48,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:59.490523: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng28{k2=3,k3=0} for conv (f32[256,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[128,48,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:25:59.519943: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.029480499s
+Trying algorithm eng28{k2=3,k3=0} for conv (f32[256,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[256,48,2,112,112]{4,3,2,1,0}, f32[128,48,2,112,112]{4,3,2,1,0}), window={size=2x112x112 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:26:08.381911: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng20{k2=6,k3=0} for conv (f32[64,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,64,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:26:08.809885: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.428022366s
+Trying algorithm eng20{k2=6,k3=0} for conv (f32[64,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,64,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:26:13.246820: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng20{k2=6,k3=0} for conv (f32[64,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,64,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:26:13.676487: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.429747004s
+Trying algorithm eng20{k2=6,k3=0} for conv (f32[64,128,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,64,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
+2023-11-13 03:26:15.912810: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 9: 2.41481e+06, expected 2.15973e+06
+2023-11-13 03:26:15.912884: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 10: 2.41346e+06, expected 2.15842e+06
+2023-11-13 03:26:15.912936: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 11: 2.40503e+06, expected 2.1535e+06
+2023-11-13 03:26:15.912984: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 12: 2.40239e+06, expected 2.15021e+06
+2023-11-13 03:26:15.913032: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 13: 2.41715e+06, expected 2.15958e+06
+2023-11-13 03:26:15.913081: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 14: 2.4034e+06, expected 2.15231e+06
+2023-11-13 03:26:15.913128: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 15: 2.40568e+06, expected 2.15369e+06
+2023-11-13 03:26:15.913177: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 16: 2.41498e+06, expected 2.16084e+06
+2023-11-13 03:26:15.913184: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 17: 2.4024e+06, expected 2.15135e+06
+2023-11-13 03:26:15.913192: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 36: 2.39611e+06, expected 2.1455e+06
+2023-11-13 03:26:15.913206: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[64,64,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[48,64,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng30{k2=7,k12=42,k13=0,k14=4,k15=1,k17=43,k18=1,k23=0} vs eng23{k2=8,k13=1,k14=4,k18=1,k23=0}
+2023-11-13 03:26:15.913214: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:26:15.913221: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:26:15.913229: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:26:15.913235: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:26:15.913243: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:26:16.857586: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 9: 2.41481e+06, expected 2.15973e+06
+2023-11-13 03:26:16.857606: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 10: 2.41346e+06, expected 2.15842e+06
+2023-11-13 03:26:16.857662: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 11: 2.40503e+06, expected 2.1535e+06
+2023-11-13 03:26:16.857715: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 12: 2.40239e+06, expected 2.15021e+06
+2023-11-13 03:26:16.857772: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 13: 2.41715e+06, expected 2.15958e+06
+2023-11-13 03:26:16.857828: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 14: 2.4034e+06, expected 2.15231e+06
+2023-11-13 03:26:16.857883: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 15: 2.40568e+06, expected 2.15369e+06
+2023-11-13 03:26:16.857943: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 16: 2.41498e+06, expected 2.16084e+06
+2023-11-13 03:26:16.857950: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 17: 2.4024e+06, expected 2.15135e+06
+2023-11-13 03:26:16.857958: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 36: 2.39611e+06, expected 2.1455e+06
+2023-11-13 03:26:16.857969: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[64,64,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[48,64,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng30{k2=7,k12=42,k13=0,k14=4,k15=1,k17=43,k18=1,k23=0} vs eng23{k2=5,k13=1,k14=3,k18=1,k23=0}
+2023-11-13 03:26:16.857976: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:26:16.857982: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:26:16.857988: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:26:16.857995: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:26:16.858003: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:26:18.291893: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 9: 2.41481e+06, expected 2.15973e+06
+2023-11-13 03:26:18.291962: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 10: 2.41346e+06, expected 2.15842e+06
+2023-11-13 03:26:18.292017: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 11: 2.40503e+06, expected 2.1535e+06
+2023-11-13 03:26:18.292069: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 12: 2.40239e+06, expected 2.15021e+06
+2023-11-13 03:26:18.292120: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 13: 2.41715e+06, expected 2.15958e+06
+2023-11-13 03:26:18.292173: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 14: 2.4034e+06, expected 2.15231e+06
+2023-11-13 03:26:18.292211: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 15: 2.40568e+06, expected 2.15369e+06
+2023-11-13 03:26:18.292245: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 16: 2.41498e+06, expected 2.16084e+06
+2023-11-13 03:26:18.292252: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 17: 2.4024e+06, expected 2.15135e+06
+2023-11-13 03:26:18.292261: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 36: 2.39611e+06, expected 2.1455e+06
+2023-11-13 03:26:18.292272: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[64,64,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[48,64,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng30{k2=7,k12=42,k13=0,k14=4,k15=1,k17=43,k18=1,k23=0} vs eng23{k2=8,k13=1,k14=4,k18=1,k23=0}
+2023-11-13 03:26:18.292280: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:26:18.292286: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:26:18.292297: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:26:18.292301: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:26:18.292311: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:26:19.239795: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 9: 2.41481e+06, expected 2.15973e+06
+2023-11-13 03:26:19.239858: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 10: 2.41346e+06, expected 2.15842e+06
+2023-11-13 03:26:19.239904: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 11: 2.40503e+06, expected 2.1535e+06
+2023-11-13 03:26:19.239949: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 12: 2.40239e+06, expected 2.15021e+06
+2023-11-13 03:26:19.239993: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 13: 2.41715e+06, expected 2.15958e+06
+2023-11-13 03:26:19.240037: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 14: 2.4034e+06, expected 2.15231e+06
+2023-11-13 03:26:19.240079: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 15: 2.40568e+06, expected 2.15369e+06
+2023-11-13 03:26:19.240127: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 16: 2.41498e+06, expected 2.16084e+06
+2023-11-13 03:26:19.240135: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 17: 2.4024e+06, expected 2.15135e+06
+2023-11-13 03:26:19.240142: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 36: 2.39611e+06, expected 2.1455e+06
+2023-11-13 03:26:19.240154: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[64,64,3,3,3]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,64,4,224,224]{4,3,2,1,0}, f32[48,64,4,224,224]{4,3,2,1,0}), window={size=3x3x3 pad=1_1x1_1x1_1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng30{k2=7,k12=42,k13=0,k14=4,k15=1,k17=43,k18=1,k23=0} vs eng23{k2=5,k13=1,k14=3,k18=1,k23=0}
+2023-11-13 03:26:19.240161: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:26:19.240168: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:26:19.240172: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:26:19.240178: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:26:19.240188: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:26:21.598564: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 0: 2.42189e+06, expected 2.164e+06
+2023-11-13 03:26:21.598641: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 1: 2.42146e+06, expected 2.1634e+06
+2023-11-13 03:26:21.598694: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 2: 2.42132e+06, expected 2.1633e+06
+2023-11-13 03:26:21.598739: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3: 2.4234e+06, expected 2.16549e+06
+2023-11-13 03:26:21.598787: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 4: 2.42022e+06, expected 2.16252e+06
+2023-11-13 03:26:21.598829: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 5: 2.42253e+06, expected 2.16424e+06
+2023-11-13 03:26:21.598874: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6: 2.42217e+06, expected 2.16396e+06
+2023-11-13 03:26:21.598917: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 7: 2.42299e+06, expected 2.16465e+06
+2023-11-13 03:26:21.598925: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 8: 2.4221e+06, expected 2.16426e+06
+2023-11-13 03:26:21.598933: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 9: 2.42231e+06, expected 2.16451e+06
+2023-11-13 03:26:21.598948: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[64,128,1,1,1]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,64,4,224,224]{4,3,2,1,0}), window={size=1x1x1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng62{k25=2} vs eng23{k2=5,k13=1,k14=3,k18=1,k23=0}
+2023-11-13 03:26:21.598958: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:26:21.598965: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:26:21.598971: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:26:21.598978: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:26:21.598986: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:26:22.424938: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 0: 2.42189e+06, expected 2.164e+06
+2023-11-13 03:26:22.424967: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 1: 2.42146e+06, expected 2.1634e+06
+2023-11-13 03:26:22.425016: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 2: 2.42132e+06, expected 2.1633e+06
+2023-11-13 03:26:22.425058: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 3: 2.4234e+06, expected 2.16549e+06
+2023-11-13 03:26:22.425101: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 4: 2.42022e+06, expected 2.16252e+06
+2023-11-13 03:26:22.425142: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 5: 2.42253e+06, expected 2.16424e+06
+2023-11-13 03:26:22.425185: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 6: 2.42217e+06, expected 2.16396e+06
+2023-11-13 03:26:22.425230: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 7: 2.42299e+06, expected 2.16465e+06
+2023-11-13 03:26:22.425238: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 8: 2.4221e+06, expected 2.16426e+06
+2023-11-13 03:26:22.425245: E external/xla/xla/service/gpu/buffer_comparator.cc:1137] Difference at 9: 2.42231e+06, expected 2.16451e+06
+2023-11-13 03:26:22.425255: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:707] Results mismatch between different convolution algorithms. This is likely a bug/unexpected loss of precision in cudnn.
+(f32[64,128,1,1,1]{4,3,2,1,0}, u8[0]{0}) custom-call(f32[48,128,4,224,224]{4,3,2,1,0}, f32[48,64,4,224,224]{4,3,2,1,0}), window={size=1x1x1}, dim_labels=bf012_oi012->bf012, custom_call_target="__cudnn$convBackwardFilter", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} for eng62{k25=2} vs eng23{k2=5,k13=1,k14=3,k18=1,k23=0}
+2023-11-13 03:26:22.425262: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:272] Device: NVIDIA A100-SXM4-80GB
+2023-11-13 03:26:22.425268: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:273] Platform: Compute Capability 8.0
+2023-11-13 03:26:22.425274: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:274] Driver: 12020 (INVALID_ARGUMENT: expected %d.%d, %d.%d.%d, or %d.%d.%d.%d form for driver version; got "1")
+2023-11-13 03:26:22.425283: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:275] Runtime: <undefined>
+2023-11-13 03:26:22.425292: E external/xla/xla/service/gpu/conv_algorithm_picker.cc:282] cudnn version: 8.9.6
+2023-11-13 03:27:22.723135: W external/tsl/tsl/framework/bfc_allocator.cc:485] Allocator (GPU_0_bfc) ran out of memory trying to allocate 59.30GiB (rounded to 63673312768)requested by op 
+2023-11-13 03:27:22.723682: W external/tsl/tsl/framework/bfc_allocator.cc:497] ***_________________________________________________________________________________________________
+2023-11-13 03:27:22.726378: E external/xla/xla/pjrt/pjrt_stream_executor_client.cc:2716] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 63673312648 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:    1.02GiB
+              constant allocation:       444B
+        maybe_live_out allocation:  827.71MiB
+     preallocated temp allocation:   59.30GiB
+  preallocated temp fragmentation:  574.57MiB (0.95%)
+                 total allocation:   60.32GiB
+              total fragmentation:  753.86MiB (1.22%)
+Peak buffers:
+	Buffer 1:
+		Size: 4.59GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(StyleGANDiscriminator)))/ResBlock_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(3, 4, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: u8[4932943888]
+		==========================
+
+	Buffer 2:
+		Size: 4.59GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/Conv_2/Conv_2/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,128,4,224,224]
+		==========================
+
+	Buffer 3:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(StyleGANDiscriminator)))/ResBlock_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(3, 4, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 4:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(jvp(StyleGANDiscriminator))))/ResBlock_0/jit(leaky_relu)/add_any" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/stylegan_discriminator_3d.py" source_line=80
+		XLA Label: fusion
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 5:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(jvp(StyleGANDiscriminator))/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 6:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(StyleGANDiscriminator)/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 7:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_7/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 8:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_7/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 9:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_6/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 10:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_6/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 11:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/transpose(jvp(VQVAE))/decoder/jit(_resize)/broadcast_in_dim[shape=(48, 4, 224, 112, 128) broadcast_dimensions=()]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=96
+		XLA Label: fusion
+		Shape: f32[112,48,4,224,128]
+		==========================
+
+	Buffer 12:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_1/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 13:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_0/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 14:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_0/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 15:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+
+2023-11-13 03:27:22.727820: W external/tsl/tsl/framework/bfc_allocator.cc:485] Allocator (GPU_2_bfc) ran out of memory trying to allocate 59.30GiB (rounded to 63673312768)requested by op 
+2023-11-13 03:27:22.728268: W external/tsl/tsl/framework/bfc_allocator.cc:497] ***_________________________________________________________________________________________________
+2023-11-13 03:27:22.729851: E external/xla/xla/pjrt/pjrt_stream_executor_client.cc:2716] Execution of replica 2 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 63673312648 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:    1.02GiB
+              constant allocation:       444B
+        maybe_live_out allocation:  827.71MiB
+     preallocated temp allocation:   59.30GiB
+  preallocated temp fragmentation:  574.57MiB (0.95%)
+                 total allocation:   60.32GiB
+              total fragmentation:  753.86MiB (1.22%)
+Peak buffers:
+	Buffer 1:
+		Size: 4.59GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(StyleGANDiscriminator)))/ResBlock_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(3, 4, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: u8[4932943888]
+		==========================
+
+	Buffer 2:
+		Size: 4.59GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/Conv_2/Conv_2/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,128,4,224,224]
+		==========================
+
+	Buffer 3:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(StyleGANDiscriminator)))/ResBlock_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(3, 4, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 4:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(jvp(StyleGANDiscriminator))))/ResBlock_0/jit(leaky_relu)/add_any" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/stylegan_discriminator_3d.py" source_line=80
+		XLA Label: fusion
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 5:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(jvp(StyleGANDiscriminator))/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 6:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(StyleGANDiscriminator)/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 7:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_7/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 8:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_7/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 9:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_6/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 10:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_6/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 11:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/transpose(jvp(VQVAE))/decoder/jit(_resize)/broadcast_in_dim[shape=(48, 4, 224, 112, 128) broadcast_dimensions=()]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=96
+		XLA Label: fusion
+		Shape: f32[112,48,4,224,128]
+		==========================
+
+	Buffer 12:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_1/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 13:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_0/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 14:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_0/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 15:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+
+2023-11-13 03:27:22.732170: W external/tsl/tsl/framework/bfc_allocator.cc:485] Allocator (GPU_3_bfc) ran out of memory trying to allocate 59.30GiB (rounded to 63673312768)requested by op 
+2023-11-13 03:27:22.732811: W external/tsl/tsl/framework/bfc_allocator.cc:497] ***_________________________________________________________________________________________________
+2023-11-13 03:27:22.734248: E external/xla/xla/pjrt/pjrt_stream_executor_client.cc:2716] Execution of replica 3 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 63673312648 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:    1.02GiB
+              constant allocation:       444B
+        maybe_live_out allocation:  827.71MiB
+     preallocated temp allocation:   59.30GiB
+  preallocated temp fragmentation:  574.57MiB (0.95%)
+                 total allocation:   60.32GiB
+              total fragmentation:  753.86MiB (1.22%)
+Peak buffers:
+	Buffer 1:
+		Size: 4.59GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(StyleGANDiscriminator)))/ResBlock_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(3, 4, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: u8[4932943888]
+		==========================
+
+	Buffer 2:
+		Size: 4.59GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/Conv_2/Conv_2/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,128,4,224,224]
+		==========================
+
+	Buffer 3:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(StyleGANDiscriminator)))/ResBlock_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(3, 4, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 4:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(jvp(StyleGANDiscriminator))))/ResBlock_0/jit(leaky_relu)/add_any" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/stylegan_discriminator_3d.py" source_line=80
+		XLA Label: fusion
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 5:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(jvp(StyleGANDiscriminator))/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 6:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(StyleGANDiscriminator)/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 7:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_7/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 8:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_7/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 9:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_6/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 10:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_6/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 11:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/transpose(jvp(VQVAE))/decoder/jit(_resize)/broadcast_in_dim[shape=(48, 4, 224, 112, 128) broadcast_dimensions=()]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=96
+		XLA Label: fusion
+		Shape: f32[112,48,4,224,128]
+		==========================
+
+	Buffer 12:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_1/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 13:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_0/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 14:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_0/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 15:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+
+2023-11-13 03:27:22.736518: W external/tsl/tsl/framework/bfc_allocator.cc:485] Allocator (GPU_1_bfc) ran out of memory trying to allocate 59.30GiB (rounded to 63673312768)requested by op 
+2023-11-13 03:27:22.737360: W external/tsl/tsl/framework/bfc_allocator.cc:497] ***_________________________________________________________________________________________________
+2023-11-13 03:27:22.738928: E external/xla/xla/pjrt/pjrt_stream_executor_client.cc:2716] Execution of replica 1 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 63673312648 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:    1.02GiB
+              constant allocation:       444B
+        maybe_live_out allocation:  827.71MiB
+     preallocated temp allocation:   59.30GiB
+  preallocated temp fragmentation:  574.57MiB (0.95%)
+                 total allocation:   60.32GiB
+              total fragmentation:  753.86MiB (1.22%)
+Peak buffers:
+	Buffer 1:
+		Size: 4.59GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(StyleGANDiscriminator)))/ResBlock_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(3, 4, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: u8[4932943888]
+		==========================
+
+	Buffer 2:
+		Size: 4.59GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/Conv_2/Conv_2/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,128,4,224,224]
+		==========================
+
+	Buffer 3:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(StyleGANDiscriminator)))/ResBlock_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(3, 4, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 4:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(jvp(StyleGANDiscriminator))))/ResBlock_0/jit(leaky_relu)/add_any" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/stylegan_discriminator_3d.py" source_line=80
+		XLA Label: fusion
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 5:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(jvp(StyleGANDiscriminator))/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 6:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(StyleGANDiscriminator)/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 7:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_7/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 8:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_7/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 9:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_6/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 10:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_6/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 11:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/transpose(jvp(VQVAE))/decoder/jit(_resize)/broadcast_in_dim[shape=(48, 4, 224, 112, 128) broadcast_dimensions=()]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=96
+		XLA Label: fusion
+		Shape: f32[112,48,4,224,128]
+		==========================
+
+	Buffer 12:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_1/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 13:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_0/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 14:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_0/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 15:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+
+VQVAE(
+    # attributes
+    config = base_lr: &id003 !!python/object:ml_collections.config_dict.config_dict.FieldReference
+      _field_type: !!python/name:builtins.float ''
+      _ops: []
+      _required: false
+      _value: 0.0001
+    batch_size: !!python/object:ml_collections.config_dict.config_dict.FieldReference
+      _field_type: &id001 !!python/name:builtins.int ''
+      _ops: []
+      _required: false
+      _value: 192
+    data_dtype_str: &id002 !!python/object:ml_collections.config_dict.config_dict.FieldReference
+      _field_type: !!python/name:builtins.str ''
+      _ops: []
+      _required: false
+      _value: float32
+    dataset_configs:
+      base_dir: ../ssv2
+      camera_name: image_aux1
+      examples_per_subset:
+        test: 24777
+        train: 168913
+        validation: 24777
+      frame_rate: 10
+      num_classes: 174
+      num_eval_clips: 15
+      num_frames: 4
+      prefetch_to_device: 2
+      shuffle_buffer_size: !!python/object:ml_collections.config_dict.config_dict.FieldReference
+        _field_type: *id001
+        _ops: []
+        _required: false
+        _value: 1536
+      stride: 1
+      tables:
+        test: test_tfrecord
+        train: train_tfrecord
+        validation: val_tfrecord
+      zero_centering: false
+    dataset_name: video_tfrecord_dataset
+    discriminator:
+      channel_multipliers: !!python/tuple
+      - 2
+      - 4
+      - 4
+      - 4
+      filters: !!python/object:ml_collections.config_dict.config_dict.FieldReference
+        _field_type: *id001
+        _ops: []
+        _required: false
+        _value: 64
+      num_remat_blocks: &id004 !!python/object:ml_collections.config_dict.config_dict.FieldReference
+        _field_type: *id001
+        _ops: []
+        _required: false
+        _value: 0
+    dtype: *id002
+    eval:
+      data_splits: train,validation
+      enable_frechet_distance: true
+      enable_inception_score: false
+      final_num_example_multiplier: 10
+      final_num_repeats: 1
+      num_examples: 247770
+    eval_batch_size: !!python/object:ml_collections.config_dict.config_dict.FieldReference
+      _field_type: *id001
+      _ops: []
+      _required: false
+      _value: 48
+    eval_from:
+      checkpoint_path: null
+      step: null
+    experiment_name: SSV2_VQGAN/3D
+    image_size: !!python/object:ml_collections.config_dict.config_dict.FieldReference
+      _field_type: *id001
+      _ops: []
+      _required: false
+      _value: 224
+    init_from: null
+    lax_precision: default
+    logging:
+      checkpoint_kept: 5
+      checkpoint_steps: 1000
+      enable_checkpoint: true
+      log_metric_steps: 200
+      log_sample_size: 2
+    lr_configs:
+      base_learning_rate: *id003
+      factors: constant * cosine_decay * linear_warmup
+      learning_rate_schedule: compound
+      steps_per_cycle: !!python/object:ml_collections.config_dict.config_dict.FieldReference
+        _field_type: *id001
+        _ops: []
+        _required: false
+        _value: 70320
+      steps_per_epoch: !!python/object:ml_collections.config_dict.config_dict.FieldReference
+        _field_type: *id001
+        _ops: []
+        _required: false
+        _value: 879
+      warmup_steps: !!python/object:ml_collections.config_dict.config_dict.FieldReference
+        _field_type: *id001
+        _ops: []
+        _required: false
+        _value: 879
+    model_class: VQGAN
+    num_training_epochs: !!python/object:ml_collections.config_dict.config_dict.FieldReference
+      _field_type: *id001
+      _ops: []
+      _required: false
+      _value: 80
+    optimizer:
+      beta1: 0.0
+      beta2: 0.99
+      d_lr: *id003
+      g_lr: *id003
+      lr: *id003
+    perceptual_loss_on_logit: true
+    perceptual_loss_weight: 0.1
+    polyak_decay: 0.999
+    pretrained_image_model: true
+    rng_seed: 0
+    vqgan:
+      finetune_decoder: false
+      finetune_path: ''
+      g_adversarial_loss_weight: 0.1
+      grad_penalty_cost: 10.0
+      gradient_penalty: r1
+      loss_type: non-saturating
+      model_type: 3D
+    vqvae:
+      activation_fn: swish
+      architecture: 3dcnn
+      channel_multipliers: !!python/tuple
+      - 1
+      - 2
+      - 4
+      codebook_size: 1024
+      commitment_cost: 0.25
+      conv_downsample: false
+      deconv_upsample: false
+      embedding_dim: 256
+      entropy_loss_ratio: 0.1
+      entropy_loss_type: softmax
+      entropy_temperature: 0.01
+      filters: !!python/object:ml_collections.config_dict.config_dict.FieldReference
+        _field_type: *id001
+        _ops: []
+        _required: false
+        _value: 64
+      norm_type: GN
+      num_dec_remat_blocks: *id004
+      num_dec_res_blocks: 2
+      num_enc_remat_blocks: *id004
+      num_enc_res_blocks: 2
+      temporal_downsample: !!python/tuple
+      - true
+      - true
+      - false
+    
+    dtype = float32
+    activation_fn = relu
+    precision = <Precision.DEFAULT: 0>
+)
+jax.errors.SimplifiedTraceback: For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/scratch/abg4br/magvit/videogvt/main.py", line 69, in <module>
+    app.run(main=main)
+  File "/scratch/abg4br/scenic/scenic/app.py", line 68, in run
+    app.run(functools.partial(_run_main, main=main))
+  File "/usr/local/lib/python3.10/site-packages/absl/app.py", line 308, in run
+    _run_main(main, args)
+  File "/usr/local/lib/python3.10/site-packages/absl/app.py", line 254, in _run_main
+    sys.exit(main(argv))
+  File "/scratch/abg4br/scenic/scenic/app.py", line 104, in _run_main
+    main(rng=rng, config=FLAGS.config, workdir=FLAGS.workdir, writer=writer)
+  File "/scratch/abg4br/magvit/videogvt/main.py", line 60, in main
+    ret = trainer(
+  File "/scratch/abg4br/magvit/videogvt/../videogvt/trainers/vqgan_trainer.py", line 663, in train
+    train_state, metrics_update = train_step_pmapped(
+jaxlib.xla_extension.XlaRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 63673312648 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:    1.02GiB
+              constant allocation:       444B
+        maybe_live_out allocation:  827.71MiB
+     preallocated temp allocation:   59.30GiB
+  preallocated temp fragmentation:  574.57MiB (0.95%)
+                 total allocation:   60.32GiB
+              total fragmentation:  753.86MiB (1.22%)
+Peak buffers:
+	Buffer 1:
+		Size: 4.59GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(StyleGANDiscriminator)))/ResBlock_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(3, 4, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: u8[4932943888]
+		==========================
+
+	Buffer 2:
+		Size: 4.59GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/Conv_2/Conv_2/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,128,4,224,224]
+		==========================
+
+	Buffer 3:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(StyleGANDiscriminator)))/ResBlock_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(3, 4, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 4:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(transpose(jvp(jvp(StyleGANDiscriminator))))/ResBlock_0/jit(leaky_relu)/add_any" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/stylegan_discriminator_3d.py" source_line=80
+		XLA Label: fusion
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 5:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(jvp(StyleGANDiscriminator))/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 6:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(StyleGANDiscriminator)/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 7:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_7/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 8:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_7/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 9:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_6/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 10:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/decoder/ResBlock_6/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 11:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/transpose(jvp(VQVAE))/decoder/jit(_resize)/broadcast_in_dim[shape=(48, 4, 224, 112, 128) broadcast_dimensions=()]" source_file="/scratch/abg4br/magvit/videogvt/../videogvt/models/model_utils.py" source_line=96
+		XLA Label: fusion
+		Shape: f32[112,48,4,224,128]
+		==========================
+
+	Buffer 12:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_1/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 13:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_0/Conv_1/Conv_1/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 14:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/ResBlock_0/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+	Buffer 15:
+		Size: 2.30GiB
+		Operator: op_name="pmap(<unnamed wrapped function>)/jit(main)/jvp(VQVAE)/VQVAE.encode/encoder/Conv_0/Conv_0/conv_general_dilated[window_strides=(1, 1, 1) padding=((1, 1), (1, 1), (1, 1)) lhs_dilation=(1, 1, 1) rhs_dilation=(1, 1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 4, 1, 2, 3), rhs_spec=(4, 3, 0, 1, 2), out_spec=(0, 4, 1, 2, 3)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/home/abg4br/.local/lib/python3.10/site-packages/flax/linen/linear.py" source_line=529
+		XLA Label: custom-call
+		Shape: f32[48,64,4,224,224]
+		==========================
+
+: while running replica 0 and partition 0 of a replicated computation (other replicas may have failed as well).
