@@ -113,14 +113,18 @@ def initialize_model(*, model_dict: Dict[str, nn.Module],
   def _initialize_model(rng):
     """Initialization function to be jitted."""
     d_rng, g_rng = jax.random.split(rng, 2)
+    print(model_dict['generator'])
+
+
     generator_variables = model_dict['generator'].init(g_rng, *dummy_input)
-    g_model_state, g_params = generator_variables.pop('params')
+
+    g_model_state, g_params = flax.core.pop(generator_variables, 'params')
 
     d_dummy_input = jax.tree_util.tree_map(
         lambda x, y: jnp.concatenate([x, y], axis=0), dummy_input, dummy_input)
     discriminator_variables = model_dict['discriminator'].init(
         d_rng, *d_dummy_input)
-    d_model_state, d_params = discriminator_variables.pop('params')
+    d_model_state, d_params = flax.core.pop(discriminator_variables, 'params')
 
     state_dict = dict(
         generator=g_model_state,
@@ -185,18 +189,19 @@ def create_train_state(input_spec: Sequence[Union[Tuple[Tuple[int, ...],
       tx_dict['generator'].init, backend='cpu')(g_params)
   d_opt_state = jax.jit(
       tx_dict['discriminator'].init, backend='cpu')(d_params)
+  n=  """
+      logging.info('logging generator parameters')
+      parameter_overview.log_parameter_overview(g_params)
+      logging.info('logging discriminator parameters')
+      parameter_overview.log_parameter_overview(d_params)
+      if jax.tree_util.tree_leaves(model_state_dict):
+        logging.info('logging model states')
+        parameter_overview.log_parameter_overview(model_state_dict)
+      
+    """
 
-  logging.info('logging generator parameters')
-  parameter_overview.log_parameter_overview(g_params)
-  logging.info('logging discriminator parameters')
-  parameter_overview.log_parameter_overview(d_params)
-  if jax.tree_util.tree_leaves(model_state_dict):
-    logging.info('logging model states')
-    parameter_overview.log_parameter_overview(model_state_dict)
   ema_params = init_params_dict['generator']
-
-  metadata = dict(
-      lecam_ema_real=jnp.asarray(0.), lecam_ema_fake=jnp.asarray(0.))
+  metadata = dict(lecam_ema_real=jnp.asarray(0.), lecam_ema_fake=jnp.asarray(0.))
 
   train_state = TrainState(
       global_step=0,
