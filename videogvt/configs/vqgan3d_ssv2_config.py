@@ -43,7 +43,7 @@ def get_config(config_str='B'):
   # Dataset.
   config.dataset_name = 'video_tfrecord_dataset'
   config.dataset_configs = ml_collections.ConfigDict()
-  config.dataset_configs.base_dir = '/scratch/bae9wk/ssv2'
+  config.dataset_configs.base_dir = f'../ssv2'
   config.dataset_configs.tables = {
       'train': 'train_tfrecord',
       'validation': 'val_tfrecord',
