@@ -4,10 +4,10 @@
 #SBATCH --array=0
 #SBATCH -t 48:00:00
 #SBATCH -p gpu
-#SBATCH --gres=gpu:a100:1
+#SBATCH --gres=gpu:a100:4
 #SBATCH --constraint=a100_80gb
 #SBATCH -N 1
-#SBATCH --cpus-per-task=16
+#SBATCH --cpus-per-task=50
 #SBATCH --output=logs/log-%A-%a.log
 #SBATCH -J official_runs
 
