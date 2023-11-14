@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-#SBATCH -A collabrobogroup
+#SBATCH -A uvadm_paid
 #SBATCH --array=0
 #SBATCH -t 48:00:00
 #SBATCH -p gpu

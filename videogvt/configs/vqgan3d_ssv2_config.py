@@ -38,7 +38,7 @@ def get_config(config_str='B'):
   config.image_size = 224
   #config.num_training_epochs = {'B': 135, 'L': 400}[version]
   config.num_training_epochs = {'B': 80}[version]
-  config.batch_size = {'B': 192}[version]
+  config.batch_size = {'B': 128}[version]
 
   # Dataset.
   config.dataset_name = 'video_tfrecord_dataset'
