@@ -25,7 +25,6 @@ poetry.lock
 .idea
 
 workdir
-workdir_backup
 magvit_env.sif
 
 logs/*

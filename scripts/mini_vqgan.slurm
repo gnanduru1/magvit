@@ -1,8 +1,8 @@
 #!/bin/bash -l
 
-#SBATCH -A uvadm_paid
+#SBATCH -A collabrobogroup
 #SBATCH --array=0
-#SBATCH -t 48:00:00
+#SBATCH -t 24:00:00
 #SBATCH -p gpu
 #SBATCH --gres=gpu:a100:4
 #SBATCH --constraint=a100_80gb
@@ -17,6 +17,6 @@
 # #SBATCH -C gpupod
 
 module purge
-module load singularity
+module load apptainer
 
-bash run.sh
+bash mini_vqgan.sh
