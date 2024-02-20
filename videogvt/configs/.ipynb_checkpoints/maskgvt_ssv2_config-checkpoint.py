@@ -25,7 +25,7 @@ r"""Configuration and hyperparameter for the MaskGVT on SSv2 frame prediction.
 
 import ml_collections
 from videogvt.configs import maskgvt_ucf101_config
-import os
+
 
 SSV2_TRAIN_SIZE = 168913
 SSV2_VAL_SIZE = 24777
@@ -78,17 +78,7 @@ def get_config(config_str='B'):
   # VQ Model
   from videogvt.configs import vqgan3d_ssv2_config
   config.vq_model_from.config = vqgan3d_ssv2_config.get_config(f'{version}-eval')
-  config.vq_model_from.checkpoint_path = '/scratch/bae9wk/magvit/workdir/checkpoint_105520'
-
-  config.transformer = ml_collections.ConfigDict()
-  config.transformer.latent_shape = [1] + [56] * 2  # [l_t, l_h, l_w]
-  config.transformer.num_layers = {'Ti': 12, 'S': 12, 'B': 12, 'L': 24, 'H': 32}[version]
-  config.transformer.hidden_size = {'Ti': 192, 'S': 384, 'B': 768, 'L': 1024, 'H': 1280}[version]
-  config.transformer.mlp_dim = {'Ti': 768, 'S': 1536, 'B': 3072, 'L': 4096, 'H': 5120}[version]
-  config.transformer.num_heads = {'Ti': 3, 'S': 6, 'B': 12, 'L': 16, 'H': 16}[version]
-  config.transformer.dropout_rate = 0.1
-  config.transformer.attention_dropout_rate = 0.1  # [0.0]
-  config.transformer.stochastic_depth = 0.0  # TODO(roadjiang): support this
+  config.vq_model_from.checkpoint_path = '/scratch/bae9wk/magvit/workdir/checkpoint_70001'
 
   # Learning rate
   steps_per_epoch = SSV2_TRAIN_SIZE // config.get_ref('batch_size')
@@ -96,8 +86,7 @@ def get_config(config_str='B'):
   total_steps = config.get_ref('num_training_epochs') * steps_per_epoch
   config.lr_configs.steps_per_cycle = total_steps
 
-  config.logging.enable_checkpoint = True
-  config.logging.checkpoint_steps = 1000
+  config.logging.enable_checkpoint = False
 
   # Evaluation.
   config.eval.enable_inception_score = False
@@ -131,8 +120,4 @@ def get_config(config_str='B'):
     config.eval.results_dir = None
 
   config.init_from = None
-  batch_size = int(os.getenv("MASKGVT_BATCH_SIZE"))
-  if not batch_size:
-    raise RuntimeError("Missing MASKGVT_BATCH_SIZE Environment Variable")
-  config.batch_size = batch_size
   return config

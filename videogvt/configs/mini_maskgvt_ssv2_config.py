@@ -25,7 +25,7 @@ r"""Configuration and hyperparameter for the MaskGVT on SSv2 frame prediction.
 
 import ml_collections
 from videogvt.configs import maskgvt_ucf101_config
-import os
+import getpass, os
 
 SSV2_TRAIN_SIZE = 168913
 SSV2_VAL_SIZE = 24777
@@ -46,7 +46,8 @@ def get_config(config_str='B'):
   # Dataset.
   config.dataset_name = 'video_tfrecord_dataset'
   config.dataset_configs = ml_collections.ConfigDict()
-  config.dataset_configs.base_dir = '../ssv2'
+  user = getpass.getuser()
+  config.dataset_configs.base_dir = f'/scratch/{user}/ssv2'
   config.dataset_configs.tables = {
       'train': 'train_tfrecord',
       'validation': 'val_tfrecord',
@@ -78,7 +79,7 @@ def get_config(config_str='B'):
   # VQ Model
   from videogvt.configs import vqgan3d_ssv2_config
   config.vq_model_from.config = vqgan3d_ssv2_config.get_config(f'{version}-eval')
-  config.vq_model_from.checkpoint_path = '/scratch/bae9wk/magvit/workdir/checkpoint_105520'
+  config.vq_model_from.checkpoint_path = '/scratch/bae9wk/magvit/workdir/mini_vqgan/checkpoint_35001'
 
   config.transformer = ml_collections.ConfigDict()
   config.transformer.latent_shape = [1] + [56] * 2  # [l_t, l_h, l_w]
@@ -96,8 +97,7 @@ def get_config(config_str='B'):
   total_steps = config.get_ref('num_training_epochs') * steps_per_epoch
   config.lr_configs.steps_per_cycle = total_steps
 
-  config.logging.enable_checkpoint = True
-  config.logging.checkpoint_steps = 1000
+  config.logging.enable_checkpoint = False
 
   # Evaluation.
   config.eval.enable_inception_score = False

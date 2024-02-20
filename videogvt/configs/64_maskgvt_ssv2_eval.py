@@ -26,14 +26,21 @@ r"""Configuration and hyperparameter for the MaskGVT on SSv2 frame prediction.
 import ml_collections
 from videogvt.configs import maskgvt_ucf101_config
 import os
+import getpass
 
-SSV2_TRAIN_SIZE = 168913
-SSV2_VAL_SIZE = 24777
-SSV2_TEST_SIZE = 27157
+
+# SSV2_TRAIN_SIZE = 168913
+# SSV2_VAL_SIZE = 24777
+# SSV2_TEST_SIZE = 27157
+SSV2_TRAIN_SIZE = 766
+SSV2_VAL_SIZE = 112
+SSV2_TEST_SIZE = 122
 VARIANT = 'MaskGVT/16'
 
 
-def get_config(config_str='B'):
+def get_config(config_str='B-eval'):
+  user = getpass.getuser()
+
   """Get the base hyperparameter configuration."""
   version, *options = config_str.split('-')
 
@@ -46,7 +53,7 @@ def get_config(config_str='B'):
   # Dataset.
   config.dataset_name = 'video_tfrecord_dataset'
   config.dataset_configs = ml_collections.ConfigDict()
-  config.dataset_configs.base_dir = '../ssv2'
+  config.dataset_configs.base_dir = '../mini_ssv2'#'../ssv2'
   config.dataset_configs.tables = {
       'train': 'train_tfrecord',
       'validation': 'val_tfrecord',
@@ -60,7 +67,7 @@ def get_config(config_str='B'):
   config.dataset_configs.camera_name = 'image_aux1'
   config.dataset_configs.num_classes = 174
   config.dataset_configs.frame_rate = 10
-  config.dataset_configs.num_frames = 4
+  config.dataset_configs.num_frames = 2
   config.dataset_configs.stride = 1
   config.dataset_configs.zero_centering = False  # Range is 0 to 1
   config.dataset_configs.num_eval_clips = 15  # Sample 16 frames out of 30
@@ -78,7 +85,7 @@ def get_config(config_str='B'):
   # VQ Model
   from videogvt.configs import vqgan3d_ssv2_config
   config.vq_model_from.config = vqgan3d_ssv2_config.get_config(f'{version}-eval')
-  config.vq_model_from.checkpoint_path = '/scratch/bae9wk/magvit/workdir/checkpoint_105520'
+  config.vq_model_from.checkpoint_path = '/scratch/bae9wk/magvit/workdir/64_vqgan/checkpoint_34001'
 
   config.transformer = ml_collections.ConfigDict()
   config.transformer.latent_shape = [1] + [56] * 2  # [l_t, l_h, l_w]
@@ -96,12 +103,11 @@ def get_config(config_str='B'):
   total_steps = config.get_ref('num_training_epochs') * steps_per_epoch
   config.lr_configs.steps_per_cycle = total_steps
 
-  config.logging.enable_checkpoint = True
-  config.logging.checkpoint_steps = 1000
+  config.logging.enable_checkpoint = False
 
   # Evaluation.
   config.eval.enable_inception_score = False
-  config.eval.enable_frechet_distance = True
+  config.eval.enable_frechet_distance = False
 
   config.eval.data_splits = 'train,validation'
   config.eval.num_examples = SSV2_VAL_SIZE * 10
@@ -111,8 +117,11 @@ def get_config(config_str='B'):
   # Standalone evaluation.
   if 'eval' in options:
     config.eval_only = True
-    config.eval.data_splits = 'validation'
-    config.eval_from.checkpoint_path = None#{
+    config.eval.data_splits = 'test'
+    config.eval_from.checkpoint_path = f'/scratch/{user}/magvit/workdir/64_maskgvt/4/checkpoint_1167001'
+    config.eval_from.legacy_checkpoint = False
+    #'/scratch/bae9wk/magvit/workdir/events.out.tfevents.1704236845.udc-an37-31.371059.0.v2'
+    #{
     #     'B': 'gs://magvit/models/bair_gvt_base_fp1',
     #     'L': 'gs://magvit/models/bair_gvt_large_fp1',
     # }[version]
@@ -125,14 +134,14 @@ def get_config(config_str='B'):
       config.sampling.mask_scheduling_method = 'exp'
 
     config.eval.enable_ssim_psnr = True
-    config.eval.enable_lpips = True
+    config.eval.enable_lpips = False#True
     config.eval.results_with_input = True
     config.eval.results_with_condition = False
-    config.eval.results_dir = None
+
+    config.eval.results_dir = f'/scratch/{user}/magvit/workdir/64_maskgvt/4/eval'
+    if not os.path.exists(config.eval.results_dir):
+      os.makedirs(config.eval.results_dir, exist_ok=True)
 
   config.init_from = None
-  batch_size = int(os.getenv("MASKGVT_BATCH_SIZE"))
-  if not batch_size:
-    raise RuntimeError("Missing MASKGVT_BATCH_SIZE Environment Variable")
-  config.batch_size = batch_size
+  config.batch_size = 128
   return config
